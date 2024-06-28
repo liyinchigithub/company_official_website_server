@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!--
+    mybatis的主配置文件：主要定义了数据库的配置信息，SQL映射文件的位置
+    1、约束文件
+        <!DOCTYPE configuration
+            PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+            "http://mybatis.org/dtd/mybatis-3-config.dtd">
+        mybatis-3-config.dtd：约束文件名称
+    2、configuration：根标签
+-->
+<configuration>
+
+    <!-- settings：mybatis全局行为 -->
+    <settings>
+        <!-- 设置mybatis输出日志 -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <settings>
+    <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <!-- Type Aliases -->
+    <typeAliases>
+        <typeAlias alias="User" type="com.cows.entity.User"/>
+    </typeAliases>
+    <!--
+        环境配置：数据库的连接信息
+            default：必须和某个environment的id值一样
+            告诉mybatis使用哪个数据库的连接信息（访问哪个数据库）
+    -->
+    <environments default="development">
+
+        <!--
+            environment：一个数据库的配置，环境
+            id：一个唯一值（可自定义，表示环境的名称）
+         -->
+        <environment id="development">
+            <!--
+                transactionManaer：mybatis的事务类型
+                    type：JDBC（表示使用JDBC中的Connection对象的commit，rollback做事务处理）
+            -->
+            <transactionManager type="JDBC"/>
+            <!--
+                dataSource：表示数据源，连接数据库的
+                    type：表述数据源的类型，POOLED表示使用连接池
+            -->
+            <dataSource type="POOLED">
+                <!--
+                   driver, user, username, password 是固定的，不能自定义。
+                -->
+                <!-- 数据库驱动类名 -->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <!-- 连接数据库的URL字符串 -->
+                <property name="url" value="jdbc:mysql://127.0.0.1:3306/springBootTest"/>
+                <!-- 访问数据库的用户名 -->
+                <property name="username" value="root"/>
+                <!-- 访问数据库的密码 -->
+                <property name="password" value="lyc123456"/>
+            </dataSource>
+        </environment>
+
+        <!--表示线上的数据库，是项目真实使用的库-->
+        <environment id="online">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/springBootTest"/>
+                <property name="username" value="root"/>
+                <property name="password" value="lyc123456"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+
+
+    <!-- sql mapper（SQL映射文件）的位置 -->
+    <mappers>
+        <!--
+            一个mapper标签指定一个文件的位置
+                从类路径开始的路径信息（target/classes）类路径
+        -->
+        <mapper resource="org/example/dao/UserDao.xml"/>
+        <mapper resource="mapper/UserMapper.xml"/>
+    </mappers>
+</configuration>

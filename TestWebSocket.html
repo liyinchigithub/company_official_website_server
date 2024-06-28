@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebSocket Test</title>
+  <script>
+    var ws;
+
+    function connect() {
+        var endpoint = document.getElementById("endpoint").value;
+        ws = new WebSocket(endpoint);
+
+        ws.onopen = function() {
+            console.log("Connected to " + endpoint);
+        };
+
+        ws.onmessage = function(event) {
+            var log = document.getElementById("log");
+            console.log(event.data);
+            log.innerHTML += event.data + "\n";
+        };
+
+        ws.onclose = function() {
+            console.log("Disconnected");
+        };
+    }
+
+    function disconnect() {
+        if (ws != null) {
+            ws.close();
+            ws = null;
+        }
+    }
+
+    function sendMessage() {
+        var message = document.getElementById("message").value;
+        if (ws != null) {
+            ws.send(message);
+            console.log("Sent: " + message);
+        } else {
+            alert("Connection not established, please connect.");
+        }
+    }
+  </script>
+</head>
+<body>
+<div>
+  <label for="endpoint">Endpoint:</label>
+  <input type="text" id="endpoint" value="ws://localhost:8088/my-websocket-endpoint">
+  <button onclick="connect();">Connect</button>
+  <button onclick="disconnect();">Disconnect</button>
+</div>
+<div>
+  <label for="message">Message:</label>
+  <input type="text" id="message">
+  <button onclick="sendMessage();">Send</button>
+</div>
+<div>
+  <label for="log">Log:</label>
+  <textarea id="log" readonly></textarea>
+</div>
+</body>
+</html>

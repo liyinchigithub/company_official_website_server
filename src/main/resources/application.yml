@@ -1,0 +1,15 @@
+# 项目
+app:
+  id: lyc.springboot.demo
+  name: learning springboot
+  version: 1.0.0
+
+  # 读取指定环境
+spring:
+  profiles:
+    active: dev
+    
+
+
+
+

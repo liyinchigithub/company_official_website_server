@@ -1,0 +1,36 @@
+<configuration> <!-- 开始配置 -->
+
+    <logger name="com.example.lyc.springboot.demo" level="INFO" /> <!-- 定义一个名为"com.example.lyc.springboot.demo"的logger，其日志级别为INFO -->
+
+    <root level="INFO"> <!-- 定义root logger，其日志级别为INFO -->
+        <appender-ref ref="CONSOLE" /> <!-- root logger将日志输出到名为"CONSOLE"的appender -->
+        <appender-ref ref="FILE" /> <!-- root logger将日志输出到名为"FILE"的appender -->
+    </root>
+
+    <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" /> <!-- 添加一个状态监听器，用于在控制台显示Logback的内部状态消息 -->
+
+    <property name="LOG_PATTERN" value="%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" /> <!-- 定义日志的输出格式 -->
+
+    <property name="FILE_PATH" value="./Log/%d{yyyy-MM-dd_HH}.%i.log" /> <!-- 定义日志文件的路径和名称，其中包含日期和时间 HH-mm-ss-->
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender"> <!-- 定义一个名为"CONSOLE"的appender，用于将日志输出到控制台 -->
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern> <!-- 使用前面定义的日志格式 -->
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender"> <!-- 定义一个名为"FILE"的appender，用于将日志输出到文件 -->
+        <file>${FILE_PATH}</file> <!-- 使用前面定义的文件路径和名称 -->
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern> <!-- 使用前面定义的日志格式 -->
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> <!-- 定义滚动策略，根据时间来滚动日志文件 -->
+            <fileNamePattern>${FILE_PATH}</fileNamePattern> <!-- 滚动时新文件的名称 -->
+            <maxHistory>60</maxHistory> <!-- 保留最近60天的日志文件 -->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP"> <!-- 定义触发滚动的策略，根据文件大小和时间来触发 -->
+                <maxFileSize>10MB</maxFileSize> <!-- 当文件大小超过10MB时，触发滚动 -->
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+</configuration> <!-- 结束配置 -->

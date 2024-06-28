@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cows.mapper.OrderMapper">
+    <!-- 使用了 resultType="Order"，这告诉 MyBatis 结果应该映射到 'Order' 类 -->
+    <select id="findOrderById" parameterType="int" resultType="com.cows.entity.Order">
+        SELECT * FROM Orders WHERE id = #{id}
+    </select>
+    <select id="getAllOrders" resultType="com.cows.entity.Order">
+        SELECT * FROM Orders ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
+    </select>
+    <select id="findAllOrders" resultType="com.cows.entity.Order">
+        SELECT * FROM Orders
+    </select>
+    <insert id="insertOrder" parameterType="com.cows.entity.Order">
+        INSERT INTO Orders (userId, totalPrice, status) VALUES (#{userId}, #{totalPrice}, #{status})
+    </insert>
+    <update id="updateOrder" parameterType="com.cows.entity.Order">
+        UPDATE Orders SET userId = #{userId}, totalPrice = #{totalPrice}, status = #{status} WHERE id = #{id}
+    </update>
+    <delete id="deleteOrder" parameterType="int">
+        DELETE FROM Orders WHERE id = #{id}
+    </delete>
+
+    <!-- 其他SQL语句... -->
+</mapper>

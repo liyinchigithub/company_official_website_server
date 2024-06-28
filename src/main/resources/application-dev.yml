@@ -1,0 +1,158 @@
+wechat:
+  appid:   # 微信应用ID
+  secret:   # 微信应用密钥
+  redirect:
+    uri:  https://3z5753f148.vicp.fun/login/wechat/callback # 回调URL
+app:
+  id: platform
+
+# 开发环境配置
+server:
+  # 服务器的HTTP端口，默认为80
+  port: 8088
+  servlet:
+    # 应用的访问路径
+    context-path: /
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    # 连接数满后的排队数，默认为100
+    accept-count: 1000
+    threads:
+      # tomcat最大线程数，默认为200
+      max: 800
+      # Tomcat启动初始化的线程数，默认值10
+      min-spare: 100
+# 配置中心
+apollo:
+  # 就是apollo config server的地址
+  meta: http://meta.apollo.xxx.cn
+  bootstrap:
+    # 是否开启 Apollo
+    enabled: true
+    eagerLoad:
+      # 将 Apollo 加载提到初始化日志系统之前，如果设置为false，则配置中心中修改日志信息不会生效
+      enabled: true
+    namespaces: application, sensitive-config, message
+  cacheDir: ./config
+# 配置微服务的地址
+microservice:
+  url:
+    # 订单微服务的地址
+    orderUrl: http://localhost:8002
+    # 用户微服务的地址
+    userUrl: http://localhost:8001
+    # 支付微服务的地址
+    payUrl: http://localhost:8003
+    # 购物车微服务的地址
+    shoppingUrl: http://localhost:8004
+
+# 配置文件上传大小限制
+file:
+  maxSize: 1024MB
+# 配置文件上传路径
+filePath: /home/lyc/upload/
+
+
+# 日志配置
+logging:
+  level:
+    com.example.lyc.springboot.demo: debug
+    org.springframework: warn
+    io.swagger: debug
+    org.springdoc: debug
+
+# 用户配置
+user:
+  password:
+    # 密码错误{maxRetryCount}次锁定10分钟
+    maxRetryCount: 5
+
+## MyBatis
+#mybatis-plus:
+#  # 搜索指定包别名
+#  typeAliasesPackage: com.example.**.entity
+#  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+#  mapperLocations: classpath*:mapper/*Mapper.xml
+#  # 加载全局的配置文件
+#  configLocation: classpath:mybatis/mybatis-config.xml
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: flag  # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+      update-fill: modify_by,modify_time
+      page-size: 10
+  mapper-locations: classpath*:mapper/**Mapper.xml
+  # 只要多加这一句就能用mybatis-plus了
+  configuration:
+    map-underscore-to-camel-case: true
+
+# PageHelper分页插件
+pagehelper:
+  helper-dialect: mysql
+  reasonable: false
+  support-methods-arguments: true
+  params: count=countSql
+
+springdoc:
+  api-docs:
+    path: /swagger-docs
+    enabled: true
+
+
+#redis相关配置
+
+spring:
+  #  配置静态资源路径
+  resources:
+    static-locations:
+      - classpath:/static/
+      - classpath:/media/
+  #  配置ActiveMQ
+  activemq:
+    # activemq url
+    broker-url: tcp://localhost:61616
+    in-memory: true
+    pool:
+      # 如果此处设置为true，需要添加activemq-pool的依赖包，否则会自动配置失败，无法注入JmsMessagingTemplate
+      enabled: false
+  #  配置RocketMQ
+#  rocketmq:
+#    name-server: 127.0.0.1:9876
+#    producer:
+#      group: my-producer-group
+#      access-key: yourAccessKey
+#      secret-key: yourSecretKey
+  # jms
+  jms:
+    pub-sub-domain: true #   默认情况下，JMS消息队列模型是点对点模型，如果设置为true，则变成发布订阅模型
+  redis:
+    # 配置redis的主机地址，需要修改成自己的
+    host: 127.0.0.1
+    port: 6379   # 默认是6379
+    password: 123456
+    timeout: 5000
+    database: 0 #  数据库索引，Redis默认提供16个数据库，编号从0到15。当你连接到Redis时，你会默认连接到0号数据库。你可以使用SELECT命令来切换到其他的数据库。
+    lettuce:
+      pool:
+        # 连接池中的最大空闲连接，默认值也是8。
+        max-idle: 500
+        # 连接池中的最小空闲连接，默认值也是0。
+        min-idle: 50
+        # 如果赋值为-1，则表示不限制；如果pool已经分配了maxActive个jedis实例，则此时pool的状态为exhausted(耗尽)
+        max-active: 1000
+        # 等待可用连接的最大时间，单位毫秒，默认值为-1，表示永不超时。如果超过等待时间，则直接抛出JedisConnectionException
+        max-wait: 5000
+#  配置OSS/文件资源访问:
+#    static-locations: [classpath:/upload/]
+
+#  aliyun:
+#    oss:
+#      endpoint: http://oss-cn-beijing.aliyuncs.com
+#      accessKeyId: yourAccessKeyId
+#      accessKeySecret: yourAccessKeySecret
+#      bucketName: yourBucketName

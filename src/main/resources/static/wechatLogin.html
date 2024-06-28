@@ -1,0 +1,19 @@
+<!-- src/main/resources/static/wechatLogin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wechat Login</title>
+</head>
+<body>
+    <h1>Wechat Login Test</h1>
+    <!-- <button style="width: 350px; height: 50px;align-items: center;" onclick="location.href='/login/wechat'">Login with Wechat</button> -->
+   <button onclick=window.location.href=`https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx9457298e075e2fee&redirect_uri=https://3z5753f148.vicp.fun/login/wechat/callback&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect`>Login with Wechat</button>
+
+</body>
+</html>
+<!-- wechatLogin.html 页面本身不需要包含请求参数 code 和 state。
+    这个页面只是提供一个按钮，用户点击后会被重定向到微信的授权页面。
+    在这个过程中，code 和 state 参数是由微信在用户授权后自动附加到回调URL上的。 
+-->
