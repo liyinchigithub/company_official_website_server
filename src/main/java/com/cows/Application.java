@@ -8,7 +8,7 @@ import org.springframework.cache.annotation.EnableCaching;
 
 @Slf4j
 @EnableCaching
-@MapperScan("com.example.lyc.springboot.demo.mapper")
+@MapperScan("com.cows.mapper")
 @SpringBootApplication
 public class Application {
 	public static void main(String[] args) {
