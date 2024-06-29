@@ -210,8 +210,17 @@ CREATE TABLE `User` (
 
 - 后台管理员表
 
-```roomsql
-CREATE TABLE `Admin`
+```sql
+CREATE TABLE Admin (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    userName VARCHAR(50) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    permissions VARCHAR(255),
+    updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    remarks TEXT,
+    isDeleted BOOLEAN DEFAULT FALSE
+);
 
 ```
 

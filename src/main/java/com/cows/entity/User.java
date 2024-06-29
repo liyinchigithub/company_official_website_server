@@ -30,7 +30,6 @@ public class User {
     @Schema(name = "password", description = "密码")
     private String password;
     private int updates;
-
     public User(int i, String 李银池, String number, int i1) {
     }
 

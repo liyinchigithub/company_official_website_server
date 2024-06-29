@@ -32,6 +32,7 @@ public class MyInterceptor implements HandlerInterceptor {
      * */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
         if (handler instanceof HandlerMethod) {
             HandlerMethod handlerMethod = (HandlerMethod) handler;
             Method method = handlerMethod.getMethod();
@@ -40,6 +41,7 @@ public class MyInterceptor implements HandlerInterceptor {
         } else if (handler instanceof ResourceHttpRequestHandler) {
             logger.info("====拦截到了静态资源请求，跳过处理====");
         }
+
         return true;
     }
 
