@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cows.mapper.CarouselMapper">
+    <select id="findCarouselById" parameterType="int" resultType="com.cows.entity.Carousel">
+        SELECT * FROM Carousels WHERE id = #{id}
+    </select>
+    <select id="findAllCarousels" resultType="com.cows.entity.Carousel">
+        SELECT * FROM Carousels
+    </select>
+    <insert id="insertCarousel" parameterType="com.cows.entity.Carousel">
+        INSERT INTO Carousels (imageUrl, redirectUrl, isEnabled, createTime, updateTime, isDeleted)
+        VALUES (#{imageUrl}, #{redirectUrl}, #{isEnabled}, #{createTime}, #{updateTime}, #{isDeleted})
+    </insert>
+    <update id="updateCarousel" parameterType="com.cows.entity.Carousel">
+        UPDATE Carousels SET imageUrl = #{imageUrl}, redirectUrl = #{redirectUrl}, isEnabled = #{isEnabled},
+        createTime = #{createTime}, updateTime = #{updateTime}, isDeleted = #{isDeleted} WHERE id = #{id}
+    </update>
+    <delete id="deleteCarousel" parameterType="int">
+        DELETE FROM Carousels WHERE id = #{id}
+    </delete>
+    <select id="getAllCarousels" resultType="com.cows.entity.Carousel">
+        SELECT * FROM Carousels ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
+    </select>
+</mapper>

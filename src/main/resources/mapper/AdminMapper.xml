@@ -2,23 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cows.mapper.AdminMapper">
     <select id="findAdminById" parameterType="int" resultType="com.cows.entity.Admin">
-        SELECT * FROM Admins WHERE id = #{id}
+        SELECT * FROM Admins WHERE id = #{id} AND isDeleted = false
     </select>
     <select id="findAllAdmins" resultType="com.cows.entity.Admin">
-        SELECT * FROM Admins
+        SELECT * FROM Admins WHERE isDeleted = false
     </select>
     <insert id="insertAdmin" parameterType="com.cows.entity.Admin">
-        INSERT INTO Admins (userName, password, permissions, createTime, updateTime, remarks) 
-        VALUES (#{userName}, #{password}, #{permissions}, #{createTime}, #{updateTime}, #{remarks})
+        INSERT INTO Admins (userName, password, permissions, createTime, updateTime, remarks, isDeleted)
+        VALUES (#{userName}, #{password}, #{permissions}, #{createTime}, #{updateTime}, #{remarks}, #{isDeleted})
     </insert>
     <update id="updateAdmin" parameterType="com.cows.entity.Admin">
-        UPDATE Admins SET userName = #{userName}, password = #{password}, permissions = #{permissions}, 
-        createTime = #{createTime}, updateTime = #{updateTime}, remarks = #{remarks} WHERE id = #{id}
+        UPDATE Admins SET userName = #{userName}, password = #{password}, permissions = #{permissions},
+        createTime = #{createTime}, updateTime = #{updateTime}, remarks = #{remarks}, isDeleted = #{isDeleted} WHERE id = #{id}
     </update>
-    <delete id="deleteAdmin" parameterType="int">
-        DELETE FROM Admins WHERE id = #{id}
-    </delete>
+    <update id="deleteAdmin" parameterType="int">
+        UPDATE Admins SET isDeleted = true WHERE id = #{id}
+    </update>
     <select id="getAllAdmins" resultType="com.cows.entity.Admin">
-        SELECT * FROM Admins ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
+        SELECT * FROM Admins WHERE isDeleted = false ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
     </select>
 </mapper>

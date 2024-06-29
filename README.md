@@ -211,13 +211,13 @@ CREATE TABLE `User` (
 - 后台管理员表
 
 ```sql
-CREATE TABLE Admin (
+CREATE TABLE Admins (
     id INT PRIMARY KEY AUTO_INCREMENT,
     userName VARCHAR(50) NOT NULL,
     password VARCHAR(100) NOT NULL,
     permissions VARCHAR(255),
-    updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     remarks TEXT,
     isDeleted BOOLEAN DEFAULT FALSE
 );
@@ -239,6 +239,7 @@ CREATE TABLE Orders (
 ```
 
 - user_location
+
 ```sql
 CREATE TABLE `user_location` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -253,6 +254,36 @@ CREATE TABLE `user_location` (
   CONSTRAINT `user_location_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `User` (`id`)
   ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8
 ```
+
+
+
+- 移动端 轮播图表
+```sql
+CREATE TABLE Carousels (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    imageUrl VARCHAR(255) NOT NULL,
+    redirectUrl VARCHAR(255),
+    isEnabled BOOLEAN DEFAULT TRUE,
+    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    isDeleted BOOLEAN DEFAULT FALSE
+);
+```
+
+
+- 移动端 金刚区表
+- 移动端 商品瀑布流表  
+- 移动端 商品详情表
+- 移动端 商品分类表
+- 移动端 商品评论表
+- 移动端 商品收藏表
+- 移动端 商品搜索表
+- 移动端 商品搜索历史表
+- 移动端 商品搜索推荐表
+- 移动端 商品搜索推荐历史表
+
+
+
 
 本地mysql数据库的表导出sql文件，并在云服务器上面导入
 
