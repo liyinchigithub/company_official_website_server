@@ -686,9 +686,13 @@ public BaseResponse<List<UserDTO>> getAllUsersPagedSorted(@RequestParam int page
 
 
 
-# 全局配置 CORS
+# 配置跨域 CORS
 
+- 方法一：
+  全局配置 CORS
 在 Spring Boot 项目的配置类中添加全局 CORS 配置：
+
+
 ```java
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -713,6 +717,57 @@ public class WebConfig implements WebMvcConfigurer {
     }
 }
 ```
+
+- 方法二：在特定的控制器中配置 CORS
+如果你只想为特定的控制器配置 CORS，可以在控制器类上使用 @CrossOrigin 注解：
+```java
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:8080") // 前端项目的地址
+public class YourController {
+
+    @GetMapping("/example")
+    public String example() {
+        return "Hello, CORS!";
+    }
+}
+```
+
+- 方法三：全局配置 CORS 过滤器
+
+也可以通过配置一个 CORS 过滤器来解决跨域问题：
+
+```java
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+@Configuration
+public class CorsConfig {
+
+    @Bean
+    public CorsFilter corsFilter() {
+        CorsConfiguration config = new CorsConfiguration();
+        config.addAllowedOrigin("http://localhost:8080"); // 前端项目的地址
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
+        config.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", config);
+
+        return new CorsFilter(source);
+    }
+}
+```
+
 
 # H5微信授权登录
 
