@@ -13,11 +13,12 @@
     </insert>
     <update id="updateCarousel" parameterType="com.cows.entity.Carousel">
         UPDATE Carousels SET imageUrl = #{imageUrl}, redirectUrl = #{redirectUrl}, isEnabled = #{isEnabled},
-        createTime = #{createTime}, updateTime = #{updateTime}, isDeleted = #{isDeleted} WHERE id = #{id}
+        updateTime = CURRENT_TIMESTAMP ,isDeleted = #{isDeleted}  WHERE id = #{id}
     </update>
-    <delete id="deleteCarousel" parameterType="int">
-        DELETE FROM Carousels WHERE id = #{id}
-    </delete>
+
+    <update id="deleteCarousel" parameterType="int">
+        UPDATE Carousels SET isDeleted = true WHERE id = #{id}
+    </update>
     <select id="getAllCarousels" resultType="com.cows.entity.Carousel">
         SELECT * FROM Carousels ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
     </select>

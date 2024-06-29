@@ -685,6 +685,35 @@ public BaseResponse<List<UserDTO>> getAllUsersPagedSorted(@RequestParam int page
 <img width="400" height="400" alt="image" src="https://github.com/liyinchigithub/springboot-learn/assets/19643260/36db82b5-e195-4bf3-a4c7-f3551b30f47f">
 
 
+
+# 全局配置 CORS
+
+在 Spring Boot 项目的配置类中添加全局 CORS 配置：
+```java
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**")
+                        .allowedOrigins("http://localhost:8080") // 前端项目的地址
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
+            }
+        };
+    }
+}
+```
+
 # H5微信授权登录
 
 ## 微信公众号配置
@@ -1130,7 +1159,7 @@ public class UploadController {
 
 
 
-接收上传文件，存放在阿里云存储上
+理想状态是接收上传的文件，存放在阿里云OSS上
 
 ```java
 import com.aliyun.oss.OSS;
@@ -1349,7 +1378,9 @@ Spring Boot 的默认静态目录为 resources/static
 
 ### 配置静态资源路径
 
-第一种方式：application.yml 文件中添加配置
+**第一种方式：** 
+
+在application.yml 文件中添加配置
 
 >src/main/resources/application-dev.yml
 
@@ -1360,8 +1391,14 @@ spring:
     static-locations: [classpath:/static/]
 ```
 
-第二种方式：代码中
+**第二种方式**：
+
+在代码中配置
+
+* 需鉴权（登录后请求头带上token才能访问）
+
 >com/cows/config/MvcConfig.java
+
 ```java
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -1379,8 +1416,35 @@ public class MvcConfig implements WebMvcConfigurer {
 
 ```
 
+* 无需鉴权
+
+>com/cows/config/SecurityConfig.java
+
+```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+
+    @Autowired
+    private DataSource dataSource;
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+            .addFilterBefore(new JwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)// 添加JWT过滤器
+            .authorizeRequests(authorize -> authorize
+                .requestMatchers("/test.png","/v1/getLatestImage").permitAll()// 允许未认证访问
+                .anyRequest().authenticated()
+            )
+```
+
 接口
+
 >com/cows/controller/ImageController.java
+
+
+
+
 
 #### 配置多媒体音频文件
 

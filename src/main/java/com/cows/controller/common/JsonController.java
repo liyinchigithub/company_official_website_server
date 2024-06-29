@@ -205,6 +205,11 @@ public class JsonController {
 
     }
 
+    /**
+     * 上传图片
+     * 上传的文件存放位置，位于./upload
+     * 
+    */
     @Slf4j
     @RestController
     @RequestMapping("/v1")
