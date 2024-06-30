@@ -14,11 +14,11 @@
     <select id="findAllUsers" resultType="com.cows.entity.User">
         SELECT * FROM User FOR UPDATE
     </select>
-   <insert id="insertUser" parameterType="com.cows.entity.User" useGeneratedKeys="true" keyProperty="id">
-    INSERT INTO User (userName, password, wechat_openid) VALUES (#{userName}, #{password}, #{wechatOpenId})
-</insert>
+    <insert id="insertUser" parameterType="com.cows.entity.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO User (userName, password, wechat_openid, isEnable, isDeleted) VALUES (#{userName}, #{password}, #{wechatOpenId}, 1, 0)
+    </insert>
     <update id="updateUser" parameterType="com.cows.entity.User">
-        UPDATE User SET username = #{userName}, password = #{password} WHERE id = #{id}
+        UPDATE User SET userName = #{userName}, password = #{password}, isEnable = #{isEnable}, isDeleted = #{isDeleted} WHERE id = #{id}
         <selectKey resultType="int" order="AFTER" keyProperty="updates">
             SELECT ROW_COUNT()
         </selectKey>
@@ -26,9 +26,9 @@
 <!--    <update id="updateUser" parameterType="entity.com.cows.User">-->
 <!--        UPDATE User SET username = #{userName}, password = #{password} WHERE id = #{id}-->
 <!--    </update> -->
-    <delete id="deleteUser" parameterType="int">
-        DELETE FROM User WHERE id = #{id}
-    </delete>
+    <update id="deleteUser" parameterType="int">
+        UPDATE User SET isDeleted = 1 WHERE id = #{id}
+    </update>
 
     <!-- 其他SQL语句... -->
 </mapper>

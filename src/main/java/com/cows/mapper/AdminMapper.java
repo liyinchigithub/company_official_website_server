@@ -7,17 +7,12 @@ import java.util.List;
 
 @Mapper
 public interface AdminMapper {
-    List<Admin> findAllAdmins();
-    //   根据id查询管理员
-    Admin findAdminById(int id);
-    //   插入管理员
-    int insertAdmin(Admin admin);
-    //  更新管理员信息
-    int updateAdmin(Admin admin);
-    //  删除管理员，逻辑删除，将isDeleted字段设置为1
-    int deleteAdmin(int id);
-    List<Admin> getAllAdmins(int offset, int limit, String sortField);
-    // 查询是否存在同名用户
+    List<Admin> findAllAdmins();//  查询所有管理员
+    Admin findAdminById(int id);// 根据id查询管理员
+    int insertAdmin(Admin admin);//   插入管理员
+    int updateAdmin(Admin admin);//  更新管理员信息
+    int deleteAdmin(int id);//  删除管理员，逻辑删除，将isDeleted字段设置为1
+    List<Admin> getAllAdmins(int offset, int limit, String sortField);//
     @Select("SELECT COUNT(*) FROM Admins WHERE userName = #{userName}")
-    int countByUserName(String userName);
+    int countByUserName(String userName); // 查询是否存在同名用户
 }

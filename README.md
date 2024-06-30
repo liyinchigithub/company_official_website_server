@@ -201,40 +201,44 @@ CREATE TABLE `User` (
   `userName` varchar(100) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
   `created` datetime DEFAULT CURRENT_TIMESTAMP,
-  `isEnalbe` tinyint(1) DEFAULT '1',
+  `isEnable` tinyint(1) DEFAULT '1',  -- 修改字段名
+  `isDeleted` tinyint(1) DEFAULT '0',  -- 新增字段
   `wechat_openid` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=471 DEFAULT CHARSET=utf8
-
+) ENGINE=InnoDB AUTO_INCREMENT=472 DEFAULT CHARSET=utf8
 ```
 
 - 后台管理员表
 
 ```sql
-CREATE TABLE Admins (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    userName VARCHAR(50) NOT NULL,
-    password VARCHAR(100) NOT NULL,
-    permissions VARCHAR(255),
-    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    remarks TEXT,
-    isDeleted BOOLEAN DEFAULT FALSE
-);
+CREATE TABLE `Admins` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `permissions` varchar(255) DEFAULT NULL,
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `remarks` text,
+  `isDeleted` tinyint(1) DEFAULT '0',
+  `isEnable` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8
 
 ```
 
 - Orders表
 ```sql
-CREATE TABLE Orders (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    userId INT,
-    totalPrice DECIMAL(10, 2) NOT NULL,
-    status VARCHAR(50),
-    createTime DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updateTime DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (userId) REFERENCES User(id)
-);
+CREATE TABLE `Orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userId` int(11) DEFAULT NULL,
+  `totalPrice` decimal(10,2) NOT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `createTime` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updateTime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `userId` (`userId`),
+  CONSTRAINT `Orders_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `User` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8
 
 ```
 
@@ -252,7 +256,7 @@ CREATE TABLE `user_location` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `user_location_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `User` (`id`)
-  ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8
 ```
 
 
@@ -688,8 +692,8 @@ public BaseResponse<List<UserDTO>> getAllUsersPagedSorted(@RequestParam int page
 
 # 配置跨域 CORS
 
-- 方法一：
-  全局配置 CORS
+- 方法一： 全局配置 CORS
+
 在 Spring Boot 项目的配置类中添加全局 CORS 配置：
 
 

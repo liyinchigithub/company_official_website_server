@@ -2,23 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cows.mapper.AdminMapper">
     <select id="findAdminById" parameterType="int" resultType="com.cows.entity.Admin">
-        SELECT * FROM Admins WHERE id = #{id} AND isDeleted = false
+        SELECT * FROM Admins WHERE id = #{id} AND isDeleted = 0
     </select>
     <select id="findAllAdmins" resultType="com.cows.entity.Admin">
-        SELECT * FROM Admins WHERE isDeleted = false
+        SELECT * FROM Admins WHERE isDeleted = 0
     </select>
     <insert id="insertAdmin" parameterType="com.cows.entity.Admin">
-        INSERT INTO Admins (userName, password, permissions, createTime, updateTime, remarks, isDeleted)
-        VALUES (#{userName}, #{password}, #{permissions}, #{createTime}, #{updateTime}, #{remarks}, #{isDeleted})
+        INSERT INTO Admins (userName, password, permissions, createTime, updateTime, remarks, isDeleted, isEnable)
+        VALUES (#{userName}, #{password}, #{permissions}, #{createTime}, #{updateTime}, #{remarks}, #{isDeleted}, #{isEnable})
     </insert>
     <update id="updateAdmin" parameterType="com.cows.entity.Admin">
-        UPDATE Admins SET userName = #{userName}, password = #{password}, permissions = #{permissions},
-        createTime = #{createTime}, updateTime = #{updateTime}, remarks = #{remarks}, isDeleted = #{isDeleted} WHERE id = #{id}
+        UPDATE Admins 
+        SET userName = #{userName}, 
+            password = #{password}, 
+            permissions = #{permissions},
+            createTime = #{createTime}, 
+            updateTime = #{updateTime}, 
+            remarks = #{remarks}, 
+            isDeleted = #{isDeleted}, 
+            isEnable = #{isEnable} 
+        WHERE id = #{id}
     </update>
     <update id="deleteAdmin" parameterType="int">
-        UPDATE Admins SET isDeleted = true WHERE id = #{id}
+        UPDATE Admins SET isDeleted = 1 WHERE id = #{id}
     </update>
     <select id="getAllAdmins" resultType="com.cows.entity.Admin">
-        SELECT * FROM Admins WHERE isDeleted = false ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
+        SELECT * FROM Admins WHERE isDeleted = 0 ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
     </select>
 </mapper>

@@ -28,4 +28,6 @@ public class Admin {
     private String remarks;
     @Schema(name = "isDeleted", description = "是否删除")
     private boolean isDeleted;
+    @Schema(name = "isEnable", description = "是否启用") // 新增字段
+    private boolean isEnable;
 }

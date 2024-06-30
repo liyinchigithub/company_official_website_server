@@ -56,9 +56,14 @@ public class AdminController {
     @Operation(summary = "更新管理员", description = "通过JSON数据更新管理员")
     @PutMapping("/updateAdmin")
     public BaseResponse<String> updateAdmin(@Parameter(description = "管理员数据", required = true) @RequestBody Admin admin) {
-        adminService.updateAdmin(admin);
-        log.info("更新管理员: {}", admin);
-        return BaseResponse.success("管理员更新成功");
+        int result = adminService.updateAdmin(admin);
+        if (result > 0) {
+            log.info("更新管理员: {}", admin);
+            return BaseResponse.success("管理员更新成功");
+        } else {
+            log.warn("更新管理员失败: {}", admin);
+            return (BaseResponse<String>) BaseResponse.error(0, "管理员更新失败");
+        }
     }
 
     @Operation(summary = "删除管理员", description = "通过管理员ID删除管理员")

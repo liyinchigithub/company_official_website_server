@@ -5,7 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 public interface AdminService {
-    List<Admin> getAllAdmins();
+    List<Admin> getAllAdmins();//
     Admin getAdminById(int id);
     int addAdmin(Admin admin);
     int updateAdmin(Admin admin);

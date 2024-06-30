@@ -228,6 +228,8 @@ public class UserController {
         userDto.setId(user.getId());
         userDto.setUserName(user.getUserName());
         userDto.setPassword(user.getPassword());
+        userDto.setEnable(user.isEnable());
+        userDto.setDeleted(user.isDeleted());
         log.info("=======convertToDto:{}", userDto);
         return userDto;
     }
@@ -241,6 +243,8 @@ public class UserController {
         user.setId(userDto.getId());
         user.setUserName(userDto.getUserName());
         user.setPassword(userDto.getPassword());
+        user.setEnable(userDto.isEnable());
+        user.setDeleted(userDto.isDeleted());
         log.info("=======convertToEntity:{}", user);
         return user;
     }

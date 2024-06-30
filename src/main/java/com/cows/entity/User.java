@@ -29,6 +29,10 @@ public class User {
     private String userName;
     @Schema(name = "password", description = "密码")
     private String password;
+    @Schema(name = "isEnable", description = "是否启用")
+    private boolean isEnable;
+    @Schema(name = "isDeleted", description = "是否删除")
+    private boolean isDeleted;
     private int updates;
     public User(int i, String 李银池, String number, int i1) {
     }

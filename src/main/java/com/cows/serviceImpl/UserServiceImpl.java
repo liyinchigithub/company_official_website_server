@@ -72,6 +72,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public int updateUser(User user) {
+        log.info("Updating user: {}", user);  // 添加日志
         int updates = userMapper.updateUser(user);
         // 返回的执行结果  1成功 0
         return updates;
@@ -133,6 +134,8 @@ public class UserServiceImpl implements UserService {
             String randomString = RandomStringUtils.randomAlphanumeric(10);
             user.setUserName(randomString); // 示例：设置默认用户名，实际应用中应根据实际情况设置
             user.setPassword("123456"); // 示例：设置默认密码，实际应用中应根据实际情况设置
+            user.setDeleted(false);
+            user.setEnable(true);
             userMapper.insertUser(user);
             // 确保新插入的用户ID被设置
             user = userMapper.findByWechatOpenId(wechatUser.getOpenId());

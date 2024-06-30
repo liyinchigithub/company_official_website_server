@@ -67,7 +67,7 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService() {
         JdbcUserDetailsManager userDetailsManager = new JdbcUserDetailsManager();
         userDetailsManager.setDataSource(dataSource);
-        userDetailsManager.setUsersByUsernameQuery("select userName, password, isEnalbe from User where userName=?");
+        userDetailsManager.setUsersByUsernameQuery("select userName, password, isEnable from User where userName=?");
         userDetailsManager.setAuthoritiesByUsernameQuery("select userName, 'ROLE_USER' from User where userName=?");
         return userDetailsManager;
     }
