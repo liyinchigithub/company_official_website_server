@@ -226,6 +226,7 @@ CREATE TABLE `Admins` (
 
 ```
 
+
 - Orders表
 ```sql
 CREATE TABLE `Orders` (
@@ -261,7 +262,7 @@ CREATE TABLE `user_location` (
 
 
 
-- 移动端 轮播图表
+- 轮播图表
 ```sql
 CREATE TABLE Carousels (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -274,6 +275,25 @@ CREATE TABLE Carousels (
 );
 ```
 
+- 基础信息
+
+```sql
+CREATE TABLE BasicInformation (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    phone VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    weChatImage VARCHAR(255),
+    icp VARCHAR(255),
+    beianImage VARCHAR(255),
+    publicSecurity VARCHAR(255),
+    copyright VARCHAR(255),
+    isDeleted BOOLEAN DEFAULT FALSE,
+    isEnable BOOLEAN DEFAULT TRUE,
+    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+```
 
 - 移动端 金刚区表
 - 移动端 商品瀑布流表  

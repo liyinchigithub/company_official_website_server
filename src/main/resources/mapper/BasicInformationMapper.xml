@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cows.mapper.BasicInformationMapper">
+    <select id="findBasicInformationById" parameterType="long" resultType="com.cows.entity.BasicInformation">
+    SELECT * FROM BasicInformation WHERE id = #{id} AND isDeleted = 0
+</select>
+    <select id="findAllBasicInformation" resultType="com.cows.entity.BasicInformation">
+        SELECT * FROM BasicInformation WHERE isDeleted = 0
+    </select>
+   <insert id="insertBasicInformation" parameterType="com.cows.entity.BasicInformation" useGeneratedKeys="true" keyProperty="id">
+    INSERT INTO BasicInformation (phone, email, address, weChatImage, icp, beianImage, publicSecurity, copyright, isDeleted, isEnable)
+    VALUES (#{phone}, #{email}, #{address}, #{weChatImage}, #{icp}, #{beianImage}, #{publicSecurity}, #{copyright}, #{isDeleted}, #{isEnable})
+</insert>
+    <update id="updateBasicInformation" parameterType="com.cows.entity.BasicInformation">
+        UPDATE BasicInformation 
+        SET phone = #{phone}, 
+            email = #{email}, 
+            address = #{address},
+            weChatImage = #{weChatImage}, 
+            icp = #{icp}, 
+            beianImage = #{beianImage}, 
+            publicSecurity = #{publicSecurity}, 
+            copyright = #{copyright}, 
+            isDeleted = #{isDeleted}, 
+            isEnable = #{isEnable} 
+        WHERE id = #{id}
+    </update>
+    <update id="deleteBasicInformation" parameterType="long">
+        UPDATE BasicInformation SET isDeleted = 1 WHERE id = #{id}
+    </update>
+    <select id="getAllBasicInformation" resultType="com.cows.entity.BasicInformation">
+        SELECT * FROM BasicInformation WHERE isDeleted = 0 ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
+    </select>
+</mapper>
