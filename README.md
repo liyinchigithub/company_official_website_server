@@ -227,6 +227,95 @@ CREATE TABLE `Admins` (
 ```
 
 
+
+- 轮播图表
+```sql
+CREATE TABLE Carousels (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    imageUrl VARCHAR(255) NOT NULL,
+    redirectUrl VARCHAR(255),
+    isEnabled BOOLEAN DEFAULT TRUE,
+    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    isDeleted BOOLEAN DEFAULT FALSE
+);
+```
+
+
+- 基础信息
+
+```sql
+CREATE TABLE BasicInformation (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    phone VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    weChatImage VARCHAR(255),
+    icp VARCHAR(255),
+    beianImage VARCHAR(255),
+    publicSecurity VARCHAR(255),
+    copyright VARCHAR(255),
+    isDeleted BOOLEAN DEFAULT FALSE,
+    isEnable BOOLEAN DEFAULT TRUE,
+    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+```
+
+- 横向商品轮播图表
+
+```sql
+CREATE TABLE ProductsCarousels (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    products JSON NOT NULL,
+    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+```
+
+
+- 商品分类表
+
+```sql
+CREATE TABLE `ProductCategories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品分类ID',
+  `name` varchar(255) NOT NULL COMMENT '商品分类名称',
+  `description` text COMMENT '商品分类描述',
+  `isEnabled` tinyint(1) DEFAULT '1' COMMENT '启用禁用状态',
+  `isDeleted` tinyint(1) DEFAULT '0' COMMENT '是否删除',
+  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='商品分类表'
+```
+
+- 商品信息表（商品详情）
+
+```sql
+CREATE TABLE `Products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品ID',
+  `name` varchar(255) NOT NULL COMMENT '商品名称',
+  `coverImage` varchar(255) DEFAULT NULL COMMENT '商品封面图片',
+  `detailImages` json DEFAULT NULL COMMENT '商品详情图片',
+  `description` text COMMENT '商品描述',
+  `salePrice` decimal(10,2) NOT NULL COMMENT '销售价格',
+  `costPrice` decimal(10,2) NOT NULL COMMENT '成本价格',
+  `stockQuantity` int(11) NOT NULL COMMENT '库存数量',
+  `brand` varchar(255) DEFAULT NULL COMMENT '商品品牌',
+  `categoryId` int(11) DEFAULT NULL COMMENT '商品分类ID',
+  `isAvailable` tinyint(1) DEFAULT '1' COMMENT '上下架状态',
+  `isDeleted` tinyint(1) DEFAULT '0' COMMENT '是否删除',
+  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `categoryId` (`categoryId`),
+  CONSTRAINT `Products_ibfk_1` FOREIGN KEY (`categoryId`) REFERENCES `ProductCategories` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='商品信息表'
+```
+
+商品信息取商品分类id作为外键
+
+
 - Orders表
 ```sql
 CREATE TABLE `Orders` (
@@ -261,50 +350,14 @@ CREATE TABLE `user_location` (
 ```
 
 
-
-- 轮播图表
-```sql
-CREATE TABLE Carousels (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    imageUrl VARCHAR(255) NOT NULL,
-    redirectUrl VARCHAR(255),
-    isEnabled BOOLEAN DEFAULT TRUE,
-    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    isDeleted BOOLEAN DEFAULT FALSE
-);
-```
-
-- 基础信息
-
-```sql
-CREATE TABLE BasicInformation (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    phone VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    address VARCHAR(255) NOT NULL,
-    weChatImage VARCHAR(255),
-    icp VARCHAR(255),
-    beianImage VARCHAR(255),
-    publicSecurity VARCHAR(255),
-    copyright VARCHAR(255),
-    isDeleted BOOLEAN DEFAULT FALSE,
-    isEnable BOOLEAN DEFAULT TRUE,
-    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-```
-
-- 移动端 金刚区表
-- 移动端 商品瀑布流表  
-- 移动端 商品详情表
-- 移动端 商品分类表
-- 移动端 商品评论表
-- 移动端 商品收藏表
-- 移动端 商品搜索表
-- 移动端 商品搜索历史表
-- 移动端 商品搜索推荐表
-- 移动端 商品搜索推荐历史表
+- 金刚区表
+- 商品瀑布流表  
+- 商品评论表
+- 商品收藏表
+- 商品搜索表
+- 商品搜索历史表
+- 商品搜索推荐表
+- 商品搜索推荐历史表
 
 
 

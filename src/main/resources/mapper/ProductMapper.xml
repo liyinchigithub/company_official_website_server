@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cows.mapper.ProductMapper">
+    <select id="findProductById" parameterType="int" resultType="com.cows.entity.Product">
+        SELECT * FROM Products WHERE id = #{id} AND isDeleted = 0
+    </select>
+    <select id="findAllProducts" resultType="com.cows.entity.Product">
+        SELECT * FROM Products WHERE isDeleted = 0
+    </select>
+ <insert id="insertProduct" parameterType="com.cows.entity.Product">
+        INSERT INTO Products (name, coverImage, detailImages, description, salePrice, costPrice, stockQuantity, brand, categoryId, isAvailable, isDeleted, updateTime, createTime)
+        VALUES (#{name}, #{coverImage}, #{detailImages, typeHandler=com.cows.handler.StringArrayTypeHandler}, #{description}, #{salePrice}, #{costPrice}, #{stockQuantity}, #{brand}, #{categoryId}, 1, 0, #{updateTime}, #{createTime})
+    </insert>
+    <update id="updateProduct" parameterType="com.cows.entity.Product">
+        UPDATE Products 
+        SET name = #{name}, 
+            coverImage = #{coverImage}, 
+            detailImages = #{detailImages, typeHandler=com.cows.handler.StringArrayTypeHandler}, 
+            description = #{description}, 
+            salePrice = #{salePrice}, 
+            costPrice = #{costPrice}, 
+            stockQuantity = #{stockQuantity}, 
+            brand = #{brand}, 
+            categoryId = #{categoryId}, 
+            isAvailable = #{isAvailable}, 
+            isDeleted = #{isDeleted},
+            updateTime = #{updateTime},
+            createTime = #{createTime}
+        WHERE id = #{id}
+    </update>
+    <update id="deleteProduct" parameterType="int">
+        UPDATE Products SET isDeleted = 1 WHERE id = #{id}
+    </update>
+    <select id="findProductsPaged" resultType="com.cows.entity.Product">
+        SELECT * FROM Products WHERE isDeleted = 0 ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
+    </select>
+</mapper>

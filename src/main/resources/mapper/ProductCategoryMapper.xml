@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cows.mapper.ProductCategoryMapper">
+    <select id="findProductCategoryById" parameterType="int" resultType="com.cows.entity.ProductCategory">
+        SELECT * FROM ProductCategories WHERE id = #{id} AND isDeleted = 0
+    </select>
+    <select id="findAllProductCategories" resultType="com.cows.entity.ProductCategory">
+        SELECT * FROM ProductCategories WHERE isDeleted = 0
+    </select>
+    <insert id="insertProductCategory" parameterType="com.cows.entity.ProductCategory">
+        INSERT INTO ProductCategories (name, description, isEnabled, isDeleted, updateTime, createTime)
+        VALUES (#{name}, #{description}, 1, 0, #{updateTime}, #{createTime})
+    </insert>
+    <update id="updateProductCategory" parameterType="com.cows.entity.ProductCategory">
+        UPDATE ProductCategories 
+        SET name = #{name}, 
+            description = #{description}, 
+            isEnabled = #{isEnabled}, 
+            isDeleted = #{isDeleted},
+            updateTime = #{updateTime},
+            createTime = #{createTime}
+        WHERE id = #{id}
+    </update>
+    <update id="deleteProductCategory" parameterType="int">
+        UPDATE ProductCategories SET isDeleted = 1 WHERE id = #{id}
+    </update>
+    <select id="findProductCategoriesPaged" resultType="com.cows.entity.ProductCategory">
+        SELECT * FROM ProductCategories WHERE isDeleted = 0 ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
+    </select>
+</mapper>

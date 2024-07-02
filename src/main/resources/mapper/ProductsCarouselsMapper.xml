@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cows.mapper.ProductsCarouselsMapper">
+    <select id="findAllProductsCarousels" resultType="com.cows.entity.ProductsCarousels">
+        SELECT * FROM ProductsCarousels WHERE isDeleted = 0
+    </select>
+    <select id="findProductsCarouselsById" parameterType="int" resultType="com.cows.entity.ProductsCarousels">
+        SELECT * FROM ProductsCarousels WHERE id = #{id} AND isDeleted = 0
+    </select>
+    <insert id="insertProductsCarousels" parameterType="com.cows.entity.ProductsCarousels">
+        INSERT INTO ProductsCarousels (products, createTime, updateTime, isDeleted)
+        VALUES (#{products, typeHandler=com.cows.handler.IntArrayTypeHandler}, #{createTime}, #{updateTime}, 0)
+    </insert>
+    <update id="updateProductsCarousels" parameterType="com.cows.entity.ProductsCarousels">
+        UPDATE ProductsCarousels 
+        SET products = #{products, typeHandler=com.cows.handler.IntArrayTypeHandler}, 
+            createTime = #{createTime}, 
+            updateTime = #{updateTime} 
+        WHERE id = #{id}
+    </update>
+    <update id="deleteProductsCarousels" parameterType="int">
+        UPDATE ProductsCarousels SET isDeleted = 1 WHERE id = #{id}
+    </update>
+</mapper>
+
+<!-- 注意：在MyBatis中，使用<typeHandler>元素来指定自定义的类型处理器。 -->
+<!-- 例如，如果有一个自定义的类型处理器，名为MyTypeHandler，它用于处理int数组类型的数据， -->
+<!-- 那么需要在MyBatis的配置文件中进行配置，以便在执行SQL语句时使用该类型处理器来处理int数组类型的数据。 -->
+<!-- 具体的配置方式可以参考MyBatis的官方文档或者相关教程。 -->
+<!-- <typeHandlers> -->

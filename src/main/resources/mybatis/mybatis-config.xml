@@ -20,10 +20,19 @@
         <setting name="logImpl" value="STDOUT_LOGGING"/>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
+    
     <!-- Type Aliases -->
     <typeAliases>
         <typeAlias alias="User" type="com.cows.entity.User"/>
     </typeAliases>
+    
+    <!-- Type Handlers -->
+    <typeHandlers>
+         <!-- <typeHandler handler="com.cows.handler.ProductArrayTypeHandler" javaType="com.cows.entity.Product[]" jdbcType="VARCHAR"/>
+         <typeHandler handler="com.cows.handler.StringArrayTypeHandler" javaType="java.lang.String[]" jdbcType="VARCHAR"/> -->
+         <typeHandler handler="com.cows.handler.IntArrayTypeHandler" javaType="int[]" jdbcType="VARCHAR"/>
+    </typeHandlers>
+    
     <!--
         环境配置：数据库的连接信息
             default：必须和某个environment的id值一样
@@ -72,7 +81,6 @@
         </environment>
 
     </environments>
-
 
     <!-- sql mapper（SQL映射文件）的位置 -->
     <mappers>

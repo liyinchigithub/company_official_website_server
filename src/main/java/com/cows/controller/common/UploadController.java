@@ -40,8 +40,8 @@ public class UploadController {
         if (file.getSize() > 1024 * 1024 * 5) {
             return new BaseResponse<>(1, "File size too large", null);
         }
-        // 限制上传文件格式
-        if (!"jpg".equals(fileExtension) && !"png".equals(fileExtension)) {
+        // 限制上传文件格式（jpg、png、jpeg、bmp）
+        if (!"jpg".equals(fileExtension) && !"png".equals(fileExtension) && !"jpeg".equals(fileExtension) && !"bmp".equals(fileExtension)) {
             return new BaseResponse<>(1, "Invalid file format", null);
         }
 
