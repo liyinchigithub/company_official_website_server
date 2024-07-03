@@ -15,4 +15,6 @@ public interface AdminMapper {
     List<Admin> getAllAdmins(int offset, int limit, String sortField);//
     @Select("SELECT COUNT(*) FROM Admins WHERE userName = #{userName}")
     int countByUserName(String userName); // 查询是否存在同名用户
+    @Select("SELECT * FROM Admins WHERE userName = #{userName} AND isDeleted = 0")
+    Admin findAdminByUserName(String userName); // 新增方法
 }

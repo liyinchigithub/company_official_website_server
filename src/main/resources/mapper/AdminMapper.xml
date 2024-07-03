@@ -29,4 +29,7 @@
     <select id="getAllAdmins" resultType="com.cows.entity.Admin">
         SELECT * FROM Admins WHERE isDeleted = 0 ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
     </select>
+    <select id="findAdminByUserName" parameterType="String" resultType="com.cows.entity.Admin">
+        SELECT * FROM Admins WHERE userName = #{userName} AND isDeleted = 0
+    </select>
 </mapper>

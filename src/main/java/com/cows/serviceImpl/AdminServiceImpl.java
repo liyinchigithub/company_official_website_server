@@ -17,6 +17,16 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
+    public Admin login(String userName, String password) {
+        Admin admin = adminMapper.findAdminByUserName(userName);
+        if (admin != null && admin.getPassword().equals(password)) {
+            return admin;
+        }
+        return null;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
     public List<Admin> getAllAdmins() {
         return adminMapper.findAllAdmins();
     }

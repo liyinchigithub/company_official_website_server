@@ -49,6 +49,7 @@ public class SecurityConfig {
                         "/v1/products/getAllProducts",
                         "/v1/products/getAllProductsCarousels",
                         "/MP_verify_tSDyEHEKTxbBXHMd.txt",
+                        "/v1/admins/login",
                         "/v1/basicInformation/getAllBasicInformation").permitAll()// 允许未认证访问
                 .anyRequest().authenticated()
             )

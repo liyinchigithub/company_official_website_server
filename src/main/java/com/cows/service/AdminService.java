@@ -13,4 +13,5 @@ public interface AdminService {
     @Transactional
     void insertAdmin(Admin admin);
     List<Admin> getAllAdmins(int page, int size, String sortField);
+    Admin login(String userName, String password);
 }

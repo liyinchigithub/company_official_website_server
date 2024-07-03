@@ -3,13 +3,17 @@ package com.cows.controller.admin;
 import com.cows.commons.api.BaseResponse;
 import com.cows.entity.Admin;
 import com.cows.service.AdminService;
+import com.cows.util.JwtUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.authentication.AuthenticationManager;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 企业官网的接口
@@ -24,6 +28,22 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @PostMapping("/login")
+    public BaseResponse<Map<String, String>> login(@RequestBody Admin admin) {
+        Admin loggedInAdmin = adminService.login(admin.getUserName(), admin.getPassword());
+        if (loggedInAdmin != null) {
+            String token = JwtUtil.generateToken(admin.getUserName()); // 假设你有一个JwtUtil类来生成token
+            Map<String, String> response = new HashMap<>();
+            response.put("token", token);
+            return BaseResponse.success(response);
+        } else {
+            return (BaseResponse<Map<String, String>>) BaseResponse.error(1, "fail");
+            }
+        }
+    
     @Operation(summary = "获取所有管理员信息", description = "返回所有管理员的列表")
     @GetMapping("/getAllAdmins")
     public BaseResponse<List<Admin>> getAllAdmins() {
