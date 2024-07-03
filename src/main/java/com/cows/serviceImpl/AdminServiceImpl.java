@@ -26,6 +26,13 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    @Transactional
+    public void logout() {
+        // 这里可以添加任何需要的业务逻辑，例如记录日志
+        log.info("管理员退出登录");
+    }
+
+    @Override
     @Transactional(rollbackFor = Exception.class)
     public List<Admin> getAllAdmins() {
         return adminMapper.findAllAdmins();

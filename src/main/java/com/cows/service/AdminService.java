@@ -14,4 +14,5 @@ public interface AdminService {
     void insertAdmin(Admin admin);
     List<Admin> getAllAdmins(int page, int size, String sortField);
     Admin login(String userName, String password);
+    void logout();
 }

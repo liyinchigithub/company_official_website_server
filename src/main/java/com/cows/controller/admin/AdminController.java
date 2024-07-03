@@ -17,6 +17,7 @@ import java.util.Map;
 
 /**
  * 企业官网的接口
+ * 
  * @author liyinchi
  * @date 2024/06/29
  */
@@ -41,9 +42,16 @@ public class AdminController {
             return BaseResponse.success(response);
         } else {
             return (BaseResponse<Map<String, String>>) BaseResponse.error(1, "fail");
-            }
         }
-    
+    }
+
+    @PostMapping("/logout")
+    public BaseResponse<String> logout() {
+        // 这里可以添加任何需要的业务逻辑，例如记录日志
+        log.info("管理员退出登录");
+        return BaseResponse.success("退出登录成功");
+    }
+
     @Operation(summary = "获取所有管理员信息", description = "返回所有管理员的列表")
     @GetMapping("/getAllAdmins")
     public BaseResponse<List<Admin>> getAllAdmins() {
@@ -69,13 +77,14 @@ public class AdminController {
             return BaseResponse.success("管理员添加成功");
         } catch (IllegalArgumentException e) {
             log.warn("新增管理员失败: {}", e.getMessage());
-            return (BaseResponse<String>) BaseResponse.error(0,e.getMessage());
+            return (BaseResponse<String>) BaseResponse.error(0, e.getMessage());
         }
     }
 
     @Operation(summary = "更新管理员", description = "通过JSON数据更新管理员")
     @PutMapping("/updateAdmin")
-    public BaseResponse<String> updateAdmin(@Parameter(description = "管理员数据", required = true) @RequestBody Admin admin) {
+    public BaseResponse<String> updateAdmin(
+            @Parameter(description = "管理员数据", required = true) @RequestBody Admin admin) {
         int result = adminService.updateAdmin(admin);
         if (result > 0) {
             log.info("更新管理员: {}", admin);
@@ -96,7 +105,8 @@ public class AdminController {
 
     @Operation(summary = "分页查询管理员", description = "根据页码和每页显示条数进行分页查询管理员")
     @GetMapping("/getAllAdminsPagedSorted")
-    public BaseResponse<List<Admin>> getAllAdminsPagedSorted(@RequestParam int page, @RequestParam int size, @RequestParam String sortField) {
+    public BaseResponse<List<Admin>> getAllAdminsPagedSorted(@RequestParam int page, @RequestParam int size,
+            @RequestParam String sortField) {
         List<Admin> admins = adminService.getAllAdmins(page, size, sortField);
         log.info("分页查询管理员: {}", admins);
         return BaseResponse.success(admins);
