@@ -5,6 +5,11 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.Date;
 
+/**
+ *
+ * 生成token
+ * token有效期
+ * */
 public class JwtUtil {
     // 密钥
     private static final String SECRET_KEY = "your_secret_key";

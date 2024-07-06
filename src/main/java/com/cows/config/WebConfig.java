@@ -7,7 +7,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  *
- * @Description: 启用跨域资源共享
+ * 配置前端允许跨域的域名地址
+ * 默认所有域名都可以跨域访问，allowedOrigins指定允许跨域域名地址
  *
  * */
 @Configuration
