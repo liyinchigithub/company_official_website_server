@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cows.mapper.BrandMapper">
+    <select id="findBrandById" parameterType="int" resultType="com.cows.entity.Brand">
+        SELECT * FROM Brands WHERE id = #{id} AND isDeleted = 0
+    </select>
+    <select id="findAllBrands" resultType="com.cows.entity.Brand">
+        SELECT * FROM Brands WHERE isDeleted = 0
+    </select>
+    <insert id="insertBrand" parameterType="com.cows.entity.Brand">
+        INSERT INTO Brands (name, description, logo, createTime, updateTime, isDeleted)
+        VALUES (#{name}, #{description}, #{logo}, #{createTime}, #{updateTime}, 0)
+    </insert>
+    <update id="updateBrand" parameterType="com.cows.entity.Brand">
+        UPDATE Brands 
+        SET name = #{name}, 
+            description = #{description}, 
+            logo = #{logo}, 
+            updateTime = #{updateTime}
+        WHERE id = #{id}
+    </update>
+    <update id="deleteBrand" parameterType="int">
+        UPDATE Brands SET isDeleted = 1 WHERE id = #{id}
+    </update>
+    <select id="findBrandsPaged" resultType="com.cows.entity.Brand">
+        SELECT * FROM Brands WHERE isDeleted = 0 ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
+    </select>
+</mapper>

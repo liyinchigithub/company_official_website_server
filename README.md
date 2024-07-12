@@ -289,6 +289,8 @@ CREATE TABLE `ProductCategories` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='商品分类表'
 ```
 
+- 
+
 - 商品信息表（商品详情）
 
 ```sql
@@ -314,6 +316,10 @@ CREATE TABLE `Products` (
 ```
 
 商品信息取商品分类id作为外键
+
+
+
+
 
 
 - Orders表
@@ -395,7 +401,7 @@ CREATE TABLE `user_location` (
 
 ```
 
-- 配置your_secret_key
+- 配置your_secret_key、设置token有效时长
 
 src/main/java/com/cows/util/JwtUtil.java
 
