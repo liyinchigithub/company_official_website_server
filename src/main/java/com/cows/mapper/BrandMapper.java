@@ -16,4 +16,5 @@ public interface BrandMapper {
     int updateBrand(Brand brand);
     int deleteBrand(int id);
     List<Brand> findBrandsPaged(@Param("offset") int offset, @Param("limit") int limit, @Param("sortField") String sortField);
+    Brand findBrandByName(@Param("name") String name); // 新增方法
 }

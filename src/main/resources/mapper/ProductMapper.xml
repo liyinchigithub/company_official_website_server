@@ -34,4 +34,10 @@
     <select id="findProductsPaged" resultType="com.cows.entity.Product">
         SELECT * FROM Products WHERE isDeleted = 0 ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
     </select>
+     <select id="countAllProducts" resultType="int">
+        SELECT COUNT(*) FROM Products WHERE isDeleted = 0
+    </select>
+     <select id="searchProductsByName" parameterType="string" resultType="com.cows.entity.Product">
+        SELECT * FROM Products WHERE name LIKE CONCAT('%', #{name}, '%') AND isDeleted = 0
+    </select>
 </mapper>

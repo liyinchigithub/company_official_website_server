@@ -70,7 +70,7 @@ public class BrandController {
     }
 
     @Operation(summary = "分页查询品牌", description = "根据页码和每页显示条数进行分页查询品牌")
-    @GetMapping("/getBrandsPaged")
+    @GetMapping("/")
     public BaseResponse<List<Brand>> getBrandsPaged(@RequestParam int page, @RequestParam int size, @RequestParam String sortField) {
         List<Brand> brands = brandService.getBrandsPaged(page, size, sortField);
         log.info("分页查询品牌: {}", brands);

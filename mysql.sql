@@ -24,18 +24,6 @@ CREATE TABLE `Admins` (
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8
 
 
-
-CREATE TABLE `Carousels` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `imageUrl` varchar(255) NOT NULL,
-  `redirectUrl` varchar(255) DEFAULT NULL,
-  `isEnabled` tinyint(1) DEFAULT '1',
-  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `isDeleted` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8
-
 CREATE TABLE `BasicInformation` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `phone` varchar(255) NOT NULL,
@@ -52,6 +40,33 @@ CREATE TABLE `BasicInformation` (
   `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8
+
+
+
+
+CREATE TABLE `Carousels` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `imageUrl` varchar(255) NOT NULL,
+  `redirectUrl` varchar(255) DEFAULT NULL,
+  `isEnabled` tinyint(1) DEFAULT '1',
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `isDeleted` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8
+
+
+
+CREATE TABLE `Brands` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` text,
+  `logo` varchar(255) DEFAULT NULL,
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `isDeleted` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
 
 
 CREATE TABLE `ProductCategories` (

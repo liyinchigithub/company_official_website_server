@@ -25,4 +25,7 @@
     <select id="findBrandsPaged" resultType="com.cows.entity.Brand">
         SELECT * FROM Brands WHERE isDeleted = 0 ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
     </select>
+    <select id="findBrandByName" parameterType="String" resultType="com.cows.entity.Brand">
+        SELECT * FROM Brands WHERE name = #{name} AND isDeleted = 0
+    </select>
 </mapper>

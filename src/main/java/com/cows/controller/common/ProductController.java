@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -71,9 +72,17 @@ public class ProductController {
 
     @Operation(summary = "分页查询商品", description = "根据页码和每页显示条数进行分页查询商品")
     @GetMapping("/getProductsPaged")
-    public BaseResponse<List<Product>> getProductsPaged(@RequestParam int page, @RequestParam int size, @RequestParam String sortField) {
-        List<Product> products = productService.getProductsPaged(page, size, sortField);
-        log.info("分页查询商品: {}", products);
+    public BaseResponse<Map<String, Object>> getProductsPaged(@RequestParam int page, @RequestParam int size, @RequestParam String sortField) {
+        Map<String, Object> result = productService.getProductsPaged(page, size, sortField);
+        log.info("分页查询商品: {}", result);
+        return BaseResponse.success(result);
+    }
+
+    @Operation(summary = "搜索商品", description = "通过商品名称搜索商品")
+    @GetMapping("/searchProductsByName")
+    public BaseResponse<List<Product>> searchProductsByName(@RequestParam String name) {
+        List<Product> products = productService.searchProductsByName(name);
+        log.info("搜索商品名称: {}", name);
         return BaseResponse.success(products);
     }
 }

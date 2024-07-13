@@ -30,6 +30,10 @@ public class BrandServiceImpl implements BrandService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public int addBrand(Brand brand) {
+        Brand existingBrand = brandMapper.findBrandByName(brand.getName());
+        if (existingBrand != null) {
+            throw new IllegalArgumentException("已存在相同品牌名称");
+        }
         brandMapper.insertBrand(brand);
         return brand.getId();
     }
@@ -58,5 +62,10 @@ public class BrandServiceImpl implements BrandService {
         }
         int offset = page * size;
         return brandMapper.findBrandsPaged(offset, size, sortField);
+    }
+
+    @Override
+    public Brand getBrandByName(String name) {
+        return brandMapper.findBrandByName(name);
     }
 }

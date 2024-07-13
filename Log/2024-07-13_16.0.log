@@ -1,0 +1,929 @@
+16:44:03.570 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+16:44:03.939 [restartedMain] INFO  c.c.f.f.i.p.DefaultApplicationProvider - App ID is set to platform by app.id property from System Property
+16:44:03.941 [restartedMain] WARN  c.c.f.f.i.p.DefaultApplicationProvider - app.label is not available from System Property and /META-INF/app.properties. It is set to null
+16:44:03.941 [restartedMain] INFO  c.c.f.f.i.p.DefaultServerProvider - Environment is set to null. Because it is not available in either (1) JVM system property 'env', (2) OS env variable 'ENV' nor (3) property 'env' from the properties InputStream.
+16:44:03.942 [restartedMain] INFO  c.c.f.a.i.DefaultMetaServerProvider - Located meta services from apollo.meta configuration: http://meta.apollo.xxx.cn!
+16:44:03.942 [restartedMain] INFO  c.c.f.apollo.core.MetaDomainConsts - Located meta server address http://meta.apollo.xxx.cn for env UNKNOWN from com.ctrip.framework.apollo.internals.DefaultMetaServerProvider
+16:44:03.942 [restartedMain] WARN  c.c.f.a.i.LocalFileConfigRepository - Sync config from upstream repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository failed, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:44:03.942 [restartedMain] WARN  c.c.f.a.i.LocalFileConfigRepository - Sync config from upstream repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository failed, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:44:03.943 [restartedMain] WARN  c.c.f.apollo.internals.DefaultConfig - Init Apollo Local Config failed - namespace: application, reason: Load config from local config failed! [Cause: Cannot read from local cache file /Users/liyinchi/workspace/java/company_official_website_server/./config/platform/config-cache/platform+default+application.properties].
+16:44:03.943 [restartedMain] WARN  c.c.f.a.i.LocalFileConfigRepository - Sync config from upstream repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository failed, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:44:03.943 [restartedMain] WARN  c.c.f.a.i.LocalFileConfigRepository - Sync config from upstream repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository failed, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:44:03.943 [restartedMain] WARN  c.c.f.apollo.internals.DefaultConfig - Init Apollo Local Config failed - namespace: sensitive-config, reason: Load config from local config failed! [Cause: Cannot read from local cache file /Users/liyinchi/workspace/java/company_official_website_server/./config/platform/config-cache/platform+default+sensitive-config.properties].
+16:44:03.944 [restartedMain] WARN  c.c.f.a.i.LocalFileConfigRepository - Sync config from upstream repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository failed, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:44:03.944 [restartedMain] WARN  c.c.f.a.i.LocalFileConfigRepository - Sync config from upstream repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository failed, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:44:03.944 [restartedMain] WARN  c.c.f.apollo.internals.DefaultConfig - Init Apollo Local Config failed - namespace: message, reason: Load config from local config failed! [Cause: Cannot read from local cache file /Users/liyinchi/workspace/java/company_official_website_server/./config/platform/config-cache/platform+default+message.properties].
+16:44:03.944 [restartedMain] WARN  c.c.f.apollo.internals.DefaultConfig - Could not load config for namespace application from Apollo, please check whether the configs are released in Apollo! Return default value now!
+16:44:03.944 [restartedMain] WARN  c.c.f.apollo.internals.DefaultConfig - Could not load config for namespace sensitive-config from Apollo, please check whether the configs are released in Apollo! Return default value now!
+16:44:03.945 [restartedMain] WARN  c.c.f.apollo.internals.DefaultConfig - Could not load config for namespace message from Apollo, please check whether the configs are released in Apollo! Return default value now!
+16:44:03.976 [restartedMain] INFO  com.cows.Application - Starting Application using Java 17.0.1 with PID 2954 (/Users/liyinchi/workspace/java/company_official_website_server/target/classes started by liyinchi in /Users/liyinchi/workspace/java/company_official_website_server)
+16:44:03.978 [restartedMain] INFO  com.cows.Application - The following 1 profile is active: "dev"
+16:44:07.317 [Apollo-RemoteConfigLongPollService-1] WARN  c.c.f.a.i.RemoteConfigLongPollService - Long polling failed, will retry in 16 seconds. appId: platform, cluster: default, namespaces: application+message+sensitive-config, long polling url: null, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:44:13.324 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+16:44:13.329 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:44:13.330 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+16:44:13.527 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:44:14.974 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.cows.mapper.AdminMapper.findAdminByUserName] is ignored, because it exists, maybe from xml file
+16:44:18.350 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: microservice.url.orderUrl, beanName: jsonController, field: com.cows.controller.common.JsonController.orderUrl
+16:44:19.060 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: wechatService, field: com.cows.service.WechatService.appId
+16:44:19.060 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.secret, beanName: wechatService, field: com.cows.service.WechatService.secret
+16:44:19.061 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: wechatService, field: com.cows.service.WechatService.redirectUri
+16:44:19.195 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: loginController, field: com.cows.controller.common.LoginController.appid
+16:44:19.195 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: loginController, field: com.cows.controller.common.LoginController.redirectUri
+16:44:22.258 [restartedMain] INFO  com.cows.service.RedisService - redis port: 6379
+16:44:25.360 [Apollo-RemoteConfigLongPollService-1] WARN  c.c.f.a.i.RemoteConfigLongPollService - Long polling failed, will retry in 32 seconds. appId: platform, cluster: default, namespaces: application+message+sensitive-config, long polling url: null, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:44:26.662 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: spring.mvc.servlet.path, beanName: swaggerWelcome, field: org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc.mvcServletPath
+16:44:29.245 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+16:44:29.688 [restartedMain] INFO  com.cows.Application - Started Application in 56.749 seconds (process running for 63.216)
+16:44:34.691 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=0, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:44:39.696 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=1, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:44:44.714 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=2, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:44:49.723 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=3, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:44:54.725 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=4, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:44:59.372 [Apollo-RemoteConfigLongPollService-1] WARN  c.c.f.a.i.RemoteConfigLongPollService - Long polling failed, will retry in 64 seconds. appId: platform, cluster: default, namespaces: application+message+sensitive-config, long polling url: null, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:44:59.735 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=5, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:45:04.744 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=6, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:45:08.820 [http-nio-8088-exec-1] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:45:08.821 [http-nio-8088-exec-1] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/login/perform_login
+16:45:08.841 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:45:08.926 [http-nio-8088-exec-1] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：performLogin，在该方法执行之前执行====
+16:45:09.426 [http-nio-8088-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16:45:09.755 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=7, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:45:10.241 [http-nio-8088-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6e701fb9
+16:45:10.245 [http-nio-8088-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16:45:11.336 [http-nio-8088-exec-1] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:45:11.337 [http-nio-8088-exec-1] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:45:11.339 [http-nio-8088-exec-1] INFO  c.c.l.MyServletRequestListener - request end
+16:45:11.339 [http-nio-8088-exec-1] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:45:14.762 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=8, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:45:19.767 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=9, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:45:24.771 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=10, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:45:29.781 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=11, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:45:34.787 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=12, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:45:39.790 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=13, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:45:44.797 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=14, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:45:49.799 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=15, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:45:54.804 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=16, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:45:59.810 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=17, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:46:04.813 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=18, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:46:05.387 [Apollo-RemoteConfigLongPollService-1] WARN  c.c.f.a.i.RemoteConfigLongPollService - Long polling failed, will retry in 120 seconds. appId: platform, cluster: default, namespaces: application+message+sensitive-config, long polling url: null, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:46:09.821 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=19, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:46:14.833 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=20, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:46:19.836 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=21, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:46:24.846 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=22, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:46:29.867 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=23, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:46:34.872 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=24, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:46:39.875 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=25, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:46:44.918 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=26, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:46:49.919 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=27, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:46:54.923 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=28, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:46:59.926 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=29, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:47:04.935 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=30, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:47:09.938 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=31, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:47:14.943 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=32, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:47:19.951 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=33, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:47:24.957 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=34, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:47:29.963 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=35, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:47:34.967 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=36, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:47:39.973 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=37, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:47:44.979 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=38, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:47:49.981 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=39, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:47:54.983 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=40, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:47:59.990 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=41, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:48:04.992 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=42, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:48:07.404 [Apollo-RemoteConfigLongPollService-1] WARN  c.c.f.a.i.RemoteConfigLongPollService - Long polling failed, will retry in 120 seconds. appId: platform, cluster: default, namespaces: application+message+sensitive-config, long polling url: null, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:48:09.995 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=43, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:48:15.001 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=44, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:48:20.012 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=45, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:48:25.015 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=46, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:48:30.020 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=47, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:48:35.023 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=48, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:48:40.027 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=49, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:48:41.230 [Apollo-RemoteConfigRepository-1] WARN  c.c.f.a.i.AbstractConfigRepository - Sync config failed, will retry. Repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:48:45.030 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=50, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:48:50.040 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=51, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:48:51.288 [Apollo-RemoteConfigRepository-1] WARN  c.c.f.a.i.AbstractConfigRepository - Sync config failed, will retry. Repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:48:55.048 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=52, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:49:00.059 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=53, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:49:01.331 [Apollo-RemoteConfigRepository-1] WARN  c.c.f.a.i.AbstractConfigRepository - Sync config failed, will retry. Repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:49:05.067 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=54, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:49:10.071 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=55, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:49:15.077 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=56, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:49:20.084 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=57, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:49:25.092 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=58, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:49:30.096 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=59, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:49:35.101 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=60, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:49:40.112 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=61, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:49:45.120 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=62, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:49:50.130 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=63, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:49:55.134 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=64, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:50:00.144 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=65, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:50:05.146 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=66, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:50:09.420 [Apollo-RemoteConfigLongPollService-1] WARN  c.c.f.a.i.RemoteConfigLongPollService - Long polling failed, will retry in 120 seconds. appId: platform, cluster: default, namespaces: application+message+sensitive-config, long polling url: null, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:50:10.155 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=67, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:50:15.158 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=68, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:50:20.168 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=69, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:50:25.171 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=70, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:50:30.177 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=71, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:50:35.183 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=72, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:50:40.220 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=73, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:50:45.228 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=74, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:50:50.237 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=75, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:50:55.241 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=76, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:51:00.251 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=77, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:51:05.254 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=78, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:51:10.260 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=79, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:51:15.263 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=80, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:51:20.269 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=81, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:51:25.281 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=82, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:51:30.285 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=83, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:51:35.288 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=84, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:51:40.292 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=85, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:51:45.303 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=86, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:51:50.312 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=87, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:51:55.323 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=88, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:52:00.329 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=89, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:52:05.348 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=90, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:52:10.357 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=91, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:52:11.436 [Apollo-RemoteConfigLongPollService-1] WARN  c.c.f.a.i.RemoteConfigLongPollService - Long polling failed, will retry in 120 seconds. appId: platform, cluster: default, namespaces: application+message+sensitive-config, long polling url: null, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:52:15.365 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=92, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:52:20.368 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=93, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:52:25.374 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=94, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:52:30.380 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=95, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:52:33.190 [http-nio-8088-exec-3] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:52:33.190 [http-nio-8088-exec-3] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:52:33.209 [http-nio-8088-exec-4] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:52:33.210 [http-nio-8088-exec-4] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/productsCarousels/getAllProductsCarousels
+16:52:33.221 [http-nio-8088-exec-3] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:52:33.221 [http-nio-8088-exec-4] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllProductsCarousels，在该方法执行之前执行====
+16:52:33.296 [http-nio-8088-exec-3] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:52:33.297 [http-nio-8088-exec-3] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:52:33.298 [http-nio-8088-exec-3] INFO  c.c.l.MyServletRequestListener - request end
+16:52:33.298 [http-nio-8088-exec-3] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:52:33.778 [http-nio-8088-exec-5] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:52:33.779 [http-nio-8088-exec-5] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:52:33.781 [http-nio-8088-exec-6] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:52:33.781 [http-nio-8088-exec-6] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/carousels/getAllCarousels
+16:52:33.790 [http-nio-8088-exec-5] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:52:33.795 [http-nio-8088-exec-6] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllCarousels，在该方法执行之前执行====
+16:52:33.798 [http-nio-8088-exec-5] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:52:33.806 [http-nio-8088-exec-5] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:52:33.806 [http-nio-8088-exec-5] INFO  c.c.l.MyServletRequestListener - request end
+16:52:33.806 [http-nio-8088-exec-5] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:52:33.908 [http-nio-8088-exec-6] INFO  c.c.c.mobile.CarouselController - 获取所有轮播图信息: [Carousel(id=1, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154410_1890x600-1.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:27:04, updateTime=2024-07-01 08:01:01, isDeleted=false), Carousel(id=2, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154423_1890x600-2.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:28:53, updateTime=2024-07-01 08:00:32, isDeleted=false), Carousel(id=3, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154435_1890x600-3.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:27:11, updateTime=2024-07-01 08:01:31, isDeleted=false), Carousel(id=4, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:15, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=5, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:18, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=6, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:23, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=7, imageUrl=https://example7.com/image.jpg, redirectUrl=https://example.com, isEnabled=false, createTime=2024-07-02 14:37:48, updateTime=2024-07-02 14:37:48, isDeleted=false)]
+16:52:33.902 [http-nio-8088-exec-4] INFO  c.c.c.c.ProductsCarouselsController - 获取所有横向轮播图商品配置: [ProductsCarousels(id=1, products=null, createTime=2024-07-02 15:06:56, updateTime=2024-07-02 16:24:02, isDeleted=false), ProductsCarousels(id=2, products=null, createTime=2024-07-02 15:06:57, updateTime=2024-07-02 16:24:02, isDeleted=false), ProductsCarousels(id=3, products=null, createTime=2024-07-02 15:06:59, updateTime=2024-07-02 16:24:02, isDeleted=false), ProductsCarousels(id=4, products=null, createTime=2024-07-02 15:06:56, updateTime=2024-07-02 16:24:10, isDeleted=false), ProductsCarousels(id=5, products=null, createTime=2024-07-02 16:24:27, updateTime=2024-07-02 16:24:27, isDeleted=false)]
+16:52:34.090 [http-nio-8088-exec-6] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:52:34.091 [http-nio-8088-exec-6] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:52:34.092 [http-nio-8088-exec-6] INFO  c.c.l.MyServletRequestListener - request end
+16:52:34.092 [http-nio-8088-exec-6] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:52:34.101 [http-nio-8088-exec-4] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:52:34.101 [http-nio-8088-exec-4] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:52:34.101 [http-nio-8088-exec-4] INFO  c.c.l.MyServletRequestListener - request end
+16:52:34.102 [http-nio-8088-exec-4] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:52:34.693 [http-nio-8088-exec-7] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:52:34.694 [http-nio-8088-exec-7] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:52:34.699 [http-nio-8088-exec-7] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:52:34.709 [http-nio-8088-exec-8] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:52:34.710 [http-nio-8088-exec-7] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:52:34.710 [http-nio-8088-exec-9] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:52:34.763 [http-nio-8088-exec-7] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:52:34.764 [http-nio-8088-exec-9] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:52:34.763 [http-nio-8088-exec-8] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:52:34.764 [http-nio-8088-exec-7] INFO  c.c.l.MyServletRequestListener - request end
+16:52:34.768 [http-nio-8088-exec-9] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:52:34.768 [http-nio-8088-exec-8] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:52:34.788 [http-nio-8088-exec-7] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:52:34.793 [http-nio-8088-exec-8] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:52:34.793 [http-nio-8088-exec-9] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:52:34.799 [http-nio-8088-exec-8] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:52:34.799 [http-nio-8088-exec-9] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:52:34.802 [http-nio-8088-exec-9] INFO  c.c.l.MyServletRequestListener - request end
+16:52:34.802 [http-nio-8088-exec-8] INFO  c.c.l.MyServletRequestListener - request end
+16:52:34.802 [http-nio-8088-exec-9] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:52:34.802 [http-nio-8088-exec-8] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:52:34.881 [http-nio-8088-exec-10] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:52:34.881 [http-nio-8088-exec-10] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:52:34.886 [http-nio-8088-exec-10] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:52:34.889 [http-nio-8088-exec-10] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:52:34.890 [http-nio-8088-exec-10] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:52:34.890 [http-nio-8088-exec-10] INFO  c.c.l.MyServletRequestListener - request end
+16:52:34.890 [http-nio-8088-exec-10] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:52:34.895 [http-nio-8088-exec-11] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:52:34.895 [http-nio-8088-exec-11] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:52:34.900 [http-nio-8088-exec-11] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:52:34.901 [http-nio-8088-exec-12] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:52:34.901 [http-nio-8088-exec-12] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:52:34.904 [http-nio-8088-exec-11] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:52:34.904 [http-nio-8088-exec-11] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:52:34.904 [http-nio-8088-exec-11] INFO  c.c.l.MyServletRequestListener - request end
+16:52:34.905 [http-nio-8088-exec-11] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:52:34.905 [http-nio-8088-exec-12] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:52:34.909 [http-nio-8088-exec-12] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:52:34.909 [http-nio-8088-exec-12] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:52:34.909 [http-nio-8088-exec-12] INFO  c.c.l.MyServletRequestListener - request end
+16:52:34.909 [http-nio-8088-exec-12] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:52:35.433 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=96, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:52:40.443 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=97, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:52:45.452 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=98, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:52:50.507 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=99, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:52:55.514 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=100, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:53:00.522 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=101, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:53:05.533 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=102, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:53:10.542 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=103, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:53:15.551 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=104, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:53:18.775 [http-nio-8088-exec-13] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:18.775 [http-nio-8088-exec-13] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:18.782 [http-nio-8088-exec-13] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:18.786 [http-nio-8088-exec-13] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:18.786 [http-nio-8088-exec-13] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:18.787 [http-nio-8088-exec-13] INFO  c.c.l.MyServletRequestListener - request end
+16:53:18.787 [http-nio-8088-exec-13] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:18.801 [http-nio-8088-exec-14] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:18.801 [http-nio-8088-exec-14] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:18.808 [http-nio-8088-exec-14] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:18.811 [http-nio-8088-exec-15] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:53:18.813 [http-nio-8088-exec-15] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/carousels/getAllCarousels
+16:53:18.821 [http-nio-8088-exec-14] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:18.822 [http-nio-8088-exec-14] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:18.823 [http-nio-8088-exec-14] INFO  c.c.l.MyServletRequestListener - request end
+16:53:18.823 [http-nio-8088-exec-14] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:18.823 [http-nio-8088-exec-16] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:53:18.826 [http-nio-8088-exec-16] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/productsCarousels/getAllProductsCarousels
+16:53:18.828 [http-nio-8088-exec-15] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllCarousels，在该方法执行之前执行====
+16:53:18.843 [http-nio-8088-exec-16] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllProductsCarousels，在该方法执行之前执行====
+16:53:18.879 [http-nio-8088-exec-16] INFO  c.c.c.c.ProductsCarouselsController - 获取所有横向轮播图商品配置: [ProductsCarousels(id=1, products=null, createTime=2024-07-02 15:06:56, updateTime=2024-07-02 16:24:02, isDeleted=false), ProductsCarousels(id=2, products=null, createTime=2024-07-02 15:06:57, updateTime=2024-07-02 16:24:02, isDeleted=false), ProductsCarousels(id=3, products=null, createTime=2024-07-02 15:06:59, updateTime=2024-07-02 16:24:02, isDeleted=false), ProductsCarousels(id=4, products=null, createTime=2024-07-02 15:06:56, updateTime=2024-07-02 16:24:10, isDeleted=false), ProductsCarousels(id=5, products=null, createTime=2024-07-02 16:24:27, updateTime=2024-07-02 16:24:27, isDeleted=false)]
+16:53:18.882 [http-nio-8088-exec-16] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:18.883 [http-nio-8088-exec-16] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:18.883 [http-nio-8088-exec-16] INFO  c.c.l.MyServletRequestListener - request end
+16:53:18.883 [http-nio-8088-exec-16] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:18.888 [http-nio-8088-exec-15] INFO  c.c.c.mobile.CarouselController - 获取所有轮播图信息: [Carousel(id=1, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154410_1890x600-1.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:27:04, updateTime=2024-07-01 08:01:01, isDeleted=false), Carousel(id=2, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154423_1890x600-2.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:28:53, updateTime=2024-07-01 08:00:32, isDeleted=false), Carousel(id=3, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154435_1890x600-3.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:27:11, updateTime=2024-07-01 08:01:31, isDeleted=false), Carousel(id=4, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:15, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=5, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:18, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=6, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:23, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=7, imageUrl=https://example7.com/image.jpg, redirectUrl=https://example.com, isEnabled=false, createTime=2024-07-02 14:37:48, updateTime=2024-07-02 14:37:48, isDeleted=false)]
+16:53:18.891 [http-nio-8088-exec-15] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:18.891 [http-nio-8088-exec-15] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:18.892 [http-nio-8088-exec-15] INFO  c.c.l.MyServletRequestListener - request end
+16:53:18.892 [http-nio-8088-exec-15] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:18.941 [http-nio-8088-exec-18] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:18.941 [http-nio-8088-exec-17] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:18.941 [http-nio-8088-exec-18] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:18.941 [http-nio-8088-exec-17] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:18.941 [http-nio-8088-exec-19] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:18.941 [http-nio-8088-exec-19] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:18.946 [http-nio-8088-exec-19] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:18.947 [http-nio-8088-exec-18] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:18.947 [http-nio-8088-exec-17] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:18.951 [http-nio-8088-exec-17] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:18.952 [http-nio-8088-exec-18] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:18.952 [http-nio-8088-exec-17] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:18.952 [http-nio-8088-exec-18] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:18.952 [http-nio-8088-exec-17] INFO  c.c.l.MyServletRequestListener - request end
+16:53:18.952 [http-nio-8088-exec-18] INFO  c.c.l.MyServletRequestListener - request end
+16:53:18.953 [http-nio-8088-exec-18] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:18.952 [http-nio-8088-exec-17] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:18.954 [http-nio-8088-exec-19] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:18.954 [http-nio-8088-exec-19] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:18.954 [http-nio-8088-exec-19] INFO  c.c.l.MyServletRequestListener - request end
+16:53:18.954 [http-nio-8088-exec-19] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:19.006 [http-nio-8088-exec-20] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:19.006 [http-nio-8088-exec-22] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:19.006 [http-nio-8088-exec-21] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:19.007 [http-nio-8088-exec-20] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:19.007 [http-nio-8088-exec-22] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:19.007 [http-nio-8088-exec-21] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:19.012 [http-nio-8088-exec-20] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:19.012 [http-nio-8088-exec-22] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:19.013 [http-nio-8088-exec-21] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:19.019 [http-nio-8088-exec-22] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:19.019 [http-nio-8088-exec-21] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:19.020 [http-nio-8088-exec-20] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:19.022 [http-nio-8088-exec-20] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:19.021 [http-nio-8088-exec-22] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:19.021 [http-nio-8088-exec-21] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:19.022 [http-nio-8088-exec-22] INFO  c.c.l.MyServletRequestListener - request end
+16:53:19.022 [http-nio-8088-exec-22] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:19.022 [http-nio-8088-exec-20] INFO  c.c.l.MyServletRequestListener - request end
+16:53:19.023 [http-nio-8088-exec-20] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:19.023 [http-nio-8088-exec-21] INFO  c.c.l.MyServletRequestListener - request end
+16:53:19.023 [http-nio-8088-exec-21] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:20.560 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=105, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:53:25.569 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=106, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:53:28.244 [http-nio-8088-exec-23] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:28.245 [http-nio-8088-exec-23] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:28.252 [http-nio-8088-exec-23] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:28.255 [http-nio-8088-exec-23] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:28.255 [http-nio-8088-exec-23] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:28.255 [http-nio-8088-exec-23] INFO  c.c.l.MyServletRequestListener - request end
+16:53:28.256 [http-nio-8088-exec-23] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:28.270 [http-nio-8088-exec-24] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:28.270 [http-nio-8088-exec-24] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:28.277 [http-nio-8088-exec-25] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:53:28.277 [http-nio-8088-exec-25] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/carousels/getAllCarousels
+16:53:28.284 [http-nio-8088-exec-24] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:28.292 [http-nio-8088-exec-24] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:28.293 [http-nio-8088-exec-24] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:28.295 [http-nio-8088-exec-24] INFO  c.c.l.MyServletRequestListener - request end
+16:53:28.296 [http-nio-8088-exec-24] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:28.297 [http-nio-8088-exec-25] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllCarousels，在该方法执行之前执行====
+16:53:28.360 [http-nio-8088-exec-25] INFO  c.c.c.mobile.CarouselController - 获取所有轮播图信息: [Carousel(id=1, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154410_1890x600-1.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:27:04, updateTime=2024-07-01 08:01:01, isDeleted=false), Carousel(id=2, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154423_1890x600-2.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:28:53, updateTime=2024-07-01 08:00:32, isDeleted=false), Carousel(id=3, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154435_1890x600-3.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:27:11, updateTime=2024-07-01 08:01:31, isDeleted=false), Carousel(id=4, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:15, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=5, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:18, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=6, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:23, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=7, imageUrl=https://example7.com/image.jpg, redirectUrl=https://example.com, isEnabled=false, createTime=2024-07-02 14:37:48, updateTime=2024-07-02 14:37:48, isDeleted=false)]
+16:53:28.365 [http-nio-8088-exec-25] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:28.366 [http-nio-8088-exec-25] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:28.366 [http-nio-8088-exec-25] INFO  c.c.l.MyServletRequestListener - request end
+16:53:28.367 [http-nio-8088-exec-25] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:28.375 [http-nio-8088-exec-27] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:28.375 [http-nio-8088-exec-28] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:28.375 [http-nio-8088-exec-26] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:28.376 [http-nio-8088-exec-27] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:28.376 [http-nio-8088-exec-28] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:28.376 [http-nio-8088-exec-26] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:28.380 [http-nio-8088-exec-27] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:28.380 [http-nio-8088-exec-28] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:28.386 [http-nio-8088-exec-28] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:28.387 [http-nio-8088-exec-28] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:28.389 [http-nio-8088-exec-28] INFO  c.c.l.MyServletRequestListener - request end
+16:53:28.390 [http-nio-8088-exec-27] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:28.391 [http-nio-8088-exec-27] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:28.390 [http-nio-8088-exec-28] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:28.391 [http-nio-8088-exec-27] INFO  c.c.l.MyServletRequestListener - request end
+16:53:28.391 [http-nio-8088-exec-27] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:28.392 [http-nio-8088-exec-28] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:28.392 [http-nio-8088-exec-28] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:28.392 [http-nio-8088-exec-26] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:28.394 [http-nio-8088-exec-29] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:28.395 [http-nio-8088-exec-29] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:28.398 [http-nio-8088-exec-26] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:28.400 [http-nio-8088-exec-26] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:28.401 [http-nio-8088-exec-28] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:28.401 [http-nio-8088-exec-26] INFO  c.c.l.MyServletRequestListener - request end
+16:53:28.402 [http-nio-8088-exec-26] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:28.403 [http-nio-8088-exec-26] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:28.403 [http-nio-8088-exec-26] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:28.406 [http-nio-8088-exec-28] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:28.406 [http-nio-8088-exec-29] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:28.407 [http-nio-8088-exec-28] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:28.407 [http-nio-8088-exec-28] INFO  c.c.l.MyServletRequestListener - request end
+16:53:28.407 [http-nio-8088-exec-28] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:28.409 [http-nio-8088-exec-26] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:28.409 [http-nio-8088-exec-29] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:28.410 [http-nio-8088-exec-29] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:28.411 [http-nio-8088-exec-29] INFO  c.c.l.MyServletRequestListener - request end
+16:53:28.411 [http-nio-8088-exec-29] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:28.413 [http-nio-8088-exec-26] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:28.414 [http-nio-8088-exec-26] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:28.414 [http-nio-8088-exec-26] INFO  c.c.l.MyServletRequestListener - request end
+16:53:28.414 [http-nio-8088-exec-26] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:29.115 [http-nio-8088-exec-30] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:29.115 [http-nio-8088-exec-30] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:29.121 [http-nio-8088-exec-30] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:29.123 [http-nio-8088-exec-30] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:29.124 [http-nio-8088-exec-30] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:29.124 [http-nio-8088-exec-30] INFO  c.c.l.MyServletRequestListener - request end
+16:53:29.124 [http-nio-8088-exec-30] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:29.156 [http-nio-8088-exec-31] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:29.157 [http-nio-8088-exec-31] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:29.163 [http-nio-8088-exec-31] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:29.166 [http-nio-8088-exec-31] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:29.166 [http-nio-8088-exec-31] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:29.166 [http-nio-8088-exec-31] INFO  c.c.l.MyServletRequestListener - request end
+16:53:29.167 [http-nio-8088-exec-31] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:29.169 [http-nio-8088-exec-33] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:53:29.169 [http-nio-8088-exec-32] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:53:29.170 [http-nio-8088-exec-32] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/carousels/getAllCarousels
+16:53:29.170 [http-nio-8088-exec-33] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/productsCarousels/getAllProductsCarousels
+16:53:29.175 [http-nio-8088-exec-32] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllCarousels，在该方法执行之前执行====
+16:53:29.175 [http-nio-8088-exec-33] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllProductsCarousels，在该方法执行之前执行====
+16:53:29.244 [http-nio-8088-exec-33] INFO  c.c.c.c.ProductsCarouselsController - 获取所有横向轮播图商品配置: [ProductsCarousels(id=1, products=null, createTime=2024-07-02 15:06:56, updateTime=2024-07-02 16:24:02, isDeleted=false), ProductsCarousels(id=2, products=null, createTime=2024-07-02 15:06:57, updateTime=2024-07-02 16:24:02, isDeleted=false), ProductsCarousels(id=3, products=null, createTime=2024-07-02 15:06:59, updateTime=2024-07-02 16:24:02, isDeleted=false), ProductsCarousels(id=4, products=null, createTime=2024-07-02 15:06:56, updateTime=2024-07-02 16:24:10, isDeleted=false), ProductsCarousels(id=5, products=null, createTime=2024-07-02 16:24:27, updateTime=2024-07-02 16:24:27, isDeleted=false)]
+16:53:29.247 [http-nio-8088-exec-33] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:29.247 [http-nio-8088-exec-33] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:29.248 [http-nio-8088-exec-33] INFO  c.c.l.MyServletRequestListener - request end
+16:53:29.248 [http-nio-8088-exec-33] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:29.255 [http-nio-8088-exec-32] INFO  c.c.c.mobile.CarouselController - 获取所有轮播图信息: [Carousel(id=1, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154410_1890x600-1.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:27:04, updateTime=2024-07-01 08:01:01, isDeleted=false), Carousel(id=2, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154423_1890x600-2.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:28:53, updateTime=2024-07-01 08:00:32, isDeleted=false), Carousel(id=3, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154435_1890x600-3.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:27:11, updateTime=2024-07-01 08:01:31, isDeleted=false), Carousel(id=4, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:15, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=5, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:18, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=6, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:23, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=7, imageUrl=https://example7.com/image.jpg, redirectUrl=https://example.com, isEnabled=false, createTime=2024-07-02 14:37:48, updateTime=2024-07-02 14:37:48, isDeleted=false)]
+16:53:29.258 [http-nio-8088-exec-32] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:29.258 [http-nio-8088-exec-32] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:29.258 [http-nio-8088-exec-32] INFO  c.c.l.MyServletRequestListener - request end
+16:53:29.258 [http-nio-8088-exec-32] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:29.269 [http-nio-8088-exec-34] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:29.269 [http-nio-8088-exec-35] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:29.269 [http-nio-8088-exec-36] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:29.269 [http-nio-8088-exec-34] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:29.269 [http-nio-8088-exec-35] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:29.269 [http-nio-8088-exec-36] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:29.273 [http-nio-8088-exec-36] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:29.273 [http-nio-8088-exec-35] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:29.273 [http-nio-8088-exec-34] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:29.279 [http-nio-8088-exec-34] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:29.283 [http-nio-8088-exec-34] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:29.285 [http-nio-8088-exec-36] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:29.287 [http-nio-8088-exec-34] INFO  c.c.l.MyServletRequestListener - request end
+16:53:29.287 [http-nio-8088-exec-36] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:29.287 [http-nio-8088-exec-34] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:29.283 [http-nio-8088-exec-35] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:29.287 [http-nio-8088-exec-36] INFO  c.c.l.MyServletRequestListener - request end
+16:53:29.287 [http-nio-8088-exec-35] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:29.287 [http-nio-8088-exec-36] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:29.287 [http-nio-8088-exec-35] INFO  c.c.l.MyServletRequestListener - request end
+16:53:29.287 [http-nio-8088-exec-35] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:29.288 [http-nio-8088-exec-34] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:29.288 [http-nio-8088-exec-36] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:29.288 [http-nio-8088-exec-34] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:29.288 [http-nio-8088-exec-36] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:29.288 [http-nio-8088-exec-35] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:29.288 [http-nio-8088-exec-35] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:29.292 [http-nio-8088-exec-34] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:29.292 [http-nio-8088-exec-35] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:29.292 [http-nio-8088-exec-36] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:29.300 [http-nio-8088-exec-35] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:29.300 [http-nio-8088-exec-35] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:29.300 [http-nio-8088-exec-34] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:29.300 [http-nio-8088-exec-35] INFO  c.c.l.MyServletRequestListener - request end
+16:53:29.302 [http-nio-8088-exec-34] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:29.302 [http-nio-8088-exec-36] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:29.302 [http-nio-8088-exec-35] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:29.302 [http-nio-8088-exec-36] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:29.302 [http-nio-8088-exec-34] INFO  c.c.l.MyServletRequestListener - request end
+16:53:29.303 [http-nio-8088-exec-34] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:29.303 [http-nio-8088-exec-36] INFO  c.c.l.MyServletRequestListener - request end
+16:53:29.303 [http-nio-8088-exec-36] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:30.582 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=107, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:53:35.590 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=108, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:53:35.822 [http-nio-8088-exec-37] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:53:35.822 [http-nio-8088-exec-37] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/admins/login
+16:53:35.825 [http-nio-8088-exec-37] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：login，在该方法执行之前执行====
+16:53:35.904 [http-nio-8088-exec-37] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:35.904 [http-nio-8088-exec-37] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:35.905 [http-nio-8088-exec-37] INFO  c.c.l.MyServletRequestListener - request end
+16:53:35.906 [http-nio-8088-exec-37] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:38.808 [http-nio-8088-exec-38] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:53:38.809 [http-nio-8088-exec-38] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/admins/login
+16:53:38.812 [http-nio-8088-exec-38] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：login，在该方法执行之前执行====
+16:53:38.838 [http-nio-8088-exec-38] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:38.839 [http-nio-8088-exec-38] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:38.839 [http-nio-8088-exec-38] INFO  c.c.l.MyServletRequestListener - request end
+16:53:38.839 [http-nio-8088-exec-38] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:38.913 [http-nio-8088-exec-39] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:38.913 [http-nio-8088-exec-39] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:38.918 [http-nio-8088-exec-39] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:38.920 [http-nio-8088-exec-39] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:38.920 [http-nio-8088-exec-39] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:38.921 [http-nio-8088-exec-39] INFO  c.c.l.MyServletRequestListener - request end
+16:53:38.921 [http-nio-8088-exec-39] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:38.939 [http-nio-8088-exec-40] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:38.941 [http-nio-8088-exec-40] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:38.948 [http-nio-8088-exec-40] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:38.949 [http-nio-8088-exec-41] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:53:38.949 [http-nio-8088-exec-42] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:53:38.950 [http-nio-8088-exec-41] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/productsCarousels/getAllProductsCarousels
+16:53:38.950 [http-nio-8088-exec-42] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/carousels/getAllCarousels
+16:53:38.951 [http-nio-8088-exec-40] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:38.951 [http-nio-8088-exec-40] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:38.952 [http-nio-8088-exec-40] INFO  c.c.l.MyServletRequestListener - request end
+16:53:38.952 [http-nio-8088-exec-40] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:39.003 [http-nio-8088-exec-42] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllCarousels，在该方法执行之前执行====
+16:53:39.004 [http-nio-8088-exec-41] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllProductsCarousels，在该方法执行之前执行====
+16:53:39.014 [http-nio-8088-exec-41] INFO  c.c.c.c.ProductsCarouselsController - 获取所有横向轮播图商品配置: [ProductsCarousels(id=1, products=null, createTime=2024-07-02 15:06:56, updateTime=2024-07-02 16:24:02, isDeleted=false), ProductsCarousels(id=2, products=null, createTime=2024-07-02 15:06:57, updateTime=2024-07-02 16:24:02, isDeleted=false), ProductsCarousels(id=3, products=null, createTime=2024-07-02 15:06:59, updateTime=2024-07-02 16:24:02, isDeleted=false), ProductsCarousels(id=4, products=null, createTime=2024-07-02 15:06:56, updateTime=2024-07-02 16:24:10, isDeleted=false), ProductsCarousels(id=5, products=null, createTime=2024-07-02 16:24:27, updateTime=2024-07-02 16:24:27, isDeleted=false)]
+16:53:39.019 [http-nio-8088-exec-41] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:39.019 [http-nio-8088-exec-41] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:39.019 [http-nio-8088-exec-41] INFO  c.c.l.MyServletRequestListener - request end
+16:53:39.020 [http-nio-8088-exec-41] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:39.025 [http-nio-8088-exec-42] INFO  c.c.c.mobile.CarouselController - 获取所有轮播图信息: [Carousel(id=1, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154410_1890x600-1.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:27:04, updateTime=2024-07-01 08:01:01, isDeleted=false), Carousel(id=2, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154423_1890x600-2.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:28:53, updateTime=2024-07-01 08:00:32, isDeleted=false), Carousel(id=3, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=88888888_20240701154435_1890x600-3.jpg, redirectUrl=https://example.com, isEnabled=true, createTime=2024-06-29 15:27:11, updateTime=2024-07-01 08:01:31, isDeleted=false), Carousel(id=4, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:15, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=5, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:18, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=6, imageUrl=http://127.0.0.1:8088/v1/getLatestImage?fileName=test.png, redirectUrl=https://example.com, isEnabled=false, createTime=2024-06-29 15:27:23, updateTime=2024-06-29 15:59:46, isDeleted=false), Carousel(id=7, imageUrl=https://example7.com/image.jpg, redirectUrl=https://example.com, isEnabled=false, createTime=2024-07-02 14:37:48, updateTime=2024-07-02 14:37:48, isDeleted=false)]
+16:53:39.027 [http-nio-8088-exec-42] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:39.028 [http-nio-8088-exec-42] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:39.028 [http-nio-8088-exec-42] INFO  c.c.l.MyServletRequestListener - request end
+16:53:39.028 [http-nio-8088-exec-42] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:39.039 [http-nio-8088-exec-43] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:39.039 [http-nio-8088-exec-44] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:39.039 [http-nio-8088-exec-43] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:39.039 [http-nio-8088-exec-45] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:39.039 [http-nio-8088-exec-44] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:39.039 [http-nio-8088-exec-45] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:39.042 [http-nio-8088-exec-43] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:39.042 [http-nio-8088-exec-44] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:39.043 [http-nio-8088-exec-45] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:39.048 [http-nio-8088-exec-43] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:39.049 [http-nio-8088-exec-43] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:39.049 [http-nio-8088-exec-43] INFO  c.c.l.MyServletRequestListener - request end
+16:53:39.049 [http-nio-8088-exec-43] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:39.052 [http-nio-8088-exec-44] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:39.052 [http-nio-8088-exec-44] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:39.052 [http-nio-8088-exec-45] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:39.053 [http-nio-8088-exec-44] INFO  c.c.l.MyServletRequestListener - request end
+16:53:39.053 [http-nio-8088-exec-45] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:39.053 [http-nio-8088-exec-44] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:39.053 [http-nio-8088-exec-45] INFO  c.c.l.MyServletRequestListener - request end
+16:53:39.053 [http-nio-8088-exec-45] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:39.059 [http-nio-8088-exec-46] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:39.059 [http-nio-8088-exec-46] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:39.061 [http-nio-8088-exec-47] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:39.061 [http-nio-8088-exec-48] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:39.061 [http-nio-8088-exec-48] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:39.061 [http-nio-8088-exec-47] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:39.065 [http-nio-8088-exec-46] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:39.065 [http-nio-8088-exec-48] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:39.065 [http-nio-8088-exec-47] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:39.072 [http-nio-8088-exec-47] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:39.072 [http-nio-8088-exec-47] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:39.070 [http-nio-8088-exec-48] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:39.072 [http-nio-8088-exec-47] INFO  c.c.l.MyServletRequestListener - request end
+16:53:39.072 [http-nio-8088-exec-48] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:39.072 [http-nio-8088-exec-47] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:39.073 [http-nio-8088-exec-48] INFO  c.c.l.MyServletRequestListener - request end
+16:53:39.073 [http-nio-8088-exec-48] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:39.073 [http-nio-8088-exec-46] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:39.074 [http-nio-8088-exec-46] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:39.074 [http-nio-8088-exec-46] INFO  c.c.l.MyServletRequestListener - request end
+16:53:39.074 [http-nio-8088-exec-46] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:40.601 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=109, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:53:41.236 [Apollo-RemoteConfigRepository-1] WARN  c.c.f.a.i.AbstractConfigRepository - Sync config failed, will retry. Repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:53:42.608 [http-nio-8088-exec-49] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:42.608 [http-nio-8088-exec-49] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:42.610 [http-nio-8088-exec-50] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:53:42.611 [http-nio-8088-exec-50] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:53:42.614 [http-nio-8088-exec-49] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:42.617 [http-nio-8088-exec-51] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:53:42.616 [http-nio-8088-exec-50] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:53:42.617 [http-nio-8088-exec-51] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/basicInformation/getAllBasicInformation
+16:53:42.619 [http-nio-8088-exec-49] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:42.619 [http-nio-8088-exec-49] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:42.620 [http-nio-8088-exec-49] INFO  c.c.l.MyServletRequestListener - request end
+16:53:42.620 [http-nio-8088-exec-49] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:42.622 [http-nio-8088-exec-50] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:42.623 [http-nio-8088-exec-50] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:42.624 [http-nio-8088-exec-50] INFO  c.c.l.MyServletRequestListener - request end
+16:53:42.624 [http-nio-8088-exec-50] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:42.626 [http-nio-8088-exec-51] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllBasicInformation，在该方法执行之前执行====
+16:53:42.643 [http-nio-8088-exec-51] INFO  c.c.c.a.BasicInformationController - 获取所有基本信息: [BasicInformation(id=1, phone=18859942595, email=429573928@qq.com, address=福建省泉州市丰泽区泉秀街道泉兴街泉秀新村12栋203室, weChatImage=http://127.0.0.1:8088/v1/getLatestImage?fileName=admin12_20240706181743_智慧其心公众号二维码.jpg, icp=ICP12345678, beianImage=http://127.0.0.1:8088/v1/getLatestImage?fileName=1_20240701224653_智慧其心logo.png, publicSecurity=8888888888, copyright=© 2024 泉州姚师傅整体家居有限公司, isDeleted=false, isEnable=false)]
+16:53:42.671 [http-nio-8088-exec-51] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:42.672 [http-nio-8088-exec-51] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:42.672 [http-nio-8088-exec-51] INFO  c.c.l.MyServletRequestListener - request end
+16:53:42.672 [http-nio-8088-exec-51] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:45.609 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=110, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:53:47.754 [http-nio-8088-exec-52] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:53:47.754 [http-nio-8088-exec-52] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/productCategories/getAllProductCategories
+16:53:47.775 [http-nio-8088-exec-52] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllProductCategories，在该方法执行之前执行====
+16:53:47.814 [http-nio-8088-exec-52] INFO  c.c.c.c.ProductCategoryController - 获取所有商品分类信息: [ProductCategory(id=1, name=分类1, description=这是一个示例分类1的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=false, isDeleted=false), ProductCategory(id=4, name=分类4, description=这是一个示例分类4的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=false, isDeleted=false), ProductCategory(id=5, name=分类5, description=这是一个示例分类5的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=false, isDeleted=false), ProductCategory(id=6, name=分类666, description=这是一个示例分类6666的描述。, updateTime=2024-07-02 09:59:05, createTime=2024-07-02 09:59:05, isEnabled=false, isDeleted=false), ProductCategory(id=7, name=分类7, description=这是一个示例分类7的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=true, isDeleted=false), ProductCategory(id=8, name=分类8, description=这是一个示例分类8的描述。, updateTime=2024-07-02 09:57:31, createTime=2024-07-02 09:57:31, isEnabled=true, isDeleted=false)]
+16:53:47.830 [http-nio-8088-exec-52] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:47.831 [http-nio-8088-exec-52] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:47.831 [http-nio-8088-exec-52] INFO  c.c.l.MyServletRequestListener - request end
+16:53:47.831 [http-nio-8088-exec-52] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:50.616 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=111, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:53:51.285 [Apollo-RemoteConfigRepository-1] WARN  c.c.f.a.i.AbstractConfigRepository - Sync config failed, will retry. Repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:53:53.154 [http-nio-8088-exec-53] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:53:53.155 [http-nio-8088-exec-53] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/productCategories/getAllProductCategories
+16:53:53.161 [http-nio-8088-exec-53] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllProductCategories，在该方法执行之前执行====
+16:53:53.358 [http-nio-8088-exec-53] INFO  c.c.c.c.ProductCategoryController - 获取所有商品分类信息: [ProductCategory(id=1, name=分类1, description=这是一个示例分类1的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=false, isDeleted=false), ProductCategory(id=4, name=分类4, description=这是一个示例分类4的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=false, isDeleted=false), ProductCategory(id=5, name=分类5, description=这是一个示例分类5的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=false, isDeleted=false), ProductCategory(id=6, name=分类666, description=这是一个示例分类6666的描述。, updateTime=2024-07-02 09:59:05, createTime=2024-07-02 09:59:05, isEnabled=false, isDeleted=false), ProductCategory(id=7, name=分类7, description=这是一个示例分类7的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=true, isDeleted=false), ProductCategory(id=8, name=分类8, description=这是一个示例分类8的描述。, updateTime=2024-07-02 09:57:31, createTime=2024-07-02 09:57:31, isEnabled=true, isDeleted=false)]
+16:53:53.361 [http-nio-8088-exec-53] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:53:53.361 [http-nio-8088-exec-53] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:53:53.361 [http-nio-8088-exec-53] INFO  c.c.l.MyServletRequestListener - request end
+16:53:53.361 [http-nio-8088-exec-53] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:53:55.626 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=112, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:54:00.637 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=113, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:54:01.353 [Apollo-RemoteConfigRepository-1] WARN  c.c.f.a.i.AbstractConfigRepository - Sync config failed, will retry. Repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:54:05.640 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=114, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:54:10.274 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8088"]
+16:54:10.276 [Thread-5] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:54:10.278 [Thread-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+16:54:10.289 [Thread-5] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.1/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.1/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+16:54:10.289 [Thread-5] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [BC Entropy Daemon] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.1/java.lang.Thread.sleep(Native Method)
+ app//org.bouncycastle.crypto.EntropyDaemon.run(Unknown Source)
+ java.base@17.0.1/java.lang.Thread.run(Thread.java:833)
+16:54:10.295 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8088"]
+16:54:10.309 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8088"]
+16:54:10.343 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16:54:10.357 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16:54:10.646 [restartedMain] INFO  com.cows.Application - Starting Application using Java 17.0.1 with PID 2954 (/Users/liyinchi/workspace/java/company_official_website_server/target/classes started by liyinchi in /Users/liyinchi/workspace/java/company_official_website_server)
+16:54:10.646 [restartedMain] INFO  com.cows.Application - The following 1 profile is active: "dev"
+16:54:11.871 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+16:54:11.871 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:54:11.871 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+16:54:11.985 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:54:12.241 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.cows.mapper.AdminMapper.findAdminByUserName] is ignored, because it exists, maybe from xml file
+16:54:12.639 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: microservice.url.orderUrl, beanName: jsonController, field: com.cows.controller.common.JsonController.orderUrl
+16:54:12.695 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: wechatService, field: com.cows.service.WechatService.appId
+16:54:12.695 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.secret, beanName: wechatService, field: com.cows.service.WechatService.secret
+16:54:12.695 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: wechatService, field: com.cows.service.WechatService.redirectUri
+16:54:12.709 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: loginController, field: com.cows.controller.common.LoginController.appid
+16:54:12.709 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: loginController, field: com.cows.controller.common.LoginController.redirectUri
+16:54:12.906 [restartedMain] INFO  com.cows.service.RedisService - redis port: 6379
+16:54:13.457 [Apollo-RemoteConfigLongPollService-1] WARN  c.c.f.a.i.RemoteConfigLongPollService - Long polling failed, will retry in 120 seconds. appId: platform, cluster: default, namespaces: application+message+sensitive-config, long polling url: null, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:54:13.569 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: spring.mvc.servlet.path, beanName: swaggerWelcome, field: org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc.mvcServletPath
+16:54:14.260 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+16:54:14.290 [restartedMain] INFO  com.cows.Application - Started Application in 3.753 seconds (process running for 647.818)
+16:54:16.721 [Thread-9] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8088"]
+16:54:16.722 [Thread-9] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:54:16.723 [Thread-9] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8088"]
+16:54:16.729 [Thread-9] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8088"]
+16:54:16.899 [restartedMain] INFO  com.cows.Application - Starting Application using Java 17.0.1 with PID 2954 (/Users/liyinchi/workspace/java/company_official_website_server/target/classes started by liyinchi in /Users/liyinchi/workspace/java/company_official_website_server)
+16:54:16.899 [restartedMain] INFO  com.cows.Application - The following 1 profile is active: "dev"
+16:54:17.630 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+16:54:17.631 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:54:17.631 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+16:54:17.659 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:54:17.879 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.cows.mapper.AdminMapper.findAdminByUserName] is ignored, because it exists, maybe from xml file
+16:54:18.546 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: microservice.url.orderUrl, beanName: jsonController, field: com.cows.controller.common.JsonController.orderUrl
+16:54:18.597 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: wechatService, field: com.cows.service.WechatService.appId
+16:54:18.598 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.secret, beanName: wechatService, field: com.cows.service.WechatService.secret
+16:54:18.598 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: wechatService, field: com.cows.service.WechatService.redirectUri
+16:54:18.612 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: loginController, field: com.cows.controller.common.LoginController.appid
+16:54:18.612 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: loginController, field: com.cows.controller.common.LoginController.redirectUri
+16:54:18.868 [restartedMain] INFO  com.cows.service.RedisService - redis port: 6379
+16:54:19.881 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: spring.mvc.servlet.path, beanName: swaggerWelcome, field: org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc.mvcServletPath
+16:54:20.845 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+16:54:20.911 [restartedMain] INFO  com.cows.Application - Started Application in 4.063 seconds (process running for 654.439)
+16:54:22.271 [Thread-13] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8088"]
+16:54:22.271 [Thread-13] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:54:22.273 [Thread-13] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8088"]
+16:54:22.285 [Thread-13] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8088"]
+16:54:22.524 [restartedMain] INFO  com.cows.Application - Starting Application using Java 17.0.1 with PID 2954 (/Users/liyinchi/workspace/java/company_official_website_server/target/classes started by liyinchi in /Users/liyinchi/workspace/java/company_official_website_server)
+16:54:22.524 [restartedMain] INFO  com.cows.Application - The following 1 profile is active: "dev"
+16:54:23.513 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+16:54:23.513 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:54:23.513 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+16:54:23.550 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:54:23.744 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.cows.mapper.AdminMapper.findAdminByUserName] is ignored, because it exists, maybe from xml file
+16:54:24.385 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: microservice.url.orderUrl, beanName: jsonController, field: com.cows.controller.common.JsonController.orderUrl
+16:54:24.498 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: wechatService, field: com.cows.service.WechatService.appId
+16:54:24.506 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.secret, beanName: wechatService, field: com.cows.service.WechatService.secret
+16:54:24.506 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: wechatService, field: com.cows.service.WechatService.redirectUri
+16:54:24.526 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: loginController, field: com.cows.controller.common.LoginController.appid
+16:54:24.527 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: loginController, field: com.cows.controller.common.LoginController.redirectUri
+16:54:24.795 [restartedMain] INFO  com.cows.service.RedisService - redis port: 6379
+16:54:25.741 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: spring.mvc.servlet.path, beanName: swaggerWelcome, field: org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc.mvcServletPath
+16:54:27.085 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+16:54:27.255 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+16:54:27.292 [restartedMain] INFO  com.cows.Application - Started Application in 4.879 seconds (process running for 660.821)
+16:54:29.095 [Thread-17] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8088"]
+16:54:29.096 [Thread-17] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:54:29.097 [Thread-17] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8088"]
+16:54:29.104 [Thread-17] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8088"]
+16:54:29.281 [restartedMain] INFO  com.cows.Application - Starting Application using Java 17.0.1 with PID 2954 (/Users/liyinchi/workspace/java/company_official_website_server/target/classes started by liyinchi in /Users/liyinchi/workspace/java/company_official_website_server)
+16:54:29.281 [restartedMain] INFO  com.cows.Application - The following 1 profile is active: "dev"
+16:54:29.420 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.cows.Application]
+16:54:29.475 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.cows.Application]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:178)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:415)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:287)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:344)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:115)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:771)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:589)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.cows.Application.main(Application.java:15)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'brandServiceImpl' for bean class [com.cows.serviceImpl.BrandServiceImpl] conflicts with existing, non-compatible bean definition of same name and class [com.cows.entity.BrandServiceImpl]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:289)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:243)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:164)
+	... 18 common frames omitted
+16:54:40.249 [restartedMain] INFO  com.cows.Application - Starting Application using Java 17.0.1 with PID 2954 (/Users/liyinchi/workspace/java/company_official_website_server/target/classes started by liyinchi in /Users/liyinchi/workspace/java/company_official_website_server)
+16:54:40.251 [restartedMain] INFO  com.cows.Application - The following 1 profile is active: "dev"
+16:54:41.169 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+16:54:41.170 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:54:41.170 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+16:54:41.208 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:54:41.366 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.cows.mapper.AdminMapper.findAdminByUserName] is ignored, because it exists, maybe from xml file
+16:54:41.785 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: microservice.url.orderUrl, beanName: jsonController, field: com.cows.controller.common.JsonController.orderUrl
+16:54:41.948 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: wechatService, field: com.cows.service.WechatService.appId
+16:54:41.948 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.secret, beanName: wechatService, field: com.cows.service.WechatService.secret
+16:54:41.948 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: wechatService, field: com.cows.service.WechatService.redirectUri
+16:54:42.075 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: loginController, field: com.cows.controller.common.LoginController.appid
+16:54:42.076 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: loginController, field: com.cows.controller.common.LoginController.redirectUri
+16:54:42.487 [restartedMain] INFO  com.cows.service.RedisService - redis port: 6379
+16:54:43.511 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: spring.mvc.servlet.path, beanName: swaggerWelcome, field: org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc.mvcServletPath
+16:54:44.453 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+16:54:44.542 [restartedMain] INFO  com.cows.Application - Started Application in 4.358 seconds (process running for 678.07)
+16:54:49.545 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=0, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:54:49.957 [Thread-21] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8088"]
+16:54:49.957 [Thread-21] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:54:49.959 [Thread-21] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8088"]
+16:54:49.966 [Thread-21] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8088"]
+16:54:50.154 [restartedMain] INFO  com.cows.Application - Starting Application using Java 17.0.1 with PID 2954 (/Users/liyinchi/workspace/java/company_official_website_server/target/classes started by liyinchi in /Users/liyinchi/workspace/java/company_official_website_server)
+16:54:50.154 [restartedMain] INFO  com.cows.Application - The following 1 profile is active: "dev"
+16:54:51.075 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+16:54:51.075 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:54:51.075 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+16:54:51.153 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:54:51.395 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.cows.mapper.AdminMapper.findAdminByUserName] is ignored, because it exists, maybe from xml file
+16:54:51.848 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: microservice.url.orderUrl, beanName: jsonController, field: com.cows.controller.common.JsonController.orderUrl
+16:54:51.908 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: wechatService, field: com.cows.service.WechatService.appId
+16:54:51.908 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.secret, beanName: wechatService, field: com.cows.service.WechatService.secret
+16:54:51.908 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: wechatService, field: com.cows.service.WechatService.redirectUri
+16:54:51.922 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: loginController, field: com.cows.controller.common.LoginController.appid
+16:54:51.922 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: loginController, field: com.cows.controller.common.LoginController.redirectUri
+16:54:52.062 [restartedMain] INFO  com.cows.service.RedisService - redis port: 6379
+16:54:52.711 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: spring.mvc.servlet.path, beanName: swaggerWelcome, field: org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc.mvcServletPath
+16:54:53.285 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+16:54:53.305 [restartedMain] INFO  com.cows.Application - Started Application in 3.205 seconds (process running for 686.833)
+16:54:55.733 [Thread-27] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8088"]
+16:54:55.734 [Thread-27] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+16:54:55.735 [Thread-27] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8088"]
+16:54:55.744 [Thread-27] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8088"]
+16:54:55.892 [restartedMain] INFO  com.cows.Application - Starting Application using Java 17.0.1 with PID 2954 (/Users/liyinchi/workspace/java/company_official_website_server/target/classes started by liyinchi in /Users/liyinchi/workspace/java/company_official_website_server)
+16:54:55.892 [restartedMain] INFO  com.cows.Application - The following 1 profile is active: "dev"
+16:54:56.469 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+16:54:56.469 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:54:56.469 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+16:54:56.501 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:54:56.709 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.cows.mapper.AdminMapper.findAdminByUserName] is ignored, because it exists, maybe from xml file
+16:54:57.451 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: microservice.url.orderUrl, beanName: jsonController, field: com.cows.controller.common.JsonController.orderUrl
+16:54:57.542 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: wechatService, field: com.cows.service.WechatService.appId
+16:54:57.542 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.secret, beanName: wechatService, field: com.cows.service.WechatService.secret
+16:54:57.542 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: wechatService, field: com.cows.service.WechatService.redirectUri
+16:54:57.582 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: loginController, field: com.cows.controller.common.LoginController.appid
+16:54:57.602 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: loginController, field: com.cows.controller.common.LoginController.redirectUri
+16:54:57.801 [restartedMain] INFO  com.cows.service.RedisService - redis port: 6379
+16:54:58.406 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: spring.mvc.servlet.path, beanName: swaggerWelcome, field: org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc.mvcServletPath
+16:54:58.872 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+16:54:58.898 [restartedMain] INFO  com.cows.Application - Started Application in 3.047 seconds (process running for 692.426)
+16:55:01.141 [http-nio-8088-exec-1] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:55:01.142 [http-nio-8088-exec-1] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/brands/addBrand
+16:55:01.142 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:55:01.147 [http-nio-8088-exec-1] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：addBrand，在该方法执行之前执行====
+16:55:01.156 [http-nio-8088-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+16:55:01.213 [http-nio-8088-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@26793658
+16:55:01.213 [http-nio-8088-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+16:55:01.230 [http-nio-8088-exec-1] WARN  c.c.controller.admin.BrandController - 新增品牌失败: 已存在相同品牌名称
+16:55:01.233 [http-nio-8088-exec-1] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:55:01.233 [http-nio-8088-exec-1] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:55:01.234 [http-nio-8088-exec-1] INFO  c.c.l.MyServletRequestListener - request end
+16:55:01.234 [http-nio-8088-exec-1] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:55:03.886 [http-nio-8088-exec-2] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:55:03.887 [http-nio-8088-exec-2] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/brands/addBrand
+16:55:03.891 [http-nio-8088-exec-2] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：addBrand，在该方法执行之前执行====
+16:55:03.903 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=0, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:55:03.911 [http-nio-8088-exec-2] WARN  c.c.controller.admin.BrandController - 新增品牌失败: 已存在相同品牌名称
+16:55:03.913 [http-nio-8088-exec-2] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:55:03.913 [http-nio-8088-exec-2] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:55:03.914 [http-nio-8088-exec-2] INFO  c.c.l.MyServletRequestListener - request end
+16:55:03.914 [http-nio-8088-exec-2] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:55:08.911 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=1, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:55:12.701 [http-nio-8088-exec-3] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:55:12.702 [http-nio-8088-exec-3] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/brands/addBrand
+16:55:12.707 [http-nio-8088-exec-3] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：addBrand，在该方法执行之前执行====
+16:55:12.743 [http-nio-8088-exec-3] INFO  c.c.controller.admin.BrandController - 新增品牌: Brand(id=0, name=品牌4, description=品牌描述4, logo=品牌Logo的URL4, createTime=null, updateTime=null, isDeleted=false)
+16:55:12.750 [http-nio-8088-exec-3] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:55:12.751 [http-nio-8088-exec-3] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:55:12.751 [http-nio-8088-exec-3] INFO  c.c.l.MyServletRequestListener - request end
+16:55:12.751 [http-nio-8088-exec-3] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:55:13.923 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=2, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:55:15.065 [http-nio-8088-exec-4] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:55:15.073 [http-nio-8088-exec-4] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/brands/addBrand
+16:55:15.077 [http-nio-8088-exec-4] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：addBrand，在该方法执行之前执行====
+16:55:15.099 [http-nio-8088-exec-4] WARN  c.c.controller.admin.BrandController - 新增品牌失败: 已存在相同品牌名称
+16:55:15.100 [http-nio-8088-exec-4] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:55:15.101 [http-nio-8088-exec-4] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:55:15.101 [http-nio-8088-exec-4] INFO  c.c.l.MyServletRequestListener - request end
+16:55:15.101 [http-nio-8088-exec-4] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:55:18.932 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=3, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:55:22.129 [http-nio-8088-exec-5] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:55:22.129 [http-nio-8088-exec-5] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/brands/addBrand
+16:55:22.132 [http-nio-8088-exec-5] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：addBrand，在该方法执行之前执行====
+16:55:22.175 [http-nio-8088-exec-5] INFO  c.c.controller.admin.BrandController - 新增品牌: Brand(id=0, name=品牌5, description=品牌描述5, logo=品牌Logo的URL5, createTime=null, updateTime=null, isDeleted=false)
+16:55:22.177 [http-nio-8088-exec-5] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:55:22.177 [http-nio-8088-exec-5] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:55:22.178 [http-nio-8088-exec-5] INFO  c.c.l.MyServletRequestListener - request end
+16:55:22.178 [http-nio-8088-exec-5] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:55:23.943 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=4, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:55:28.951 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=5, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:55:29.894 [http-nio-8088-exec-6] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:55:29.908 [http-nio-8088-exec-6] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/brands/addBrand
+16:55:29.912 [http-nio-8088-exec-6] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：addBrand，在该方法执行之前执行====
+16:55:29.936 [http-nio-8088-exec-6] INFO  c.c.controller.admin.BrandController - 新增品牌: Brand(id=0, name=品牌6, description=品牌描述6, logo=品牌Logo的URL6, createTime=null, updateTime=null, isDeleted=false)
+16:55:29.939 [http-nio-8088-exec-6] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:55:29.939 [http-nio-8088-exec-6] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:55:29.939 [http-nio-8088-exec-6] INFO  c.c.l.MyServletRequestListener - request end
+16:55:29.939 [http-nio-8088-exec-6] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:55:33.960 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=6, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:55:37.877 [http-nio-8088-exec-7] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:55:37.877 [http-nio-8088-exec-7] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/brands/addBrand
+16:55:37.880 [http-nio-8088-exec-7] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：addBrand，在该方法执行之前执行====
+16:55:37.926 [http-nio-8088-exec-7] INFO  c.c.controller.admin.BrandController - 新增品牌: Brand(id=0, name=品牌7, description=品牌描述7, logo=品牌Logo的URL7, createTime=null, updateTime=null, isDeleted=false)
+16:55:37.927 [http-nio-8088-exec-7] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:55:37.927 [http-nio-8088-exec-7] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:55:37.928 [http-nio-8088-exec-7] INFO  c.c.l.MyServletRequestListener - request end
+16:55:37.928 [http-nio-8088-exec-7] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:55:38.969 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=7, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:55:40.161 [http-nio-8088-exec-8] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:55:40.161 [http-nio-8088-exec-8] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/brands/addBrand
+16:55:40.165 [http-nio-8088-exec-8] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：addBrand，在该方法执行之前执行====
+16:55:40.192 [http-nio-8088-exec-8] WARN  c.c.controller.admin.BrandController - 新增品牌失败: 已存在相同品牌名称
+16:55:40.194 [http-nio-8088-exec-8] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:55:40.194 [http-nio-8088-exec-8] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:55:40.194 [http-nio-8088-exec-8] INFO  c.c.l.MyServletRequestListener - request end
+16:55:40.194 [http-nio-8088-exec-8] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:55:43.977 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=8, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:55:48.988 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=9, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:55:53.997 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=10, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:55:59.009 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=11, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:56:04.014 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=12, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:56:09.020 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=13, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:56:14.027 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=14, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:56:15.482 [Apollo-RemoteConfigLongPollService-1] WARN  c.c.f.a.i.RemoteConfigLongPollService - Long polling failed, will retry in 120 seconds. appId: platform, cluster: default, namespaces: application+message+sensitive-config, long polling url: null, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:56:19.039 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=15, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:56:24.048 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=16, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:56:29.051 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=17, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:56:34.063 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=18, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:56:39.068 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=19, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:56:44.079 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=20, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:56:49.092 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=21, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:56:54.103 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=22, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:56:59.111 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=23, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:57:04.114 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=24, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:57:09.124 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=25, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:57:14.133 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=26, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:57:16.144 [http-nio-8088-exec-10] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:57:16.144 [http-nio-8088-exec-10] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/brands/getAllBrands
+16:57:16.156 [http-nio-8088-exec-10] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllBrands，在该方法执行之前执行====
+16:57:16.183 [http-nio-8088-exec-10] INFO  c.c.controller.admin.BrandController - 获取所有品牌信息成功
+16:57:16.191 [http-nio-8088-exec-10] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:57:16.191 [http-nio-8088-exec-10] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:57:16.192 [http-nio-8088-exec-10] INFO  c.c.l.MyServletRequestListener - request end
+16:57:16.192 [http-nio-8088-exec-10] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:57:19.144 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=27, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:57:24.156 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=28, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:57:29.167 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=29, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:57:34.197 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=30, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:57:39.205 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=31, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:57:44.216 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=32, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:57:48.973 [http-nio-8088-exec-11] INFO  c.c.l.MyServletRequestListener - session id为：null
+16:57:48.973 [http-nio-8088-exec-11] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/getLatestImage
+16:57:48.975 [http-nio-8088-exec-11] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getLatestImage，在该方法执行之前执行====
+16:57:48.989 [http-nio-8088-exec-11] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:57:48.990 [http-nio-8088-exec-11] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:57:48.990 [http-nio-8088-exec-11] INFO  c.c.l.MyServletRequestListener - request end
+16:57:48.990 [http-nio-8088-exec-11] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:57:49.010 [http-nio-8088-exec-12] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:57:49.011 [http-nio-8088-exec-12] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/productCategories/getAllProductCategories
+16:57:49.013 [http-nio-8088-exec-12] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllProductCategories，在该方法执行之前执行====
+16:57:49.032 [http-nio-8088-exec-12] INFO  c.c.c.c.ProductCategoryController - 获取所有商品分类信息: [ProductCategory(id=1, name=分类1, description=这是一个示例分类1的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=false, isDeleted=false), ProductCategory(id=4, name=分类4, description=这是一个示例分类4的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=false, isDeleted=false), ProductCategory(id=5, name=分类5, description=这是一个示例分类5的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=false, isDeleted=false), ProductCategory(id=6, name=分类666, description=这是一个示例分类6666的描述。, updateTime=2024-07-02 09:59:05, createTime=2024-07-02 09:59:05, isEnabled=false, isDeleted=false), ProductCategory(id=7, name=分类7, description=这是一个示例分类7的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=true, isDeleted=false), ProductCategory(id=8, name=分类8, description=这是一个示例分类8的描述。, updateTime=2024-07-02 09:57:31, createTime=2024-07-02 09:57:31, isEnabled=true, isDeleted=false)]
+16:57:49.037 [http-nio-8088-exec-12] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:57:49.037 [http-nio-8088-exec-12] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:57:49.037 [http-nio-8088-exec-12] INFO  c.c.l.MyServletRequestListener - request end
+16:57:49.037 [http-nio-8088-exec-12] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:57:49.235 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=33, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:57:54.243 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=34, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:57:59.251 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=35, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:58:03.421 [http-nio-8088-exec-13] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:58:03.422 [http-nio-8088-exec-13] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/productCategories/getAllProductCategories
+16:58:03.423 [http-nio-8088-exec-14] INFO  c.c.l.MyServletRequestListener - session id为：07758AF621D07D0E7C9C2BE2D241DCF2
+16:58:03.423 [http-nio-8088-exec-14] INFO  c.c.l.MyServletRequestListener - request url为：http://127.0.0.1:8088/v1/brands/getAllBrands
+16:58:03.426 [http-nio-8088-exec-13] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllProductCategories，在该方法执行之前执行====
+16:58:03.426 [http-nio-8088-exec-14] INFO  c.c.c.Interceptor.MyInterceptor - ====拦截到了方法：getAllBrands，在该方法执行之前执行====
+16:58:03.444 [http-nio-8088-exec-13] INFO  c.c.c.c.ProductCategoryController - 获取所有商品分类信息: [ProductCategory(id=1, name=分类1, description=这是一个示例分类1的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=false, isDeleted=false), ProductCategory(id=4, name=分类4, description=这是一个示例分类4的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=false, isDeleted=false), ProductCategory(id=5, name=分类5, description=这是一个示例分类5的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=false, isDeleted=false), ProductCategory(id=6, name=分类666, description=这是一个示例分类6666的描述。, updateTime=2024-07-02 09:59:05, createTime=2024-07-02 09:59:05, isEnabled=false, isDeleted=false), ProductCategory(id=7, name=分类7, description=这是一个示例分类7的描述。, updateTime=2024-07-02 09:52:29, createTime=2024-07-02 09:52:29, isEnabled=true, isDeleted=false), ProductCategory(id=8, name=分类8, description=这是一个示例分类8的描述。, updateTime=2024-07-02 09:57:31, createTime=2024-07-02 09:57:31, isEnabled=true, isDeleted=false)]
+16:58:03.446 [http-nio-8088-exec-13] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:58:03.446 [http-nio-8088-exec-13] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:58:03.446 [http-nio-8088-exec-13] INFO  c.c.l.MyServletRequestListener - request end
+16:58:03.447 [http-nio-8088-exec-13] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:58:03.453 [http-nio-8088-exec-14] INFO  c.c.controller.admin.BrandController - 获取所有品牌信息成功
+16:58:03.460 [http-nio-8088-exec-14] INFO  c.c.c.Interceptor.MyInterceptor - 执行完方法之后进执行(Controller方法调用之后)，但是此时还没进行视图渲染
+16:58:03.460 [http-nio-8088-exec-14] INFO  c.c.c.Interceptor.MyInterceptor - 整个请求都处理完咯，DispatcherServlet也渲染了对应的视图咯，此时我可以做一些清理的工作了
+16:58:03.460 [http-nio-8088-exec-14] INFO  c.c.l.MyServletRequestListener - request end
+16:58:03.461 [http-nio-8088-exec-14] INFO  c.c.l.MyServletRequestListener - request域中保存的name值为：测试自定义事件监听器
+16:58:04.260 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=36, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:58:09.270 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=37, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:58:14.277 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=38, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:58:17.507 [Apollo-RemoteConfigLongPollService-1] WARN  c.c.f.a.i.RemoteConfigLongPollService - Long polling failed, will retry in 120 seconds. appId: platform, cluster: default, namespaces: application+message+sensitive-config, long polling url: null, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:58:19.287 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=39, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:58:24.296 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=40, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:58:29.306 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=41, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:58:34.311 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=42, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:58:39.319 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=43, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:58:41.238 [Apollo-RemoteConfigRepository-1] WARN  c.c.f.a.i.AbstractConfigRepository - Sync config failed, will retry. Repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:58:44.327 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=44, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:58:49.341 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=45, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:58:51.294 [Apollo-RemoteConfigRepository-1] WARN  c.c.f.a.i.AbstractConfigRepository - Sync config failed, will retry. Repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:58:54.346 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=46, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:58:59.351 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=47, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:59:01.337 [Apollo-RemoteConfigRepository-1] WARN  c.c.f.a.i.AbstractConfigRepository - Sync config failed, will retry. Repository class com.ctrip.framework.apollo.internals.RemoteConfigRepository, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=192.168.31.81 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+16:59:04.358 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=48, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:59:09.369 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=49, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:59:14.379 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=50, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:59:19.392 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=51, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:59:24.398 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=52, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:59:29.410 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=53, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:59:34.420 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=54, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:59:39.422 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=55, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:59:44.425 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=56, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:59:49.429 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=57, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:59:54.438 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=58, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+16:59:59.448 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=59, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused

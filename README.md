@@ -230,48 +230,69 @@ CREATE TABLE `Admins` (
 
 - 轮播图表
 ```sql
-CREATE TABLE Carousels (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    imageUrl VARCHAR(255) NOT NULL,
-    redirectUrl VARCHAR(255),
-    isEnabled BOOLEAN DEFAULT TRUE,
-    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    isDeleted BOOLEAN DEFAULT FALSE
-);
+CREATE TABLE `Carousels` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `imageUrl` varchar(255) NOT NULL,
+  `redirectUrl` varchar(255) DEFAULT NULL,
+  `isEnabled` tinyint(1) DEFAULT '1',
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `isDeleted` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8
 ```
 
 
 - 基础信息
 
 ```sql
-CREATE TABLE BasicInformation (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    phone VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    address VARCHAR(255) NOT NULL,
-    weChatImage VARCHAR(255),
-    icp VARCHAR(255),
-    beianImage VARCHAR(255),
-    publicSecurity VARCHAR(255),
-    copyright VARCHAR(255),
-    isDeleted BOOLEAN DEFAULT FALSE,
-    isEnable BOOLEAN DEFAULT TRUE,
-    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+CREATE TABLE `BasicInformation` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `weChatImage` varchar(255) DEFAULT NULL,
+  `icp` varchar(255) DEFAULT NULL,
+  `beianImage` varchar(255) DEFAULT NULL,
+  `publicSecurity` varchar(255) DEFAULT NULL,
+  `copyright` varchar(255) DEFAULT NULL,
+  `isDeleted` tinyint(1) DEFAULT '0',
+  `isEnable` tinyint(1) DEFAULT '1',
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8
 ```
 
 - 横向商品轮播图表
 
 ```sql
-CREATE TABLE ProductsCarousels (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    products JSON NOT NULL,
-    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+CREATE TABLE `ProductsCarousels` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `products` json NOT NULL,
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `isDeleted` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8
 ```
+
+-  商品品牌
+
+```sql
+CREATE TABLE `Brands` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` text,
+  `logo` varchar(255) DEFAULT NULL,
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `isDeleted` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+
+```
+
 
 
 - 商品分类表
@@ -289,7 +310,6 @@ CREATE TABLE `ProductCategories` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='商品分类表'
 ```
 
-- 
 
 - 商品信息表（商品详情）
 

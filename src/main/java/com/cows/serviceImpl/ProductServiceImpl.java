@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 商品信息服务接口实现类
@@ -51,7 +54,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public List<Product> getProductsPaged(int page, int size, String sortField) {
+    public Map<String, Object> getProductsPaged(int page, int size, String sortField) {
         log.debug("page: {}, size: {}, sortField: {}", page, size, sortField);
         if (page < 0 || size <= 0) {
             throw new IllegalArgumentException("Page must be non-negative and size must be positive");
@@ -60,6 +63,18 @@ public class ProductServiceImpl implements ProductService {
             sortField = "id";
         }
         int offset = page * size;
-        return productMapper.findProductsPaged(offset, size, sortField);
+        List<Product> products = productMapper.findProductsPaged(offset, size, sortField);
+        int total = productMapper.countAllProducts();
+        Map<String, Object> result = new HashMap<>();
+        result.put("total", total);
+        result.put("products", products);
+        return result;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public List<Product> searchProductsByName(String name) {
+        log.debug("搜索商品名称: {}", name);
+        return productMapper.searchProductsByName(name);
     }
 }
