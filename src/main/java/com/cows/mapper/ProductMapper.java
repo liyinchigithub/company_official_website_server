@@ -17,5 +17,5 @@ public interface ProductMapper {
     int deleteProduct(int id);
     List<Product> findProductsPaged(@Param("offset") int offset, @Param("limit") int limit, @Param("sortField") String sortField);
     int countAllProducts();// 统计所有商品数量
-    List<Product> searchProductsByName(@Param("name") String name);
+    List<Product> searchProductsByName(@Param("name") String name);// 根据商品名称搜索商品
 }
