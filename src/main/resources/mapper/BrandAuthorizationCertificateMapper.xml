@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cows.mapper.BrandAuthorizationCertificateMapper">
+    <select id="findCertificateById" parameterType="int" resultType="com.cows.entity.BrandAuthorizationCertificate">
+        SELECT * FROM BrandAuthorizationCertificates WHERE id = #{id} AND isDeleted = 0
+    </select>
+    <select id="findAllCertificates" resultType="com.cows.entity.BrandAuthorizationCertificate">
+        SELECT * FROM BrandAuthorizationCertificates WHERE isDeleted = 0
+    </select>
+    <insert id="insertCertificate" parameterType="com.cows.entity.BrandAuthorizationCertificate">
+        INSERT INTO BrandAuthorizationCertificates (name, description, imageUrl, createTime, updateTime, isDeleted)
+        VALUES (#{name}, #{description}, #{imageUrl}, #{createTime}, #{updateTime}, 0)
+    </insert>
+    <update id="updateCertificate" parameterType="com.cows.entity.BrandAuthorizationCertificate">
+        UPDATE BrandAuthorizationCertificates 
+        SET name = #{name}, 
+            description = #{description}, 
+            imageUrl = #{imageUrl}, 
+            updateTime = #{updateTime}
+        WHERE id = #{id}
+    </update>
+    <update id="deleteCertificate" parameterType="int">
+        UPDATE BrandAuthorizationCertificates SET isDeleted = 1 WHERE id = #{id}
+    </update>
+    <select id="findCertificatesPaged" resultType="com.cows.entity.BrandAuthorizationCertificate">
+    SELECT * FROM BrandAuthorizationCertificates WHERE isDeleted = 0 ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
+    </select>
+    <select id="searchCertificatesByName" parameterType="String" resultType="com.cows.entity.BrandAuthorizationCertificate">
+        SELECT * FROM BrandAuthorizationCertificates WHERE name LIKE CONCAT('%', #{name}, '%') AND isDeleted = 0
+    </select>
+</mapper>

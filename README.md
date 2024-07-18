@@ -338,6 +338,19 @@ CREATE TABLE `Products` (
 商品信息取商品分类id作为外键
 
 
+- 品牌授权书
+
+```sql
+CREATE TABLE BrandAuthorizationCertificates (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL COMMENT '证书名称',
+    description TEXT COMMENT '证书描述',
+    imageUrl VARCHAR(255) COMMENT '证书图片URL地址',
+    createTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    updateTime TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+    isDeleted BOOLEAN DEFAULT FALSE COMMENT '是否删除'
+);
+```
 
 
 

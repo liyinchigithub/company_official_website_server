@@ -14,5 +14,6 @@ public interface BrandService {
     int updateBrand(Brand brand);
     int deleteBrand(int id);
     List<Brand> getBrandsPaged(int page, int size, String sortField);
-    Brand getBrandByName(String name); // 新增方法
+    Brand getBrandByName(String name); 
+    List<Brand> searchBrandsByName(String name);
 }

@@ -68,4 +68,10 @@ public class BrandServiceImpl implements BrandService {
     public Brand getBrandByName(String name) {
         return brandMapper.findBrandByName(name);
     }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public List<Brand> searchBrandsByName(String name) {
+        return brandMapper.searchBrandsByName(name);
+}
 }

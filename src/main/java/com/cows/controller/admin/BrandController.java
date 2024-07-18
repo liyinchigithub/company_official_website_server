@@ -76,4 +76,12 @@ public class BrandController {
         log.info("分页查询品牌: {}", brands);
         return BaseResponse.success(brands);
     }
+
+    @Operation(summary = "搜索品牌", description = "根据品牌名称搜索品牌")
+    @GetMapping("/search")
+    public BaseResponse<List<Brand>> searchBrandsByName(@RequestParam String name) {
+        List<Brand> brands = brandService.searchBrandsByName(name);
+        log.info("搜索品牌: {}", brands);
+        return BaseResponse.success(brands);
+}
 }
