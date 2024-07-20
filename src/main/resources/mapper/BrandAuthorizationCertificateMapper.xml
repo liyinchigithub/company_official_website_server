@@ -11,12 +11,13 @@
         INSERT INTO BrandAuthorizationCertificates (name, description, imageUrl, createTime, updateTime, isDeleted)
         VALUES (#{name}, #{description}, #{imageUrl}, #{createTime}, #{updateTime}, 0)
     </insert>
-    <update id="updateCertificate" parameterType="com.cows.entity.BrandAuthorizationCertificate">
+   <update id="updateCertificate" parameterType="com.cows.entity.BrandAuthorizationCertificate">
         UPDATE BrandAuthorizationCertificates 
         SET name = #{name}, 
             description = #{description}, 
             imageUrl = #{imageUrl}, 
-            updateTime = #{updateTime}
+            updateTime = #{updateTime},
+            isDeleted = #{isDeleted}
         WHERE id = #{id}
     </update>
     <update id="deleteCertificate" parameterType="int">
