@@ -37,10 +37,12 @@ public class IntArrayTypeHandler extends BaseTypeHandler<int[]> {
 
     private int[] toIntArray(String json) throws SQLException {
         if (json == null || json.isEmpty()) {
-            return new int[0];
+            return new int[0];// 返回空数组
         }
         try {
-            return objectMapper.readValue(json, int[].class);
+           // 添加日志
+           System.out.println("Parsing JSON: " + json);
+           return objectMapper.readValue(json, int[].class);
         } catch (JsonProcessingException e) {
             throw new SQLException("Error converting JSON to int[]", e);
         }

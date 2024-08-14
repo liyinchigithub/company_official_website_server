@@ -20,8 +20,10 @@ public class ProductsCarouselsServiceImpl implements ProductsCarouselsService {
 
     @Override
     public ProductsCarousels getProductsCarouselsById(int id) {
-        return productsCarouselsMapper.findProductsCarouselsById(id);
-    }
+       ProductsCarousels productsCarousels = productsCarouselsMapper.findProductsCarouselsById(id);
+       System.out.println("Retrieved from DB: " + productsCarousels);
+       return productsCarousels;
+   }
 
     @Override
     public int addProductsCarousels(ProductsCarousels productsCarousels) {
