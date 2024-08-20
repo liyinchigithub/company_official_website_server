@@ -195,7 +195,7 @@ java -jar com.cows-0.0.1-SNAPSHOT.jar
 # 表
 
 - User表
-```sql
+```roomsql
 CREATE TABLE `User` (
   `id` int(100) NOT NULL AUTO_INCREMENT,
   `userName` varchar(100) DEFAULT NULL,
@@ -210,7 +210,7 @@ CREATE TABLE `User` (
 
 - 后台管理员表
 
-```sql
+```roomsql
 CREATE TABLE `Admins` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userName` varchar(255) NOT NULL,
@@ -229,7 +229,7 @@ CREATE TABLE `Admins` (
 
 
 - 轮播图表
-```sql
+```roomsql
 CREATE TABLE `Carousels` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `imageUrl` varchar(255) NOT NULL,
@@ -245,7 +245,7 @@ CREATE TABLE `Carousels` (
 
 - 基础信息
 
-```sql
+```roomsql
 CREATE TABLE `BasicInformation` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `phone` varchar(255) NOT NULL,
@@ -266,7 +266,7 @@ CREATE TABLE `BasicInformation` (
 
 - 横向商品轮播图表
 
-```sql
+```roomsql
 CREATE TABLE `ProductsCarousels` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `products` json NOT NULL,
@@ -279,7 +279,7 @@ CREATE TABLE `ProductsCarousels` (
 
 -  商品品牌
 
-```sql
+```roomsql
 CREATE TABLE `Brands` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -352,7 +352,7 @@ CREATE TABLE BrandAuthorizationCertificates (
 );
 ```
 
-- 加盟
+- 招商加盟
 ```roomsql
 CREATE TABLE `Businesses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -365,10 +365,21 @@ CREATE TABLE `Businesses` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 ```
-
+- 关于我们
+```roomsql
+CREATE TABLE `About` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `imageUrl` varchar(255) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `isDeleted` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+```
 
 - Orders表
-```sql
+```roomsql
 CREATE TABLE `Orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userId` int(11) DEFAULT NULL,
@@ -385,7 +396,7 @@ CREATE TABLE `Orders` (
 
 - user_location
 
-```sql
+```roomsql
 CREATE TABLE `user_location` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,

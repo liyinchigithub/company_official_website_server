@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cows.mapper.AboutMapper">
+    <select id="findAboutById" parameterType="int" resultType="com.cows.entity.About">
+        SELECT * FROM About WHERE id = #{id} AND isDeleted = 0
+    </select>
+    <select id="findAllAbouts" resultType="com.cows.entity.About">
+        SELECT * FROM About WHERE isDeleted = 0
+    </select>
+    <insert id="insertAbout" parameterType="com.cows.entity.About">
+        INSERT INTO About (imageUrl, description, updateTime, createTime, isDeleted)
+        VALUES (#{imageUrl}, #{description}, #{updateTime}, #{createTime}, 0)
+    </insert>
+    <update id="updateAbout" parameterType="com.cows.entity.About">
+        UPDATE About 
+        SET imageUrl = #{imageUrl}, 
+            description = #{description}, 
+            updateTime = #{updateTime},
+            createTime = #{createTime},
+            isDeleted = #{isDeleted}
+        WHERE id = #{id}
+    </update>
+    <update id="deleteAbout" parameterType="int">
+        UPDATE About SET isDeleted = 1 WHERE id = #{id}
+    </update>
+    <select id="findAboutsPaged" resultType="com.cows.entity.About">
+        SELECT * FROM About WHERE isDeleted = 0 ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
+    </select>
+    <select id="countAllAbouts" resultType="int">
+        SELECT COUNT(*) FROM About WHERE isDeleted = 0
+    </select>
+</mapper>
