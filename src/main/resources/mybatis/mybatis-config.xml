@@ -30,7 +30,9 @@
     <typeHandlers>
          <!-- <typeHandler handler="com.cows.handler.ProductArrayTypeHandler" javaType="com.cows.entity.Product[]" jdbcType="VARCHAR"/>
          <typeHandler handler="com.cows.handler.StringArrayTypeHandler" javaType="java.lang.String[]" jdbcType="VARCHAR"/> -->
-         <typeHandler handler="com.cows.handler.IntArrayTypeHandler" javaType="int[]" jdbcType="VARCHAR"/>
+    </typeHandlers>
+    <typeHandlers>
+    <typeHandler handler="com.cows.handler.IntArrayTypeHandler" javaType="java.lang.int[]" jdbcType="VARCHAR"/>
     </typeHandlers>
     
     <!--

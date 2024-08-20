@@ -297,7 +297,7 @@ CREATE TABLE `Brands` (
 
 - 商品分类表
 
-```sql
+```roomsql
 CREATE TABLE `ProductCategories` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品分类ID',
   `name` varchar(255) NOT NULL COMMENT '商品分类名称',
@@ -313,7 +313,7 @@ CREATE TABLE `ProductCategories` (
 
 - 商品信息表（商品详情）
 
-```sql
+```roomsql
 CREATE TABLE `Products` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '商品ID',
   `name` varchar(255) NOT NULL COMMENT '商品名称',
@@ -340,7 +340,7 @@ CREATE TABLE `Products` (
 
 - 品牌授权书
 
-```sql
+```roomsql
 CREATE TABLE BrandAuthorizationCertificates (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL COMMENT '证书名称',
@@ -352,7 +352,19 @@ CREATE TABLE BrandAuthorizationCertificates (
 );
 ```
 
-
+- 加盟
+```roomsql
+CREATE TABLE `Businesses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `contactInfo` varchar(255) NOT NULL,
+  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `isDeleted` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+```
 
 
 - Orders表
@@ -2494,7 +2506,7 @@ public class IoTController {
 </settings>
 ```
 
-这个设置确保 MyBatis 在处理数据库列名和 Java 属性名时，会自动进行驼峰和下划线的转换。
+这个设置确保 MyBatis 在处理数据库**列名**和 Java **属性名**时，会自动进行驼峰和下划线的转换。
 
 - 检查 MyBatis 映射文件
 
@@ -2510,7 +2522,21 @@ public class IoTController {
 在这里，#{userId}, #{totalPrice}, 和 #{status} 是 MyBatis 参数占位符，它们将自动映射到 Order 类的 userId, totalPrice, 和 status 属性。
 
 
-5. 如何在 Java 中使用 BigDecimal 类型与数据库中的 DECIMAL 类型相匹配？
+5. 配置typeHandler
+
+>src/main/resources/mybatis/mybatis-config.xml
+
+```xml
+<typeHandlers>
+    <typeHandler handler="com.cows.handler.JsonTypeHandler" javaType="com.cows.entity.ProductsCarousels" jdbcType="VARCHAR"/>
+</typeHandlers>
+```
+
+作用是将java对象转换为json，将json转换为java对象
+
+
+
+6. 如何在 Java 中使用 BigDecimal 类型与数据库中的 DECIMAL 类型相匹配？
 
 在 Java 中使用 BigDecimal 类型与数据库中的 DECIMAL 类型相匹配是常见的做法，因为 BigDecimal 提供了精确的小数运算，非常适合处理金融数据。在 MyBatis 中，BigDecimal 类型可以直接映射到 SQL 的 DECIMAL 类型，因此这种类型的映射通常不会引起问题。
 
@@ -2530,8 +2556,7 @@ total_price DECIMAL(10, 2) NOT NULL,
 ```
 
 
-6. Docker配置国内镜像源
-
+7. Docker配置国内镜像源
 - 第一步：新建或编辑daemon.json
 ```shell
 
@@ -2557,14 +2582,14 @@ docker info
 ```
 
 
-7. 微信公众平台，微信授权登录报错{"errcode":40125,"errmsg":"invalid appsecret, rid: 6671ab61-0dd17ae3-718c1ccd"}
+8. 微信公众平台，微信授权登录报错{"errcode":40125,"errmsg":"invalid appsecret, rid: 6671ab61-0dd17ae3-718c1ccd"}
 
 - 问题原因：appid和appsecret不匹配
 
 参考：https://developers.weixUserin.qq.com/community/develop/doc/0000886514c7987cbf40d2b846b000?highLine=invalid%2520appsecret
 
 
-8. Nginx反向代理
+9. Nginx反向代理
 
 >https://www.cnblogs.com/lujunan/p/12447275.html?tt_from=weixin&utm_source=weixin&utm_medium=toutiao_ios&utm_campaign=client_share&wxshare_count=1
 
@@ -2618,7 +2643,7 @@ ps aux|grep nginx
 
 
 
-9. 返回内容类型不一致
+10. 返回内容类型不一致
 
 从微信API获取用户信息时，返回的内容类型是 text/plain，而 RestTemplate 没有适当的 HttpMessageConverter 来处理这种类型，导致无法将响应转换为 WechatUser 类型的对象。
 
@@ -2630,7 +2655,7 @@ ps aux|grep nginx
 
 
 
-10. **返回内容类型**是统一在哪里定义的？比如有text、xml、json不同格式是不是要分开定义？
+11. **返回内容类型**是统一在哪里定义的？比如有text、xml、json不同格式是不是要分开定义？
 
 在 Spring Framework 中，返回内容类型通常是通过 HttpMessageConverter 接口的实现来定义的，这些转换器负责在 HTTP 请求和响应之间
 转换数据。每种数据格式（如 JSON, XML, 文本等）通常都有对应的转换器来处理。Spring 自动配置了一些默认的转换器，但你也可以自定义或添加新的转换器来支持更多的媒体类型。
@@ -2677,7 +2702,7 @@ public RestTemplate restTemplate() {
 
 通过适当配置 HttpMessageConverter，你可以灵活地处理各种不同的内容类型。如果有特殊需求，例如处理非标准的媒体类型或自定义数据格式，你也可以实现自己的 HttpMessageConverter。
 
-11. 返回数据类型Thymeleaf模版、json
+12. 返回数据类型Thymeleaf模版、json
 
 （1）使用 Thymeleaf 作为模板引擎
 
@@ -2754,7 +2779,12 @@ public String userProfile(Model model) {
     }
 ```
 
-12.
-
 
 13. 
+
+
+14. 
+
+
+
+15. 

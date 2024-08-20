@@ -4,7 +4,7 @@
     <select id="findCertificateById" parameterType="int" resultType="com.cows.entity.BrandAuthorizationCertificate">
         SELECT * FROM BrandAuthorizationCertificates WHERE id = #{id} AND isDeleted = 0
     </select>
-    <select id="findAllCertificates" resultType="com.cows.entity.BrandAuthorizationCertificate">
+    <select id="findAllCertificates" resultType="map">
         SELECT * FROM BrandAuthorizationCertificates WHERE isDeleted = 0
     </select>
     <insert id="insertCertificate" parameterType="com.cows.entity.BrandAuthorizationCertificate">

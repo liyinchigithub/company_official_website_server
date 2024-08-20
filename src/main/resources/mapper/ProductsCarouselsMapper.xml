@@ -2,20 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cows.mapper.ProductsCarouselsMapper">
     <select id="findAllProductsCarousels" resultType="com.cows.entity.ProductsCarousels">
-        SELECT * FROM ProductsCarousels WHERE isDeleted = 0
+       SELECT id, products, createTime, updateTime, isDeleted 
+       FROM ProductsCarousels 
+       WHERE isDeleted = 0
     </select>
     <select id="findProductsCarouselsById" parameterType="int" resultType="com.cows.entity.ProductsCarousels">
-        SELECT * FROM ProductsCarousels WHERE id = #{id} AND isDeleted = 0
+        SELECT id, products, createTime, updateTime, isDeleted FROM ProductsCarousels WHERE id = #{id} AND isDeleted = 0
     </select>
     <insert id="insertProductsCarousels" parameterType="com.cows.entity.ProductsCarousels">
         INSERT INTO ProductsCarousels (products, createTime, updateTime, isDeleted)
         VALUES (#{products, typeHandler=com.cows.handler.IntArrayTypeHandler}, #{createTime}, #{updateTime}, 0)
     </insert>
     <update id="updateProductsCarousels" parameterType="com.cows.entity.ProductsCarousels">
-        UPDATE ProductsCarousels 
-        SET products = #{products, typeHandler=com.cows.handler.IntArrayTypeHandler}, 
-            createTime = #{createTime}, 
-            updateTime = #{updateTime} 
+        UPDATE ProductsCarousels
+        SET products = #{products, typeHandler=com.cows.handler.IntArrayTypeHandler},
+            createTime = #{createTime},
+            updateTime = #{updateTime}
         WHERE id = #{id}
     </update>
     <update id="deleteProductsCarousels" parameterType="int">

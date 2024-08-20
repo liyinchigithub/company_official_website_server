@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cows.mapper.BusinessMapper">
+    <select id="findBusinessById" parameterType="int" resultType="com.cows.entity.Business">
+        SELECT * FROM Businesses WHERE id = #{id} AND isDeleted = 0
+    </select>
+    <select id="findAllBusinesses" resultType="com.cows.entity.Business">
+        SELECT * FROM Businesses WHERE isDeleted = 0
+    </select>
+    <insert id="insertBusiness" parameterType="com.cows.entity.Business">
+        INSERT INTO Businesses (name, description, contactInfo, createTime, updateTime, isDeleted)
+        VALUES (#{name}, #{description}, #{contactInfo}, #{createTime}, #{updateTime}, 0)
+    </insert>
+    <update id="updateBusiness" parameterType="com.cows.entity.Business">
+        UPDATE Businesses 
+        SET name = #{name}, 
+            description = #{description}, 
+            contactInfo = #{contactInfo}, 
+            createTime = #{createTime}, 
+            updateTime = #{updateTime}, 
+            isDeleted = #{isDeleted}
+        WHERE id = #{id}
+    </update>
+    <update id="deleteBusiness" parameterType="int">
+        UPDATE Businesses SET isDeleted = 1 WHERE id = #{id}
+    </update>
+    <select id="findBusinessesPaged" resultType="com.cows.entity.Business">
+        SELECT * FROM Businesses WHERE isDeleted = 0 ORDER BY ${sortField} LIMIT #{limit} OFFSET #{offset}
+    </select>
+    <select id="countAllBusinesses" resultType="int">
+        SELECT COUNT(*) FROM Businesses WHERE isDeleted = 0
+    </select>
+    <select id="searchBusinessesByName" parameterType="string" resultType="com.cows.entity.Business">
+        SELECT * FROM Businesses WHERE name LIKE CONCAT('%', #{name}, '%') AND isDeleted = 0
+    </select>
+</mapper>

@@ -32,7 +32,6 @@ public class ProductsCarouselsController {
     public BaseResponse<ProductsCarousels> getProductsCarouselsById(@Parameter(description = "配置ID", required = true) @PathVariable int id) {
         ProductsCarousels productsCarousels = productsCarouselsService.getProductsCarouselsById(id);
         log.info("通过ID获取横向轮播图商品配置: {}", productsCarousels);
-        System.out.println("Retrieved from DB: " + productsCarousels);
         return BaseResponse.success(productsCarousels);
     }
 
