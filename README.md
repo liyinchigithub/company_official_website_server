@@ -1,5 +1,8 @@
 # 一个公司企业官网后端项目
 
+[配套VUE 前端项目](https://github.com/liyinchigithub/company_official_website_fe)
+
+
 ## 版本
 * jdk 17
 * Spring Boot 3.1.2
@@ -14,6 +17,13 @@
 * Spring Security                 安全认证和授权
 * Spring Boot Admin               管理和监控Spring Boot应用程序
 * Spring Boot Data JDBC           JDBC访问数据库
+
+![image](https://github.com/user-attachments/assets/ef4b9bbc-5e31-4a48-98c5-56719fd82351)
+
+![image](https://github.com/user-attachments/assets/3be3c420-a659-40cb-b915-eceb23c90b15)
+
+![image](https://github.com/user-attachments/assets/b09f58e7-e8bc-4a6e-8351-0f308ed3082b)
+
 
 ## 项目结构
 
