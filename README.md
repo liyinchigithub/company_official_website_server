@@ -2714,9 +2714,9 @@ server {
 （4）重启Nginx
 
 ```shell
-  cd /usr/local/nginx/sbin/
-  ./nginx -s reload
-  sudo nginx -s reload
+cd /usr/local/nginx/sbin/
+./nginx -s reload
+sudo nginx -s reload
 ```
 查看Nginx进程
 ```shell
