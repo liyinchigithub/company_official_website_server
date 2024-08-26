@@ -202,6 +202,17 @@ java -jar com.cows-0.0.1-SNAPSHOT.jar
 
 # 数据库
 
+DBeaver连接mysql提示Public Key Retrieval is not allowed 账号和密码都正确，如何解决？
+
+解决办法：
+
+在 DBeaver 中，编辑你的 MySQL 连接，添加以下参数到 JDBC URL 中：
+
+在连接URL中添加参数：allowPublicKeyRetrieval=true
+```roomsql
+jdbc:mysql://localhost:3306/your_database?allowPublicKeyRetrieval=true
+```
+
 # 表
 
 - User表
