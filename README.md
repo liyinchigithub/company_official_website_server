@@ -2726,7 +2726,7 @@ docker info
 前端项目
 ```shell
 server {
-    listen 8087;  # 监听 80 端口
+    listen 9000;  # 监听 80 端口
     server_name 81.71.17.188;  # 服务器地址
 
     location / {

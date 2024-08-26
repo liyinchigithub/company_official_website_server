@@ -55,3 +55,37 @@
 22:04:34.002 [restartedMain] INFO  com.cows.Application - Started Application in 3.902 seconds (process running for 2575.961)
 22:04:39.004 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=0, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
 22:04:42.560 [Thread-58] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+22:12:55.087 [restartedMain] INFO  com.cows.Application - Starting Application using Java 17.0.1 with PID 95965 (/Users/liyinchi/workspace/java/company_official_website_server/target/classes started by liyinchi in /Users/liyinchi/workspace/java/company_official_website_server)
+22:12:55.089 [restartedMain] INFO  com.cows.Application - The following 1 profile is active: "dev"
+22:12:56.417 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+22:12:56.417 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+22:12:56.481 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+22:12:56.704 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.cows.mapper.AdminMapper.findAdminByUserName] is ignored, because it exists, maybe from xml file
+22:12:57.444 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: microservice.url.orderUrl, beanName: jsonController, field: com.cows.controller.common.JsonController.orderUrl
+22:12:57.523 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: wechatService, field: com.cows.service.WechatService.appId
+22:12:57.523 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.secret, beanName: wechatService, field: com.cows.service.WechatService.secret
+22:12:57.524 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: wechatService, field: com.cows.service.WechatService.redirectUri
+22:12:57.543 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: loginController, field: com.cows.controller.common.LoginController.appid
+22:12:57.543 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: loginController, field: com.cows.controller.common.LoginController.redirectUri
+22:12:57.787 [restartedMain] INFO  com.cows.service.RedisService - redis port: 6379
+22:12:58.516 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: spring.mvc.servlet.path, beanName: swaggerWelcome, field: org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc.mvcServletPath
+22:12:59.384 [restartedMain] INFO  com.cows.Application - Started Application in 4.417 seconds (process running for 3081.34)
+22:13:00.498 [Apollo-RemoteConfigLongPollService-1] WARN  c.c.f.a.i.RemoteConfigLongPollService - Long polling failed, will retry in 120 seconds. appId: platform, cluster: default, namespaces: application+message+sensitive-config, long polling url: null, reason: Get config services failed from http://meta.apollo.xxx.cn/services/config?appId=platform&ip=10.224.0.20 [Cause: Could not complete get operation [Cause: meta.apollo.xxx.cn]]
+22:13:01.809 [Thread-72] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+22:13:02.080 [restartedMain] INFO  com.cows.Application - Starting Application using Java 17.0.1 with PID 95965 (/Users/liyinchi/workspace/java/company_official_website_server/target/classes started by liyinchi in /Users/liyinchi/workspace/java/company_official_website_server)
+22:13:02.080 [restartedMain] INFO  com.cows.Application - The following 1 profile is active: "dev"
+22:13:02.626 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+22:13:02.627 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+22:13:02.664 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+22:13:02.760 [restartedMain] ERROR c.b.m.core.MybatisConfiguration - mapper[com.cows.mapper.AdminMapper.findAdminByUserName] is ignored, because it exists, maybe from xml file
+22:13:03.083 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: microservice.url.orderUrl, beanName: jsonController, field: com.cows.controller.common.JsonController.orderUrl
+22:13:03.124 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: wechatService, field: com.cows.service.WechatService.appId
+22:13:03.124 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.secret, beanName: wechatService, field: com.cows.service.WechatService.secret
+22:13:03.124 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: wechatService, field: com.cows.service.WechatService.redirectUri
+22:13:03.268 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.appid, beanName: loginController, field: com.cows.controller.common.LoginController.appid
+22:13:03.268 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: wechat.redirect.uri, beanName: loginController, field: com.cows.controller.common.LoginController.redirectUri
+22:13:03.416 [restartedMain] INFO  com.cows.service.RedisService - redis port: 6379
+22:13:03.866 [restartedMain] INFO  c.c.f.a.s.a.SpringValueProcessor - Monitoring key: spring.mvc.servlet.path, beanName: swaggerWelcome, field: org.springdoc.webmvc.ui.SwaggerWelcomeWebMvc.mvcServletPath
+22:13:04.531 [restartedMain] INFO  com.cows.Application - Started Application in 2.512 seconds (process running for 3086.488)
+22:13:09.533 [org.springframework.jms.JmsListenerEndpointContainer#0-1] ERROR o.s.j.l.DefaultMessageListenerContainer - Could not refresh JMS Connection for destination 'activemq.queue' - retrying using FixedBackOff{interval=5000, currentAttempts=0, maxAttempts=unlimited}. Cause: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused
+22:13:13.059 [Thread-76] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
