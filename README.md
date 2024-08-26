@@ -195,10 +195,16 @@ mvn clean package -Dmaven.test.skip=true
 
 ## 运行jar包
 
+### 无窗口化运行
+```bash
+nohup java -jar com.cows-0.0.1-SNAPSHOT.jar &
+
+```
+
+### 手动测试
 ```bash
 java -jar com.cows-0.0.1-SNAPSHOT.jar
 ```
-
 
 # 数据库
 
