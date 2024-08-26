@@ -201,6 +201,13 @@ nohup java -jar com.cows-0.0.1-SNAPSHOT.jar &
 
 ```
 
+- nohup：使程序在退出终端后继续运行。
+- java -jar your-app.jar：运行 JAR 文件。
+- > app.log：将标准输出重定向到 app.log 文件。
+- 2>&1：将标准错误输出也重定向到 app.log。
+- &：将进程放入后台运行。
+- 查看日志：你可以使用 tail -f app.log 来实时查看日志输出。
+
 ### 手动测试
 ```bash
 java -jar com.cows-0.0.1-SNAPSHOT.jar
@@ -224,6 +231,7 @@ jdbc:mysql://localhost:3306/your_database?allowPublicKeyRetrieval=true
 创建数据库springBootTest，默认字符集utf8mb4，默认排序规则utf8mb4_general_ci，打开本地数据库，选择所有表，右击“导出数据”，导出目标选择“数据库”，目标容器选择，选择产线数据库springBootTest
 
 
+- 备注：腾讯云端口开启3306和8088
 
 
 
@@ -2673,6 +2681,34 @@ docker info
               ssl_session_cache    shared:SSL:1m;
               ssl_session_timeout  5m;
     }
+```
+
+
+前端项目
+```shell
+server {
+    listen 8087;  # 监听 80 端口
+    server_name 81.71.17.188;  # 服务器地址
+
+    location / {
+        root /home/dist;  # 指向你的 dist 文件夹
+        try_files $uri $uri/ /index.html;  # 支持 Vue Router 的 HTML5 History 模式
+    }
+
+    error_page 404 /404.html;  # 自定义 404 页面
+    location = /404.html {
+        internal;
+    }
+
+    # 可选：配置跨域
+    location /api/ {
+        proxy_pass http://81.71.17.188:8088;  # 代理到后端服务
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
 ```
 
 （4）重启Nginx
