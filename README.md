@@ -208,7 +208,7 @@ java -jar com.cows-0.0.1-SNAPSHOT.jar
 
 # 数据库
 
-DBeaver连接mysql提示Public Key Retrieval is not allowed 账号和密码都正确，如何解决？
+- DBeaver连接mysql提示Public Key Retrieval is not allowed 账号和密码都正确，如何解决？
 
 解决办法：
 
@@ -218,6 +218,14 @@ DBeaver连接mysql提示Public Key Retrieval is not allowed 账号和密码都�
 ```roomsql
 jdbc:mysql://localhost:3306/your_database?allowPublicKeyRetrieval=true
 ```
+
+- DBeaver导出表直接导入到产线数据库中
+
+创建数据库springBootTest，默认字符集utf8mb4，默认排序规则utf8mb4_general_ci，打开本地数据库，选择所有表，右击“导出数据”，导出目标选择“数据库”，目标容器选择，选择产线数据库springBootTest
+
+
+
+
 
 # 表
 
