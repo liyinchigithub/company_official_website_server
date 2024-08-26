@@ -183,7 +183,45 @@ mvn spring-boot:run
 ```
 
 
-##  部署
+##  部署打包
+
+
+### 修改前端跨域地址
+
+>com/cows/config/WebConfig.java
+```java
+package com.cows.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+/**
+ *
+ * 配置前端允许跨域的域名地址
+ * 默认所有域名都可以跨域访问，allowedOrigins指定允许跨域域名地址
+ *
+ * */
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+
+  @Bean
+  public WebMvcConfigurer corsConfigurer() {
+    return new WebMvcConfigurer() {
+      @Override
+      public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+//                        .allowedOrigins("http://127.0.0.1:9000") // 前端项目的地址-测试环境
+                .allowedOrigins("http://http://81.71.17.188:8087/") // 前端项目的地址-生产环境
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
+      }
+    };
+  }
+}
+```
 
 ### 打jar包
 
@@ -874,6 +912,7 @@ public BaseResponse<List<UserDTO>> getAllUsersPagedSorted(@RequestParam int page
 
 在 Spring Boot 项目的配置类中添加全局 CORS 配置：
 
+>com/cows/config/WebConfig.java
 
 ```java
 import org.springframework.context.annotation.Bean;
