@@ -1,11 +1,11 @@
 package com.cows.config;
 
 import javax.sql.DataSource;
-
 import com.cows.security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,11 +13,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.cors.CorsConfigurationSource;
 
+import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
@@ -29,37 +30,28 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            .addFilterBefore(new JwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)// 添加JWT过滤器
+            .cors().configurationSource(corsConfigurationSource()) // 使用新的 CORS 配置
+            .and()
+            .addFilterBefore(new JwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
             .authorizeRequests(authorize -> authorize
-                .requestMatchers("/",
-                        "/home",
-                        "/login",
-                        "/login/wechat",
-                        "/login/wechat/callback",
-                        "/login/perform_login",
-                        "/v1/users/addUser",
-                        "/wechatLogin.html",
-                        "/login/wechat/verify",
-                        "/location",
-                        "/test.png",
-                        "/v1/getLatestImage",
-                        "/v1/carousels/getAllCarousels",
-                        "/v1/productCategories/getAllProductCategories",
-                        "/v1/productsCarousels/getAllProductsCarousels",
-                        "/v1/products/getAllProducts",
-                        "/v1/products/getAllProductsCarousels",
-                        "/MP_verify_tSDyEHEKTxbBXHMd.txt",
-                        "/v1/admins/login",
-                        "/v1/basicInformation/getAllBasicInformation",
-                        "/v1/carousels/getAllCarousels",
-                        "/v1/products/getAllProducts",
-                        "/v1/products/getProductById",
-                        "/v1/businesses/getBusinessById",
-                        "/v1/businesses/getAllBusinesses",
-                        "/v1/certificates/getAllCertificates",
-                        "/v1/abouts/getAboutById/1"
-
-                        ).permitAll()// 允许未认证访问
+                .requestMatchers("/", "/home", "/login", "/login/wechat", "/login/wechat/callback", 
+                                 "/login/perform_login", "/v1/users/addUser", "/wechatLogin.html", 
+                                 "/login/wechat/verify", "/location", "/test.png", 
+                                 "/v1/getLatestImage", "/v1/carousels/getAllCarousels", 
+                                 "/v1/productCategories/getAllProductCategories", 
+                                 "/v1/productsCarousels/getAllProductsCarousels", 
+                                 "/v1/products/getAllProducts", 
+                                 "/v1/products/getAllProductsCarousels", 
+                                 "/MP_verify_tSDyEHEKTxbBXHMd.txt", "/v1/admins/login", 
+                                 "/v1/basicInformation/getAllBasicInformation", 
+                                 "/v1/carousels/getAllCarousels", 
+                                 "/v1/products/getAllProducts", 
+                                 "/v1/products/getProductById", 
+                                 "/v1/businesses/getBusinessById/1",
+                                 "/v1/businesses/getAllBusinesses", 
+                                 "/v1/certificates/getAllCertificates", 
+                                 "/v1/abouts/getAboutById/1")
+                .permitAll()
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form
@@ -70,9 +62,23 @@ public class SecurityConfig {
             .logout(logout -> logout
                 .permitAll()
             )
-            .csrf().disable();  // 如果你使用POST方法，可能需要禁用CSRF保护
+            .csrf().disable(); // 禁用 CSRF 保护
         return http.build();
     }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("http://81.71.17.188:9000")); // 允许的前端地址
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
+        configuration.setAllowCredentials(true);
+        
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
+
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
         return http.getSharedObject(AuthenticationManagerBuilder.class).build();
@@ -81,22 +87,5 @@ public class SecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public DaoAuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userDetailsService());
-        authProvider.setPasswordEncoder(passwordEncoder());
-        return authProvider;
-    }
-
-    @Bean
-    public UserDetailsService userDetailsService() {
-        JdbcUserDetailsManager userDetailsManager = new JdbcUserDetailsManager();
-        userDetailsManager.setDataSource(dataSource);
-        userDetailsManager.setUsersByUsernameQuery("select userName, password, isEnable from User where userName=?");
-        userDetailsManager.setAuthoritiesByUsernameQuery("select userName, 'ROLE_USER' from User where userName=?");
-        return userDetailsManager;
     }
 }
