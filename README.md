@@ -185,10 +185,11 @@ mvn spring-boot:run
 ```
 
 
-##  部署打包
+##  部署
 
+### 切换环境
 
-### 修改前端跨域地址
+#### 修改前端跨域地址
 
 >com/cows/config/WebConfig.java
 ```java
@@ -236,7 +237,7 @@ public class WebConfig implements WebMvcConfigurer {
 ```
 
 
-### 打包
+### 打jar包
 
 ```bash
 mvn clean package -Dmaven.test.skip=true
@@ -246,9 +247,9 @@ mvn clean package -Dmaven.test.skip=true
 
 >target/com.cows-0.0.1-SNAPSHOT.jar
 
-## 运行jar包
+#### 运行jar包
 
-### 无窗口化运行
+##### 无窗口化运行
 ```bash
 nohup java -jar com.cows-0.0.1-SNAPSHOT.jar &
 
@@ -261,11 +262,17 @@ nohup java -jar com.cows-0.0.1-SNAPSHOT.jar &
 - &：将进程放入后台运行。
 - 查看日志：你可以使用 tail -f app.log 来实时查看日志输出。
 
-### 手动测试
+##### 手动测试
 ```bash
 java -jar com.cows-0.0.1-SNAPSHOT.jar
 ```
 
+### 容器化部署
+
+```shell
+docker build -t your-app-name .
+docker run -p 8080:8080 your-app-name
+```
 
 ### 创建上传文件夹
 

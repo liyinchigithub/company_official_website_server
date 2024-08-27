@@ -31,6 +31,17 @@ public class UploadController {
 
     @PostMapping("/upload")
     public BaseResponse<String> handleFileUpload(@RequestParam("file") MultipartFile file, @RequestParam("userId") String userId) {
+        // 创建upload文件夹（如果不存在）
+        try {
+            Path uploadPath = Paths.get(UPLOAD_DIR);
+            if (!Files.exists(uploadPath)) {
+                Files.createDirectories(uploadPath);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new BaseResponse<>(1, "Failed to create upload directory", null);
+        }
+
         String originalFilename = file.getOriginalFilename();
         String fileExtension = originalFilename.substring(originalFilename.lastIndexOf(".") + 1);
         // 限制上传文件大小
