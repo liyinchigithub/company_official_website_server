@@ -190,13 +190,6 @@ mvn spring-boot:run
 
 >com/cows/config/WebConfig.java
 ```java
-package com.cows.config;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
 /**
  *
  * 配置前端允许跨域的域名地址
@@ -223,12 +216,32 @@ public class WebConfig implements WebMvcConfigurer {
 }
 ```
 
-### 打jar包
+>com/cows/config/SecurityConfig.java
+```java
+@Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+//        configuration.setAllowedOrigins(Arrays.asList("http://127.0.0.1:9000")); // 允许的前端地址
+        configuration.setAllowedOrigins(Arrays.asList("http://81.71.17.188:9000")); // 允许的前端地址
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
+        configuration.setAllowCredentials(true);
+        
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
+```
+
+
+### 打包
 
 ```bash
 mvn clean package -Dmaven.test.skip=true
 ```
+
 * 生成jar包在target目录下
+
 >target/com.cows-0.0.1-SNAPSHOT.jar
 
 ## 运行jar包
@@ -250,6 +263,11 @@ nohup java -jar com.cows-0.0.1-SNAPSHOT.jar &
 ```bash
 java -jar com.cows-0.0.1-SNAPSHOT.jar
 ```
+
+
+### 创建上传文件夹
+
+在jar包所在根目录创建一个文件夹名问`upload`，用于存放上传的文件
 
 # 数据库
 
