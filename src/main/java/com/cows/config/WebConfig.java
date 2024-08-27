@@ -2,9 +2,11 @@ package com.cows.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
+import org.springframework.beans.factory.annotation.Value; 
+import org.springframework.context.annotation.Profile; 
 /**
  *
  * 配置前端允许跨域的域名地址
@@ -12,7 +14,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  *
  * */
 @Configuration
+@Profile({"dev", "prod"})
 public class WebConfig implements WebMvcConfigurer {
+
+    @Value("${cors.allowed-origins}") // Add this line
+    private String[] allowedOrigins; // Add this line
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
@@ -20,8 +26,7 @@ public class WebConfig implements WebMvcConfigurer {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-//                        .allowedOrigins("http://127.0.0.1:9000") // 前端项目的地址-测试环境
-                        .allowedOrigins("http://81.71.17.188:9000") // 前端项目的地址-生产环境
+                        .allowedOrigins(allowedOrigins) // Update this line
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);

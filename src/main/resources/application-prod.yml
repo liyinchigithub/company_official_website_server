@@ -6,6 +6,8 @@ wechat:
 app:
   id: platform
 
+cors:
+  allowed-origins: http://81.71.17.188:9000
 # 开发环境配置
 server:
   # 服务器的HTTP端口，默认为80

@@ -5,6 +5,9 @@ wechat:
     uri:  https://3z5753f148.vicp.fun/login/wechat/callback # 回调URL
 app:
   id: platform
+  
+cors:
+  allowed-origins: http://127.0.0.1:9000
 
 # 开发环境配置
 server:

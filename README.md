@@ -134,8 +134,7 @@ pom.xml
 ```yaml
 spring:
   profiles:
-    active:
-      - dev
+    active: dev
 ```  
 -  生效配置：
 >src/main/resources/application-dev.yml
@@ -144,8 +143,7 @@ spring:
 ```yaml
 spring:
   profiles:
-    active:
-      - prod
+    active: prod
 ```
 - 生效配置：
 >src/main/resources/application-prod.yml

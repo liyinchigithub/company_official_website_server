@@ -1,13 +1,14 @@
 # 项目
 app:
-  id: lyc.springboot.demo
-  name: learning springboot
+  id: company-lyc-springboot-demo
+  name: company-lyc-springboot-demo
+  description: company-lyc-springboot-demo
   version: 1.0.0
 
   # 读取指定环境
 spring:
   profiles:
-    active: dev
+    active: dev  # dev 或者 'prod'，根据您需要的环境
     
 
 

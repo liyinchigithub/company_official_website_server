@@ -5,6 +5,7 @@ import com.cows.security.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -17,15 +18,20 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.cors.CorsConfigurationSource;
-
+import org.springframework.beans.factory.annotation.Value; 
 import java.util.Arrays;
+import org.springframework.context.annotation.Profile; 
 
 @Configuration
 @EnableWebSecurity
+@Profile({"dev", "prod"})
 public class SecurityConfig {
 
     @Autowired
     private DataSource dataSource;
+
+    @Value("${cors.allowed-origins}") // 添加此行
+    private String[] allowedOrigins; // 添加此行
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -69,8 +75,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-//        configuration.setAllowedOrigins(Arrays.asList("http://127.0.0.1:9000")); // 允许的前端地址
-        configuration.setAllowedOrigins(Arrays.asList("http://81.71.17.188:9000")); // 允许的前端地址
+        configuration.setAllowedOrigins(Arrays.asList(allowedOrigins)); // 更新此行
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);

@@ -32,6 +32,11 @@ public class AdminController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    public AdminController(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
+
     @PostMapping("/login")
     public BaseResponse<Map<String, String>> login(@RequestBody Admin admin) {
         Admin loggedInAdmin = adminService.login(admin.getUserName(), admin.getPassword());
