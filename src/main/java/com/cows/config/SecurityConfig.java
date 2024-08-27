@@ -56,7 +56,8 @@ public class SecurityConfig {
                         "/v1/products/getProductById",
                         "/v1/businesses/getBusinessById",
                         "/v1/businesses/getAllBusinesses",
-                        "/v1/certificates/getAllCertificates"
+                        "/v1/certificates/getAllCertificates",
+                        "/v1/abouts/getAboutById/1"
 
                         ).permitAll()// 允许未认证访问
                 .anyRequest().authenticated()
