@@ -57,28 +57,18 @@
                     type：表述数据源的类型，POOLED表示使用连接池
             -->
             <dataSource type="POOLED">
-                <!--
-                   driver, user, username, password 是固定的，不能自定义。
-                -->
                 <!-- 数据库驱动类名 -->
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <!-- <property name="driver" value="com.mysql.jdbc.Driver"/> -->
+                <property name="driver" value="${spring.datasource.driver-class-name}"/>
                 <!-- 连接数据库的URL字符串 -->
-                <property name="url" value="jdbc:mysql://127.0.0.1:3306/springBootTest"/>
+                <!-- <property name="url" value="jdbc:mysql://127.0.0.1:3306/springBootTest"/> -->
+                <property name="url" value="${spring.datasource.url}"/>
                 <!-- 访问数据库的用户名 -->
-                <property name="username" value="root"/>
+                <!-- <property name="username" value="root"/> -->
+                <property name="username" value="${spring.datasource.username}"/>
                 <!-- 访问数据库的密码 -->
-                <property name="password" value="lyc123456"/>
-            </dataSource>
-        </environment>
-
-        <!--表示线上的数据库，是项目真实使用的库-->
-        <environment id="online">
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/springBootTest"/>
-                <property name="username" value="root"/>
-                <property name="password" value="lyc123456"/>
+                <!-- <property name="password" value="lyc123456"/> -->
+                <property name="password" value="${spring.datasource.password}"/>
             </dataSource>
         </environment>
 

@@ -30,8 +30,8 @@ public class SecurityConfig {
     @Autowired
     private DataSource dataSource;
 
-    @Value("${cors.allowed-origins}") // 添加此行
-    private String[] allowedOrigins; // 添加此行
+    @Value("${cors.allowed-origins}")
+    private String[] allowedOrigins;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {

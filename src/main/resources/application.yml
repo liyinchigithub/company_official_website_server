@@ -1,8 +1,11 @@
 # 项目
 app:
-  id: company-lyc-springboot-demo
-  name: company-lyc-springboot-demo
-  description: company-lyc-springboot-demo
+  id: company-official-website-server
+  name: company-official-website-server
+  author: liyinchi
+  email: liyinchi@qq.com
+  github: https://github.com/liyinchigithub/company_official_website_server
+  description: company-official-website-server
   version: 1.0.0
 
   # 读取指定环境

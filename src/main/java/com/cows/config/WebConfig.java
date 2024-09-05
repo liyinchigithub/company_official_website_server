@@ -17,8 +17,8 @@ import org.springframework.context.annotation.Profile;
 @Profile({"dev", "prod"})
 public class WebConfig implements WebMvcConfigurer {
 
-    @Value("${cors.allowed-origins}") // Add this line
-    private String[] allowedOrigins; // Add this line
+    @Value("${cors.allowed-origins}")
+    private String[] allowedOrigins;
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
@@ -26,7 +26,7 @@ public class WebConfig implements WebMvcConfigurer {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins(allowedOrigins) // Update this line
+                        .allowedOrigins(allowedOrigins) // 允许跨域
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);

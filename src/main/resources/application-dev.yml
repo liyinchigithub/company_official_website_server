@@ -7,7 +7,7 @@ app:
   id: platform
   
 cors:
-  allowed-origins: http://127.0.0.1:9000
+  allowed-origins: http://127.0.0.1:9000,http://localhost:9000
 
 # 开发环境配置
 server:
@@ -115,6 +115,14 @@ spring:
     static-locations:
       - classpath:/static/
       - classpath:/media/
+  
+  # 配置Mybatis
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/springBootTest
+    username: root
+    password: lyc123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
   #  配置ActiveMQ
   activemq:
     # activemq url

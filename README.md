@@ -6,7 +6,7 @@
 
 
 ## 版本
-* jdk 17
+* [jdk 17](https://blog.csdn.net/u013302168/article/details/141369914)
 * Spring Boot 3.1.2
 * Mybatis plus 3.5.3.
 * Mysql 5.7
@@ -185,20 +185,23 @@ mvn spring-boot:run
 
 ##  部署
 
-### 切换环境
+[Linux CentOS 部署Docker](https://blog.csdn.net/u013302168/article/details/141923236)
+[Linux CentOS 部署JDK](https://blog.csdn.net/u013302168/article/details/141369914)
 
-#### 修改前端跨域地址
+### 项目切换产线环境
+
+#### 配置前端跨域
+
+##### 允许跨域
 
 >com/cows/config/WebConfig.java
 ```java
-/**
- *
- * 配置前端允许跨域的域名地址
- * 默认所有域名都可以跨域访问，allowedOrigins指定允许跨域域名地址
- *
- * */
 @Configuration
+@Profile({"dev", "prod"})
 public class WebConfig implements WebMvcConfigurer {
+
+  @Value("${cors.allowed-origins}") // Add this line
+  private String[] allowedOrigins; // Add this line
 
   @Bean
   public WebMvcConfigurer corsConfigurer() {
@@ -206,8 +209,7 @@ public class WebConfig implements WebMvcConfigurer {
       @Override
       public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-//                        .allowedOrigins("http://127.0.0.1:9000") // 前端项目的地址-测试环境
-                .allowedOrigins("http://81.71.17.188:9000") // 前端项目的地址-生产环境
+                .allowedOrigins(allowedOrigins) 
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
@@ -217,23 +219,75 @@ public class WebConfig implements WebMvcConfigurer {
 }
 ```
 
+##### 允许跨域
 >com/cows/config/SecurityConfig.java
 ```java
+@Configuration
+@EnableWebSecurity
+@Profile({"dev", "prod"})
+public class SecurityConfig {
+
+  @Autowired
+  private DataSource dataSource;
+
+  @Value("${cors.allowed-origins}")
+  private String[] allowedOrigins;
+  
 @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
+public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-//        configuration.setAllowedOrigins(Arrays.asList("http://127.0.0.1:9000")); // 允许的前端地址
-        configuration.setAllowedOrigins(Arrays.asList("http://81.71.17.188:9000")); // 允许的前端地址
+        configuration.setAllowedOrigins(Arrays.asList(allowedOrigins)); 
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true);
-        
+
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
-    }
+        }
 ```
 
+##### 配置具体跨域地址
+
+>application-prod.yml
+```yml
+cors:
+  allowed-origins: http://81.71.17.188:9000
+```
+>application-dev.yml
+```yml
+cors:
+  allowed-origins: http://127.0.0.1:9000
+```
+
+### 数据库**地址**和**端口**
+
+#### 配置
+> application-prod.yml 和 application-dev.yml
+```xml
+spring:
+        # 配置Mybatis
+        datasource:
+        url: jdbc:mysql://127.0.0.1:3306/springBootTest
+        username: root
+        password: lyc123456
+        driver-class-name: com.mysql.cj.jdbc.Driver
+```
+#### 引用
+> mybatis/mybatis-config.xml
+
+```xml
+ <dataSource type="POOLED">
+  <!-- 数据库驱动类名 -->
+  <property name="driver" value="${spring.datasource.driver-class-name}"/>
+  <!-- 连接数据库的URL字符串 -->
+  <property name="url" value="${spring.datasource.url}"/>
+  <!-- 访问数据库的用户名 -->
+  <property name="username" value="${spring.datasource.username}"/>
+  <!-- 访问数据库的密码 -->
+  <property name="password" value="${spring.datasource.password}"/>
+</dataSource>
+```
 
 ### 打jar包
 
@@ -940,27 +994,26 @@ public BaseResponse<List<UserDTO>> getAllUsersPagedSorted(@RequestParam int page
 >com/cows/config/WebConfig.java
 
 ```java
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
 @Configuration
+@Profile({"dev", "prod"})
 public class WebConfig implements WebMvcConfigurer {
 
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:8080") // 前端项目的地址
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*")
-                        .allowCredentials(true);
-            }
-        };
-    }
+  @Value("${cors.allowed-origins}")
+  private String[] allowedOrigins;
+
+  @Bean
+  public WebMvcConfigurer corsConfigurer() {
+    return new WebMvcConfigurer() {
+      @Override
+      public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins(allowedOrigins) // 允许跨域
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
+      }
+    };
+  }
 }
 ```
 
@@ -2749,6 +2802,7 @@ docker info
 
 
 前端项目
+
 ```shell
 server {
     listen 9000;  # 监听 80 端口
