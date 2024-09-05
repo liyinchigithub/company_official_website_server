@@ -303,8 +303,7 @@ mvn clean package -Dmaven.test.skip=true
 
 ##### 无窗口化运行
 ```bash
-nohup java -jar com.cows-0.0.1-SNAPSHOT.jar &
-
+nohup java -jar back_server-0.0.1-SNAPSHOT.jar > app.log 2>&1 &
 ```
 
 - nohup：使程序在退出终端后继续运行。
@@ -316,7 +315,7 @@ nohup java -jar com.cows-0.0.1-SNAPSHOT.jar &
 
 ##### 手动测试
 ```bash
-java -jar com.cows-0.0.1-SNAPSHOT.jar
+java -jar back_server-0.0.1-SNAPSHOT.jar
 ```
 
 ### 容器化部署
