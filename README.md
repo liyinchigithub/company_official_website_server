@@ -1,8 +1,8 @@
 # 一个公司企业官网后端项目
 
-[预览](http://81.71.17.188:9000/#/home)
+[demo体验](http://81.71.17.188:9000/#/home)
 
-[配套VUE 前端项目](https://github.com/liyinchigithub/company_official_website_fe)
+前端项目[传送门](https://github.com/liyinchigithub/company_official_website_fe)
 
 
 ## 版本
