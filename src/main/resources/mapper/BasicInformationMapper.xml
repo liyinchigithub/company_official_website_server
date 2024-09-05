@@ -23,7 +23,7 @@
             copyright = #{copyright}, 
             isDeleted = #{isDeleted}, 
             isEnable = #{isEnable} 
-        WHERE id = #{id}
+        WHERE id = 1
     </update>
     <update id="deleteBasicInformation" parameterType="long">
         UPDATE BasicInformation SET isDeleted = 1 WHERE id = #{id}

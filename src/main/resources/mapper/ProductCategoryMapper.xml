@@ -8,17 +8,15 @@
         SELECT * FROM ProductCategories WHERE isDeleted = 0
     </select>
     <insert id="insertProductCategory" parameterType="com.cows.entity.ProductCategory">
-        INSERT INTO ProductCategories (name, description, isEnabled, isDeleted, updateTime, createTime)
-        VALUES (#{name}, #{description}, 1, 0, #{updateTime}, #{createTime})
+        INSERT INTO ProductCategories (name, description, isEnabled, isDeleted)
+        VALUES (#{name}, #{description}, 1, 0)
     </insert>
     <update id="updateProductCategory" parameterType="com.cows.entity.ProductCategory">
         UPDATE ProductCategories 
         SET name = #{name}, 
             description = #{description}, 
             isEnabled = #{isEnabled}, 
-            isDeleted = #{isDeleted},
-            updateTime = #{updateTime},
-            createTime = #{createTime}
+            isDeleted = #{isDeleted}
         WHERE id = #{id}
     </update>
     <update id="deleteProductCategory" parameterType="int">

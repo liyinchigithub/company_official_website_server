@@ -8,17 +8,15 @@
         SELECT * FROM Admins WHERE isDeleted = 0
     </select>
     <insert id="insertAdmin" parameterType="com.cows.entity.Admin">
-        INSERT INTO Admins (userName, password, permissions, createTime, updateTime, remarks, isDeleted, isEnable)
-        VALUES (#{userName}, #{password}, #{permissions}, #{createTime}, #{updateTime}, #{remarks}, #{isDeleted}, #{isEnable})
+        INSERT INTO Admins (userName, password, permissions,  remarks, isDeleted, isEnable)
+        VALUES (#{userName}, #{password}, #{permissions}, #{remarks}, #{isDeleted}, #{isEnable})
     </insert>
     <update id="updateAdmin" parameterType="com.cows.entity.Admin">
         UPDATE Admins 
         SET userName = #{userName}, 
             password = #{password}, 
             permissions = #{permissions},
-            createTime = #{createTime}, 
-            updateTime = #{updateTime}, 
-            remarks = #{remarks}, 
+            remarks = #{remarks},
             isDeleted = #{isDeleted}, 
             isEnable = #{isEnable} 
         WHERE id = #{id}

@@ -8,8 +8,8 @@
         SELECT * FROM Products WHERE isDeleted = 0
     </select>
  <insert id="insertProduct" parameterType="com.cows.entity.Product">
-        INSERT INTO Products (name, coverImage, detailImages, description, salePrice, costPrice, stockQuantity, brand, categoryId, isAvailable, isDeleted, updateTime, createTime)
-        VALUES (#{name}, #{coverImage}, #{detailImages, typeHandler=com.cows.handler.StringArrayTypeHandler}, #{description}, #{salePrice}, #{costPrice}, #{stockQuantity}, #{brand}, #{categoryId}, 1, 0, #{updateTime}, #{createTime})
+        INSERT INTO Products (name, coverImage, detailImages, description, salePrice, costPrice, stockQuantity, brand, categoryId, isAvailable, isDeleted)
+        VALUES (#{name}, #{coverImage}, #{detailImages, typeHandler=com.cows.handler.StringArrayTypeHandler}, #{description}, #{salePrice}, #{costPrice}, #{stockQuantity}, #{brand}, #{categoryId}, 1, 0)
     </insert>
     <update id="updateProduct" parameterType="com.cows.entity.Product">
         UPDATE Products 
@@ -23,9 +23,7 @@
             brand = #{brand}, 
             categoryId = #{categoryId}, 
             isAvailable = #{isAvailable}, 
-            isDeleted = #{isDeleted},
-            updateTime = #{updateTime},
-            createTime = #{createTime}
+            isDeleted = #{isDeleted}
         WHERE id = #{id}
     </update>
     <update id="deleteProduct" parameterType="int">

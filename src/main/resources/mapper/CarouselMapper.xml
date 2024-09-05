@@ -8,8 +8,8 @@
         SELECT * FROM Carousels
     </select>
     <insert id="insertCarousel" parameterType="com.cows.entity.Carousel">
-        INSERT INTO Carousels (imageUrl, redirectUrl, isEnabled, createTime, updateTime, isDeleted)
-        VALUES (#{imageUrl}, #{redirectUrl}, #{isEnabled}, #{createTime}, #{updateTime}, #{isDeleted})
+        INSERT INTO Carousels (imageUrl, redirectUrl, isEnabled, isDeleted)
+        VALUES (#{imageUrl}, #{redirectUrl}, #{isEnabled},  #{isDeleted})
     </insert>
     <update id="updateCarousel" parameterType="com.cows.entity.Carousel">
         UPDATE Carousels SET imageUrl = #{imageUrl}, redirectUrl = #{redirectUrl}, isEnabled = #{isEnabled},

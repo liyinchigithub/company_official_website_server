@@ -7,7 +7,7 @@ app:
   id: platform
 
 cors:
-  allowed-origins: http://118.178.232.103:9000,http://localhost:9000
+  allowed-origins: http://81.71.17.188:9000,http://localhost:9000
 # 开发环境配置
 server:
   # 服务器的HTTP端口，默认为80

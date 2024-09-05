@@ -8,16 +8,14 @@
         SELECT * FROM Businesses WHERE isDeleted = 0
     </select>
     <insert id="insertBusiness" parameterType="com.cows.entity.Business">
-        INSERT INTO Businesses (name, description, contactInfo, createTime, updateTime, isDeleted)
-        VALUES (#{name}, #{description}, #{contactInfo}, #{createTime}, #{updateTime}, 0)
+        INSERT INTO Businesses (name, description, contactInfo, isDeleted)
+        VALUES (#{name}, #{description}, #{contactInfo}, 0)
     </insert>
     <update id="updateBusiness" parameterType="com.cows.entity.Business">
         UPDATE Businesses 
         SET name = #{name}, 
             description = #{description}, 
-            contactInfo = #{contactInfo}, 
-            createTime = #{createTime}, 
-            updateTime = #{updateTime}, 
+            contactInfo = #{contactInfo},
             isDeleted = #{isDeleted}
         WHERE id = #{id}
     </update>
