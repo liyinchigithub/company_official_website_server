@@ -16,7 +16,7 @@ public class CarouselServiceImpl implements CarouselService {
     private CarouselMapper carouselMapper;
 
     @Override
-    @Transactional(rollbackFor = Exception.class)
+    @Transactional(readOnly = true)
     public List<Carousel> getAllCarousels() {
         return carouselMapper.findAllCarousels();
     }
@@ -50,13 +50,14 @@ public class CarouselServiceImpl implements CarouselService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Carousel> getAllCarousels(int page, int size, String sortField) {
-        log.debug("page" + page + " size" + size + " sortField" + sortField);
+        log.debug("page: " + page + ", size: " + size + ", sortField: " + sortField);
         if (page < 0 || size <= 0) {
-            throw new IllegalArgumentException("Page must be non-negative and size must be positive");
+            throw new IllegalArgumentException("页码必须为非负数，且每页大小必须为正数");
         }
         if (sortField == null || sortField.isEmpty()) {
-            sortField = "id";
+            sortField = "order";  // 默认按 order 字段排序
         }
         int offset = page * size;
         return carouselMapper.getAllCarousels(offset, size, sortField);

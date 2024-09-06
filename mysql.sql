@@ -73,6 +73,8 @@ CREATE TABLE `Businesses` (
 
 CREATE TABLE `Carousels` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `order` int(11) DEFAULT '0',
   `imageUrl` varchar(255) NOT NULL,
   `redirectUrl` varchar(255) DEFAULT NULL,
   `isEnabled` tinyint(1) DEFAULT '1',
@@ -80,7 +82,7 @@ CREATE TABLE `Carousels` (
   `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `isDeleted` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8
 
 CREATE TABLE `User` (
   `id` int(100) NOT NULL AUTO_INCREMENT,

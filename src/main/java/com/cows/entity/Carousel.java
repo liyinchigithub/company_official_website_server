@@ -14,6 +14,10 @@ import org.springframework.stereotype.Component;
 public class Carousel {
     @Schema(name = "id", description = "轮播图ID")
     private int id;
+    @Schema(name = "title", description = "轮播图标题")
+    private String title;
+    @Schema(name = "order", description = "轮播图排序")
+    private int order;
     @Schema(name = "imageUrl", description = "图片URL地址")
     private String imageUrl;
     @Schema(name = "redirectUrl", description = "图片跳转地址")
