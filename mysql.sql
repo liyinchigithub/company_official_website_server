@@ -22,7 +22,7 @@ CREATE TABLE `Admins` (
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8
 
 CREATE TABLE `BasicInformation` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id` bigint NOT NULL AUTO_INCREMENT,
   `phone` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
@@ -35,8 +35,10 @@ CREATE TABLE `BasicInformation` (
   `isEnable` tinyint(1) DEFAULT '1',
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `homeTitle` varchar(255) DEFAULT NULL,
+  `homeDescription` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3
 
 CREATE TABLE `BrandAuthorizationCertificates` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

@@ -7,24 +7,27 @@
     <select id="findAllBasicInformation" resultType="com.cows.entity.BasicInformation">
         SELECT * FROM BasicInformation WHERE isDeleted = 0
     </select>
-   <insert id="insertBasicInformation" parameterType="com.cows.entity.BasicInformation" useGeneratedKeys="true" keyProperty="id">
-    INSERT INTO BasicInformation (phone, email, address, weChatImage, icp, beianImage, publicSecurity, copyright, isDeleted, isEnable)
-    VALUES (#{phone}, #{email}, #{address}, #{weChatImage}, #{icp}, #{beianImage}, #{publicSecurity}, #{copyright}, #{isDeleted}, #{isEnable})
+ <insert id="insertBasicInformation" parameterType="com.cows.entity.BasicInformation" useGeneratedKeys="true" keyProperty="id">
+    INSERT INTO BasicInformation (phone, email, address, weChatImage, icp, beianImage, publicSecurity, copyright, isDeleted, isEnable, homeTitle, homeDescription)
+    VALUES (#{phone}, #{email}, #{address}, #{weChatImage}, #{icp}, #{beianImage}, #{publicSecurity}, #{copyright}, #{isDeleted}, #{isEnable}, #{homeTitle}, #{homeDescription})
 </insert>
-    <update id="updateBasicInformation" parameterType="com.cows.entity.BasicInformation">
-        UPDATE BasicInformation 
-        SET phone = #{phone}, 
-            email = #{email}, 
-            address = #{address},
-            weChatImage = #{weChatImage}, 
-            icp = #{icp}, 
-            beianImage = #{beianImage}, 
-            publicSecurity = #{publicSecurity}, 
-            copyright = #{copyright}, 
-            isDeleted = #{isDeleted}, 
-            isEnable = #{isEnable} 
-        WHERE id = 1
-    </update>
+
+<update id="updateBasicInformation" parameterType="com.cows.entity.BasicInformation">
+    UPDATE BasicInformation 
+    SET phone = #{phone}, 
+        email = #{email}, 
+        address = #{address},
+        weChatImage = #{weChatImage}, 
+        icp = #{icp}, 
+        beianImage = #{beianImage}, 
+        publicSecurity = #{publicSecurity}, 
+        copyright = #{copyright}, 
+        isDeleted = #{isDeleted}, 
+        isEnable = #{isEnable},
+        homeTitle = #{homeTitle},
+        homeDescription = #{homeDescription}
+    WHERE id = 1
+</update>
     <update id="deleteBasicInformation" parameterType="long">
         UPDATE BasicInformation SET isDeleted = 1 WHERE id = #{id}
     </update>

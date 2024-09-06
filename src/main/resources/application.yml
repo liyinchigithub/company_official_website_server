@@ -6,7 +6,7 @@ app:
   email: liyinchi@qq.com
   github: https://github.com/liyinchigithub/company_official_website_server
   description: company-official-website-server
-  version: 1.0.0
+  version: 1.0.4
 
   # 读取指定环境
 spring:
