@@ -52,7 +52,7 @@ public class SecurityConfig {
                                  "/v1/basicInformation/getAllBasicInformation", 
                                  "/v1/carousels/getAllCarousels", 
                                  "/v1/products/getAllProducts", 
-                                 "/v1/products/getProductById", 
+                                 "/v1/products/getProductById/*",
                                  "/v1/businesses/getBusinessById/1",
                                  "/v1/businesses/getAllBusinesses", 
                                  "/v1/certificates/getAllCertificates", 

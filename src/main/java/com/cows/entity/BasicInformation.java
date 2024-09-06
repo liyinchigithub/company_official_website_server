@@ -20,6 +20,10 @@ public class BasicInformation {
     @Id
     @Schema(name = "id", description = "ID")
     private Long id;
+    @Schema(name = "homeTitle", description = "首页标题")
+    private String homeTitle;
+    @Schema(name = "homeDescription", description = "首页描述")
+    private String homeDescription;
     @Schema(name = "phone", description = "联系方式")
     private String phone;
     @Schema(name = "email", description = "邮箱")
