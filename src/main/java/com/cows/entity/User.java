@@ -15,8 +15,9 @@ import org.springframework.stereotype.Component;
  */
 
 @Data   //  自动生成getter/setter方法
-@AllArgsConstructor //   自动生成全参构造器
-@NoArgsConstructor //  自动生成无参构造器
+//@AllArgsConstructor
+//@NoArgsConstructor
+@RequiredArgsConstructor
 @Component //  注册到spring容器
 @Schema(name = "User", description = "用户实体类") // swagger 标注
 public class User {

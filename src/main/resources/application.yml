@@ -11,7 +11,7 @@ app:
   # 读取指定环境
 spring:
   profiles:
-    active: prod  # dev 或者 'prod'，根据您需要的环境
+    active: dev  # dev 或者 'prod'，根据您需要的环境
     
 
 

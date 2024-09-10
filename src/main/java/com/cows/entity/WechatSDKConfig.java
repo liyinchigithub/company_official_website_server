@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
+@RequiredArgsConstructor
 @Data
 public class WechatSDKConfig {
     private String appId;

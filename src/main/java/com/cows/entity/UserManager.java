@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 /***
@@ -12,8 +13,9 @@ import org.springframework.stereotype.Component;
  */
 
 @Data   //  自动生成getter/setter方法
-@AllArgsConstructor //   自动生成全参构造器
-@NoArgsConstructor //  自动生成无参构造器
+//@AllArgsConstructor
+//@NoArgsConstructor
+@RequiredArgsConstructor
 @Component //  注册到spring容器
 @Schema(name = "UserManager", description = "管理员用户实体类") // swagger 标注
 public class UserManager {

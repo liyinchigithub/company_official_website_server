@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Component;
 
@@ -11,8 +12,9 @@ import org.springframework.stereotype.Component;
  * 基本信息实体类
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
+@RequiredArgsConstructor
 @Component
 @Schema(name = "BasicInformation", description = "网站基本信息")
 public class BasicInformation {

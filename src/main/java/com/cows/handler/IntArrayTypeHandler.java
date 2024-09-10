@@ -5,11 +5,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
+import org.springframework.stereotype.Component;
 
 
 import java.sql.*;
 
 @Slf4j
+@Component
 public class IntArrayTypeHandler extends BaseTypeHandler<int[]> {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();

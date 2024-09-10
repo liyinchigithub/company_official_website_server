@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * 商品信息服务接口实现类
- * */
+ */
 @Slf4j
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -30,7 +30,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public Product getProductById(int id) {
-        return productMapper.findProductById(id);
+        Product product = productMapper.findProductById(id);
+        if (product != null && product.getDetailImages() == null) {
+            product.setDetailImages(new String[0]); // 或者设置为默认值
+        }
+        return product;
     }
 
     @Override

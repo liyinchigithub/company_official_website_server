@@ -29,7 +29,7 @@ public class ProductController {
     }
 
 @Operation(summary = "通过ID获取商品信息", description = "返回指定ID的商品")
-    @GetMapping("/getProductById/{id}")
+        @GetMapping("/getProductById/{id}")
     public BaseResponse<Product> getProductById(@Parameter(description = "商品ID", required = true) @PathVariable int id) {
         Product product = productService.getProductById(id);
         log.info("通过ID获取商品信息: {}", product);

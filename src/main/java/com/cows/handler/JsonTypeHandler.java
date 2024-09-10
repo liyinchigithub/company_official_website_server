@@ -4,9 +4,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 
+//@Component
 public class JsonTypeHandler<T> extends BaseTypeHandler<T> {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();

@@ -3,12 +3,14 @@ package com.cows.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.util.Date;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
+@RequiredArgsConstructor
 public class LbsInfo {
 
     private Long id;

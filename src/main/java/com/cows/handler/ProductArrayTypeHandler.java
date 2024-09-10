@@ -7,9 +7,9 @@ import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
-
 public class ProductArrayTypeHandler extends BaseTypeHandler<Product[]> {
 
     private static final Logger logger = LoggerFactory.getLogger(ProductArrayTypeHandler.class);

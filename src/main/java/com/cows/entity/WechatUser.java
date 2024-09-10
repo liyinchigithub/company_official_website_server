@@ -3,12 +3,14 @@ package com.cows.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
+@RequiredArgsConstructor
 public class WechatUser {
     private String openId; // 用户的唯一标识
     private String nickname; // 用户昵称
