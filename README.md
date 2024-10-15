@@ -1,9 +1,11 @@
 # 一个公司企业官网后端项目
 
+
+[前端项目传送门](https://github.com/liyinchigithub/company_official_website_fe)
+
 [demo体验](http://81.71.17.188:9000/#/home)
 
-前端项目[传送门](https://github.com/liyinchigithub/company_official_website_fe)
-
+管理员账号：admin 密码：123456
 
 ## 版本
 * [jdk 17](https://blog.csdn.net/u013302168/article/details/141369914)
