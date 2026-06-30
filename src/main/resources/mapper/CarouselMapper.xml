@@ -5,31 +5,31 @@
         SELECT * FROM Carousels WHERE id = #{id}
     </select>
     <select id="findAllCarousels" resultType="com.cows.entity.Carousel">
-        SELECT * FROM Carousels WHERE isDeleted = false ORDER BY `order` ASC
+        SELECT * FROM Carousels WHERE isDeleted = false ORDER BY `sort_order` ASC
     </select>
-     <insert id="insertCarousel" parameterType="com.cows.entity.Carousel">
-        INSERT INTO Carousels (title, `order`, imageUrl, redirectUrl, isEnabled, isDeleted)
-        VALUES (#{title}, #{order}, #{imageUrl}, #{redirectUrl}, #{isEnabled}, #{isDeleted})
+    <insert id="insertCarousel" parameterType="com.cows.entity.Carousel">
+        INSERT INTO Carousels (title, `sort_order`, imageUrl, redirectUrl, isEnabled, isDeleted)
+        VALUES (#{title}, #{sortOrder}, #{imageUrl}, #{redirectUrl}, #{isEnabled}, #{isDeleted})
     </insert>
     <update id="updateCarousel" parameterType="com.cows.entity.Carousel">
-        UPDATE Carousels SET title = #{title}, `order` = #{order}, imageUrl = #{imageUrl}, 
-        redirectUrl = #{redirectUrl}, isEnabled = #{isEnabled},
-        updateTime = CURRENT_TIMESTAMP, isDeleted = #{isDeleted} WHERE id = #{id}
+        UPDATE Carousels SET title = #{title}, `sort_order` = #{sortOrder}, imageUrl = #{imageUrl},
+                             redirectUrl = #{redirectUrl}, isEnabled = #{isEnabled},
+                             updateTime = CURRENT_TIMESTAMP, isDeleted = #{isDeleted} WHERE id = #{id}
     </update>
 
     <update id="deleteCarousel" parameterType="int">
         UPDATE Carousels SET isDeleted = true WHERE id = #{id}
     </update>
-   <select id="getAllCarousels" resultType="com.cows.entity.Carousel">
-        SELECT * FROM Carousels 
-        WHERE isDeleted = false 
-        ORDER BY 
+    <select id="getAllCarousels" resultType="com.cows.entity.Carousel">
+        SELECT * FROM Carousels
+        WHERE isDeleted = false
+        ORDER BY
         <choose>
             <when test="sortField != null and sortField != ''">
                 ${sortField},
             </when>
         </choose>
-        `order` ASC 
+        `sort_order` ASC
         LIMIT #{limit} OFFSET #{offset}
     </select>
 </mapper>
